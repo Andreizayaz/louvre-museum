@@ -1,0 +1,39 @@
+@mixin flex(
+  $flex-direction: row,
+  $flex-wrap: wrap,
+  $justify-content: space-between,
+  $align-items: center
+) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-flow: $flex-direction $flex-wrap;
+}
+
+@mixin block(
+  $display: block,
+  $padding: auto,
+  $margin: auto,
+  $width: auto,
+  $height: auto
+) {
+  display: $display;
+  margin: $margin;
+  padding: $padding;
+  height: $height;
+  width: $width;
+}
+
+@mixin text(
+  $color: inherit,
+  $font-size: inherit,
+  $font-weight: inherit,
+  $line-height: inherit,
+  $letter-spacing: inherit
+) {
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}

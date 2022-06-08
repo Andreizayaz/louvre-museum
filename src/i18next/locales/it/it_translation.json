@@ -1,0 +1,70 @@
+{
+  "links": {
+    "visiting": "Visitando",
+    "explore": "Esplorare",
+    "video": "video",
+    "gallery": "Galleria",
+    "tickets": "Biglietti",
+    "contacts": "Contatti"
+  },
+
+  "welcome_section": {
+    "welcome": "Benvenuti al Louvre",
+    "from_the_castle": "Dal castello al museo",
+    "discover_btn": "Scopri il Louvre"
+  },
+
+  "virtual_tour": {
+    "section_heading": "Scopri il Louvre",
+    "royal_palace": "Palazzo Reale",
+    "Denon_wing": "Ala Denon",
+    "colonnade_perrault": "Colonnato Perrault",
+    "greek hall": "Sala Greca",
+    "Mona_Lisa": "Monna Lisa",
+    "night_palace": "Palazzo della Notte",
+    "virtual_tour_description": "Tour virtuale a 360°",
+    "panorama_view": "Vista panoramica di Google Street"
+  },
+
+  "picture_explore": {
+    "section_heading": "Esplora l'immagine",
+    "first_row": "Las Meninas è un dipinto del 1656 di Diego Velázquez, il principale artista dell'età d'oro spagnola",
+    "second_row_first_half": "È stato pulito nel 1984 per rimuovere a",
+    "second_row_highlighted_text": "velo giallo",
+    "second_row_second_half": "di polvere accumulatasi dal precedente restauro ottocentesco",
+    "third_row": "La pulizia ha provocato proteste furiose, non perché il quadro fosse stato danneggiato in qualche modo, ma perché aveva un aspetto diverso"
+  },
+
+  "video_journey": {
+    "section_heading": "Viaggio in video",
+    "description_text": "Entra e visita uno dei musei più famosi al mondo e goditi capolavori come la Gioconda o il Codice di Hammurabi"
+  },
+
+  "art_gallery": {
+    "section_heading": "Galleria d'arte"
+  },
+
+  "buy_tickets": {
+    "section_heading": "comprare biglietti",
+    "ticket_type": "Tipo di biglietto",
+    "permanent_exhibition": "Esposizione permanente",
+    "temporary_exhibition": "Mostra temporanea",
+    "combined_admission": "Ingresso Combinato",
+    "amount": "Quantità",
+    "basic_18": "Fondamentale 18",
+    "senior_65": "Anziano 65",
+    "total": "Totale",
+    "buy_btn": "Acquista ora"
+  },
+
+  "contacts": {
+    "section_heading": "Contatti",
+    "museum_name": "Museo del Louvre di Palazzo Reale",
+    "address": "indirizzo",
+    "address_name": "75001 Parigi, Francia",
+    "phone": "Telefono",
+    "phone_number": "+33(0) 1 40 20 50 50",
+    "mail": "posta",
+    "mail_address": "info@louvre.fr"
+  }
+}

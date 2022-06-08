@@ -1,0 +1,70 @@
+{
+  "links": {
+    "visiting": "Посещение",
+    "explore": "Обозрение",
+    "video": "Видео",
+    "gallery": "Галлерея",
+    "tickets": "Билеты",
+    "contacts": "Контакты"
+  },
+
+  "welcome_section": {
+    "welcome": "Добро пожаловать в Лувр",
+    "from_the_castle": "Из замка к музею",
+    "discover_btn": "Откройте для себя Лувр"
+  },
+
+  "virtual_tour": {
+    "section_heading": "Откройте для себя Лувр",
+    "royal_palace": "Королевский дворец",
+    "Denon_wing": "крыло Денон",
+    "colonnade_perrault": "Колоннада Перро",
+    "greek hall": "Греческий зал",
+    "Mona_Lisa": "Мона Лиза",
+    "night_palace": "Ночной дворец",
+    "virtual_tour_description": "Виртуальный тур 360°",
+    "panorama_view": "Google Панорамный вид"
+  },
+
+  "picture_explore": {
+    "section_heading": "Информация о картине",
+    "first_row": "Las Meninas - картина 1656 года Диего Веласкеса, ведущего художника Золотого века Испании",
+    "second_row_first_half": "Она была очищена в 1984 году, чтобы удалить",
+    "second_row_highlighted_text": "желтую вуаль",
+    "second_row_second_half": "пыль, скопившейся с момента предыдущей реставрации в 19 веке",
+    "third_row": "Чистка вызвала яростные протесты не потому, что картина была как-то повреждена, а потому, что она выглядела иначе."
+  },
+
+  "video_journey": {
+    "section_heading": "Видеопутешествие",
+    "description_text": "Войдите и посетите один из самых известных музеев в мире и насладитесь такими шедеврами, как Мона Лиза или Кодекс Хаммурапи."
+  },
+
+  "art_gallery": {
+    "section_heading": "Художественная галлерея"
+  },
+
+  "buy_tickets": {
+    "section_heading": "купить билет",
+    "ticket_type": "Тип билета",
+    "permanent_exhibition": "Абонемент",
+    "temporary_exhibition": "Единовременное посещение",
+    "combined_admission": "Комбинированный тип",
+    "amount": "Количество",
+    "basic_18": "Базовый 18",
+    "senior_65": "Пенсионный 65",
+    "total": "Всего",
+    "buy_btn": "Купить"
+  },
+
+  "contacts": {
+    "section_heading": "Контакты",
+    "museum_name": "Королевский дворец Лувр музей",
+    "address": "адрес",
+    "address_name": "75001 Париж, Франция",
+    "phone": "телефон",
+    "phone_number": "+33(0) 1 40 20 50 50",
+    "mail": "почта",
+    "mail_address": "info@louvre.fr"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "links": {
+    "visiting": "Visitando",
+    "explore": "Explorar",
+    "video": "Video",
+    "gallery": "Galería",
+    "tickets": "Entradas",
+    "contacts": "Contactos"
+  },
+
+  "welcome_section": {
+    "welcome": "Bienvenido al louvre",
+    "from_the_castle": "Del castillo al museo",
+    "discover_btn": "Descubre el Museo del Louvre"
+  },
+
+  "virtual_tour": {
+    "section_heading": "Descubre el Museo del Louvre",
+    "royal_palace": "Palacio Real",
+    "Denon_wing": "Ala Denon",
+    "colonnade_perrault": "Columnata Perrault",
+    "greek hall": "salón griego",
+    "Mona_Lisa": "Mona Lisa",
+    "night_palace": "Palacio de la noche",
+    "virtual_tour_description": "Tour Virtual 360°",
+    "panorama_view": "Vista panorámica de Google Street"
+  },
+
+  "picture_explore": {
+    "section_heading": "Imagen explorar",
+    "first_row": "Las Meninas es una pintura de 1656 de Diego Velázquez, el artista principal del Siglo de Oro español",
+    "second_row_first_half": "Se limpió en 1984 para eliminar un",
+    "second_row_highlighted_text": "velo amarillo",
+    "second_row_second_half": "de polvo que se había acumulado desde la restauración anterior en el siglo XIX",
+    "third_row": "La limpieza provocó furiosas protestas, no porque la imagen hubiera sido dañada de alguna manera, sino porque se veía diferente."
+  },
+
+  "video_journey": {
+    "section_heading": "Video viaje",
+    "description_text": "Entra y visita uno de los museos más famosos del mundo y disfruta de obras maestras como la Mona Lisa o el Código de Hammurabi"
+  },
+
+  "art_gallery": {
+    "section_heading": "Galería de arte"
+  },
+
+  "buy_tickets": {
+    "section_heading": "comprar boletos",
+    "ticket_type": "Tipo de billete",
+    "permanent_exhibition": "Exhibición permanente",
+    "temporary_exhibition": "exposición temporal",
+    "combined_admission": "Admisión combinada",
+    "amount": "Monto",
+    "basic_18": "Básico 18",
+    "senior_65": "Mayor 65",
+    "total": "Total",
+    "buy_btn": "Comprar ahora"
+  },
+
+  "contacts": {
+    "section_heading": "Contactos",
+    "museum_name": "Museo del Louvre del Palacio Real",
+    "address": "Dirección",
+    "address_name": "75001 París, Francia",
+    "phone": "teléfono",
+    "phone_number": "+33(0) 1 40 20 50 50",
+    "mail": "correo",
+    "mail_address": "info@louvre.fr"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "links": {
+    "visiting": "Besuch",
+    "explore": "Entdecken",
+    "video": "Video",
+    "gallery": "Galerie",
+    "tickets": "Eintrittskarten",
+    "contacts": "Kontakte"
+  },
+
+  "welcome_section": {
+    "welcome": "Willkommen im Louvre",
+    "from_the_castle": "Vom Schloss zum Museum",
+    "discover_btn": "Entdecken Sie den Louvre"
+  },
+
+  "virtual_tour": {
+    "section_heading": "Entdecken Sie den Louvre",
+    "royal_palace": "königlicher Palast",
+    "Denon_wing": "Denon-Flügel",
+    "colonnade_perrault": "Kolonnade Perrault",
+    "greek hall": "Griechischer Saal",
+    "Mona_Lisa": "Mona Lisa",
+    "night_palace": "Nacht Palast",
+    "virtual_tour_description": "Virtuelle 360°-Tour",
+    "panorama_view": "Google Street-Panoramaansicht"
+  },
+
+  "picture_explore": {
+    "section_heading": "Bild erkunden",
+    "first_row": "Las Meninas ist ein Gemälde aus dem Jahr 1656 von Diego Velázquez, dem führenden Künstler des spanischen Goldenen Zeitalters",
+    "second_row_first_half": "Es wurde 1984 gereinigt, um a zu entfernen",
+    "second_row_highlighted_text": "gelber Schleier",
+    "second_row_second_half": "staub, der sich seit der vorherigen Restaurierung im 19. Jahrhundert angesammelt hatte",
+    "third_row": "Die Reinigung rief heftige Proteste hervor, nicht weil das Bild in irgendeiner Weise beschädigt worden war, sondern weil es anders aussah"
+  },
+
+  "video_journey": {
+    "section_heading": "Videoreise",
+    "description_text": "Betreten und besuchen Sie eines der berühmtesten Museen der Welt und genießen Sie Meisterwerke wie Mona Lisa oder Hammurabis Kodex"
+  },
+
+  "art_gallery": {
+    "section_heading": "Kunstgalerie"
+  },
+
+  "buy_tickets": {
+    "section_heading": "Tickets kaufen",
+    "ticket_type": "Art des Tickets",
+    "permanent_exhibition": "Dauerausstellung",
+    "temporary_exhibition": "Temporäre Ausstellung",
+    "combined_admission": "Kombinierter Eintritt",
+    "amount": "Menge",
+    "basic_18": "Basis 18",
+    "senior_65": "Senior 65",
+    "total": "Gesamt",
+    "buy_btn": "Kaufe jetzt"
+  },
+
+  "contacts": {
+    "section_heading": "Kontakte",
+    "museum_name": "Louvre-Museum des Königspalastes",
+    "address": "die Anschrift",
+    "address_name": "75001 Paris, Frankreich",
+    "phone": "Telefon",
+    "phone_number": "+33(0) 1 40 20 50 50",
+    "mail": "Post",
+    "mail_address": "info@louvre.fr"
+  }
+}

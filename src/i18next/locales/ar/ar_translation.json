@@ -1,0 +1,70 @@
+{
+  "links": {
+    "visiting": "زيارة",
+    "explore": "يكتشف",
+    "video": "فيديو",
+    "gallery": "صالة عرض",
+    "tickets": "تذاكر",
+    "contacts": "جهات الاتصال"
+  },
+
+  "welcome_section": {
+    "welcome": "مرحبًا بكم في متحف اللوفر",
+    "from_the_castle": "من القلعة الى المتحف",
+    "discover_btn": "اكتشف متحف اللوفر"
+  },
+
+  "virtual_tour": {
+    "section_heading": "اكتشف متحف اللوفر",
+    "royal_palace": "قصر ملكي",
+    "Denon_wing": "جناح دينون",
+    "colonnade_perrault": "كولونيد بيرولت",
+    "greek hall": "القاعة اليونانية",
+    "Mona_Lisa": "موناليزا",
+    "night_palace": "قصر الليل",
+    "virtual_tour_description": "جولة افتراضية 360 درجة",
+    "panorama_view": "جوجل ستريت بانوراما فيو"
+  },
+
+  "picture_explore": {
+    "section_heading": "استكشاف الصورة",
+    "first_row": "Las Meninas هي لوحة من 1656 رسمها دييغو فيلاسكيز ، الفنان الرائد في العصر الذهبي الإسباني",
+    "second_row_first_half": "تم تنظيفه في عام 1984 لإزالة أ",
+    "second_row_highlighted_text": "حجاب أصفر",
+    "second_row_second_half": "من الغبار الذي تراكم منذ الترميم السابق في القرن التاسع عشر",
+    "third_row": "أثار التنظيف احتجاجات غاضبة ، ليس لأن الصورة تضررت بأي شكل من الأشكال ، ولكن لأنها بدت مختلفة"
+  },
+
+  "video_journey": {
+    "section_heading": "رحلة الفيديو",
+    "description_text": "ادخل وقم بزيارة أحد أشهر المتاحف في العالم واستمتع بروائع مثل الموناليزا أو كود حمورابي"
+  },
+
+  "art_gallery": {
+    "section_heading": "معرض الفنون"
+  },
+
+  "buy_tickets": {
+    "section_heading": "اشتري تذاكر",
+    "ticket_type": "نوع التذكرة",
+    "permanent_exhibition": "معرض دائم",
+    "temporary_exhibition": "معرض مؤقت",
+    "combined_admission": "القبول المشترك",
+    "amount": "مقدار",
+    "basic_18": "أساسي 18",
+    "senior_65": "65 سنة",
+    "total": "المجموع",
+    "buy_btn": "اشتري الآن"
+  },
+
+  "contacts": {
+    "section_heading": "جهات الاتصال",
+    "museum_name": "متحف اللوفر بالقصر الملكي",
+    "address": "تبوك",
+    "address_name": "75001 باريس ، فرنسا",
+    "phone": "هاتف",
+    "phone_number": "+33 (0) 1 40 20 50 50",
+    "mail": "بريد",
+    "mail_address": "info@louvre.fr"
+  }
+}

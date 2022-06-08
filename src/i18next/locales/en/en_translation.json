@@ -1,0 +1,74 @@
+{
+  "heading": {
+    "welcome_to_react": "Welcome to React and react-i18next"
+  },
+
+  "links": {
+    "visiting": "Visiting",
+    "explore": "Explore",
+    "video": "Video",
+    "gallery": "Gallery",
+    "tickets": "Tickets",
+    "contacts": "Contacts"
+  },
+
+  "welcome_section": {
+    "welcome": "Welcome to the Louvre",
+    "from_the_castle": "From the castle to the museum",
+    "discover_btn": "Discover the Louvre"
+  },
+
+  "virtual_tour": {
+    "section_heading": "Discover the Louvre",
+    "royal_palace": "Royal Palace",
+    "Denon_wing": "Denon Wing",
+    "colonnade_perrault": "Colonnade Perrault",
+    "greek hall": "Greek hall",
+    "Mona_Lisa": "Mona Lisa",
+    "night_palace": "Night Palace",
+    "virtual_tour_description": "360° Virtual Tour",
+    "panorama_view": "Google Street Panorama View"
+  },
+
+  "picture_explore": {
+    "section_heading": "Picture explore",
+    "first_row": "Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age",
+    "second_row_first_half": "It was cleaned in 1984 to remove a",
+    "second_row_highlighted_text": "yellow veil",
+    "second_row_second_half": "of dust that had gathered since the previous restoration in the 19th century",
+    "third_row": "The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different"
+  },
+
+  "video_journey": {
+    "section_heading": "Video journey",
+    "description_text": "Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code"
+  },
+
+  "art_gallery": {
+    "section_heading": "Art Gallery"
+  },
+
+  "buy_tickets": {
+    "section_heading": "buy tickets",
+    "ticket_type": "Ticket Type",
+    "permanent_exhibition": "Permanent exhibition",
+    "temporary_exhibition": "Temporary exhibition",
+    "combined_admission": "Combined Admission",
+    "amount": "Amount",
+    "basic_18": "Basic 18",
+    "senior_65": "Senior 65",
+    "total": "Total",
+    "buy_btn": "Buy Now"
+  },
+
+  "contacts": {
+    "section_heading": "Contacts",
+    "museum_name": "Palais Royal Musee du Louvre",
+    "address": "address",
+    "address_name": "75001 Paris, France",
+    "phone": "phone",
+    "phone_number": "+33(0) 1 40 20 50 50",
+    "mail": "mail",
+    "mail_address": "info@louvre.fr"
+  }
+}

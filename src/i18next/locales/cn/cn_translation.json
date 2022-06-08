@@ -1,0 +1,70 @@
+{
+  "links": {
+    "visiting": "參觀",
+    "explore": "探索",
+    "video": "視頻",
+    "gallery": "畫廊",
+    "tickets": "門票",
+    "contacts": "聯繫人"
+  },
+
+  "welcome_section": {
+    "welcome": "歡迎來到盧浮宮",
+    "from_the_castle": "從城堡到博物館",
+    "discover_btn": "探索盧浮宮"
+  },
+
+  "virtual_tour": {
+    "section_heading": "探索盧浮宮",
+    "royal_palace": "皇宮",
+    "Denon_wing": "天龍翼",
+    "colonnade_perrault": "柱廊佩羅",
+    "greek hall": "希臘大廳",
+    "Mona_Lisa": "蒙娜麗莎",
+    "night_palace": "夜宮",
+    "virtual_tour_description": "360° 虛擬之旅",
+    "panorama_view": "谷歌街景全景"
+  },
+
+  "picture_explore": {
+    "section_heading": "圖片探索",
+    "first_row": "Las Meninas 是西班牙黃金時代的主要藝術家 Diego Velázquez 於 1656 年創作的一幅畫作",
+    "second_row_first_half": "它於 1984 年進行了清理，以去除",
+    "second_row_highlighted_text": "黃色面紗",
+    "second_row_second_half": "自 19 世紀上一次修復以來聚集的灰塵",
+    "third_row": "大掃除引起了憤怒的抗議，不是因為這幅畫有任何損壞，而是因為它看起來不一樣"
+  },
+
+  "video_journey": {
+    "section_heading": "視頻之旅",
+    "description_text": "進入並參觀世界上最著名的博物館之一，欣賞蒙娜麗莎或漢謨拉比密碼等傑作"
+  },
+
+  "art_gallery": {
+    "section_heading": "美術館"
+  },
+
+  "buy_tickets": {
+    "section_heading": "買票",
+    "ticket_type": "票種",
+    "permanent_exhibition": "常設展覽",
+    "temporary_exhibition": "臨時展覽",
+    "combined_admission": "合併錄取",
+    "amount": "數量",
+    "basic_18": "基本 18",
+    "senior_65": "高級 65",
+    "total": "全部的",
+    "buy_btn": "立即購買"
+  },
+
+  "contacts": {
+    "section_heading": "聯繫人",
+    "museum_name": "皇宮盧浮宮博物館",
+    "address": "地址",
+    "address_name": "75001 巴黎，法國",
+    "phone": "電話",
+    "phone_number": "+33(0) 1 40 20 50 50",
+    "mail": "郵件",
+    "mail_address": "info@louvre.fr"
+  }
+}

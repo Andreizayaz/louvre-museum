@@ -1,0 +1,74 @@
+{
+  "heading": {
+    "welcome_to_react": "Bienvenue sur React et react-i18next"
+  },
+
+  "links": {
+    "visiting": "Visiter",
+    "explore": "Explorer",
+    "video": "Vidéo",
+    "gallery": "Galerie",
+    "tickets": "Des billets",
+    "contacts": "Contacts"
+  },
+
+  "welcome_section": {
+    "welcome": "Bienvenue au Louvre",
+    "from_the_castle": "Du château au musée",
+    "discover_btn": "Découvrir le Louvre"
+  },
+
+  "virtual_tour": {
+    "section_heading": "Découvrir le Louvre",
+    "royal_palace": "Palais Royal",
+    "Denon_wing": "Aile Denon",
+    "colonnade_perrault": "Colonnade Perrault",
+    "greek hall": "salle grecque",
+    "Mona_Lisa": "Mona Lisa",
+    "night_palace": "Palais de la nuit",
+    "virtual_tour_description": "Visite virtuelle 360°",
+    "panorama_view": "Vue panoramique de la rue Google"
+  },
+
+  "picture_explore": {
+    "section_heading": "Explorer l'image",
+    "first_row": "Las Meninas est une peinture de 1656 de Diego Velázquez, le principal artiste de l'âge d'or espagnol",
+    "second_row_first_half": "Il a été nettoyé en 1984 pour enlever un",
+    "second_row_highlighted_text": "voile jaune",
+    "second_row_second_half": "de la poussière qui s'était accumulée depuis la précédente restauration au XIXe siècle",
+    "third_row": "Le nettoyage a provoqué de furieuses protestations, non pas parce que le tableau avait été endommagé de quelque manière que ce soit, mais parce qu'il avait l'air différent"
+  },
+
+  "video_journey": {
+    "section_heading": "Voyage vidéo",
+    "description_text": "Entrez et visitez l'un des musées les plus célèbres au monde et admirez des chefs-d'œuvre tels que Mona Lisa ou Hammurabi's Code"
+  },
+
+  "art_gallery": {
+    "section_heading": "Galerie d'art"
+  },
+
+  "buy_tickets": {
+    "section_heading": "acheter des billets",
+    "ticket_type": "Type de billet",
+    "permanent_exhibition": "Exposition permanente",
+    "temporary_exhibition": "Exposition temporaire",
+    "combined_admission": "Admission combinée",
+    "amount": "Montant",
+    "basic_18": "De base 18",
+    "senior_65": "Senior 65",
+    "total": "Total",
+    "buy_btn": "Acheter maintenant"
+  },
+
+  "contacts": {
+    "section_heading": "Contacts",
+    "museum_name": "Palais Royal Musée du Louvre",
+    "address": "adresse",
+    "address_name": "75001 Paris, France",
+    "phone": "téléphoner",
+    "phone_number": "+33(0)1 40 20 50 50",
+    "mail": "courrier",
+    "mail_address": "info@louvre.fr"
+  }
+}

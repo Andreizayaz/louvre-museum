@@ -1,8 +1,11 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+yarn stylelint-fix
 yarn stylelint
+yarn lint-fix
 yarn lint
+yarn format-fix
 yarn format-check
 yarn test
 exit 0

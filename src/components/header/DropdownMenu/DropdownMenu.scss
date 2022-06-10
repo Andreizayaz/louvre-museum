@@ -1,0 +1,26 @@
+@import '../../../scss/abstracts/mixins';
+
+.options {
+  @include flex;
+
+  &__flag,
+  &__text {
+    display: block;
+    padding: 0 10px;
+  }
+
+  &__flag {
+    margin-right: auto;
+  }
+}
+
+button.dropdown-btn{
+  padding: 0;
+  background-color: transparent;
+  transition: all 1s;
+
+  &:hover{
+    background-color: transparent;
+    transform: scale(1.1);
+  }
+}

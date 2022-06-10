@@ -48,11 +48,11 @@ $select-option-hover-background-color: $light-white-color;
 /*  font-sizes  */
 
 // font-size-values
-$extra-large-font-size:80px;
-$large-font-size:32px;
-$medium-font-size:28px;
-$small-font-size:22px;
-$extra-small-font-size:18px;
+$extra-large-font-size: 80px;
+$large-font-size: 32px;
+$medium-font-size: 28px;
+$small-font-size: 22px;
+$extra-small-font-size: 18px;
 
 // font-size-names
 $section-heading-font-size: $extra-large-font-size;
@@ -66,12 +66,12 @@ $small-text: $extra-small-font-size;
 /*  lines height  */
 
 // line-height-values
-$extra-large-line-height:90px;
-$large-line-height:38px;
-$medium-line-height:35px;
-$normal-line-height:33px;
-$small-line-height:26px;
-$extra-small-line-height:21px;
+$extra-large-line-height: 90px;
+$large-line-height: 38px;
+$medium-line-height: 35px;
+$normal-line-height: 33px;
+$small-line-height: 26px;
+$extra-small-line-height: 21px;
 
 // line-height-names
 $section-heading-line-height: $extra-large-line-height;
@@ -85,11 +85,11 @@ $small-text-line-height: $extra-small-line-height;
 /*  font-weight  */
 
 // font-weight-values
-$thin-font-weight:100;
-$light-font-weight:300;
-$normal-font-weight:400;
-$medium-font-weight:500;
-$bold-font-weight:700;
+$thin-font-weight: 100;
+$light-font-weight: 300;
+$normal-font-weight: 400;
+$medium-font-weight: 500;
+$bold-font-weight: 700;
 
 // font-weight-names
 $link-font-weight: $thin-font-weight;
@@ -108,17 +108,17 @@ $form-subheading-font-weight: $bold-font-weight;
 /*  letter-spacing  */
 
 // letter-spacing values
-$big-letter-spacing:5px;
-$medium-letter-spacing:2px;
-$normal-letter-spacing:inherit;
-$small-letter-spacing:1.65px;
+$big-letter-spacing: 5px;
+$medium-letter-spacing: 2px;
+$normal-letter-spacing: inherit;
+$small-letter-spacing: 1.65px;
 
 // letter-spacing-names
-$link-letter-spacing:$medium-letter-spacing;
-$section-heading-letter-spacing:$big-letter-spacing;
-$section-subheading-letter-spacing:$big-letter-spacing;
-$text-letter-spacing:$medium-letter-spacing;
-$button-letter-spacing:$medium-letter-spacing;
-$card-description-letter-spacing:$normal-letter-spacing;
-$common-text-letter-spacing:$normal-letter-spacing;
-$footer-info-letter-spacing:$medium-letter-spacing;
+$link-letter-spacing: $medium-letter-spacing;
+$section-heading-letter-spacing: $big-letter-spacing;
+$section-subheading-letter-spacing: $big-letter-spacing;
+$text-letter-spacing: $medium-letter-spacing;
+$button-letter-spacing: $medium-letter-spacing;
+$card-description-letter-spacing: $normal-letter-spacing;
+$common-text-letter-spacing: $normal-letter-spacing;
+$footer-info-letter-spacing: $medium-letter-spacing;

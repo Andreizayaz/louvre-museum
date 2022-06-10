@@ -35,13 +35,13 @@
   .list-item {
     &__link {
       display: block;
-      padding:10px 0;
+      padding: 10px 0;
     }
   }
 
   .link {
     @include text(
-      $main-color, 
+      $main-color,
       center,
       $link-font-size,
       $link-font-weight,

@@ -1,4 +1,8 @@
 {
+  "titles": {
+    "main_page_title": "музей Лувр"
+  },
+
   "links": {
     "visiting": "Посещение",
     "explore": "Обозрение",

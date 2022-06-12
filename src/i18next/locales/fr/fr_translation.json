@@ -1,4 +1,8 @@
 {
+  "titles": {
+    "main_page_title": "Musée du Louvre"
+  },
+
   "heading": {
     "welcome_to_react": "Bienvenue sur React et react-i18next"
   },

@@ -4,3 +4,10 @@ export type ClassesTypes = {
   listItemClasses: string;
   linkClasses: string;
 };
+
+export type LanguageType = {
+  code: string;
+  name: string;
+  dir?: string;
+  country_code: string;
+};

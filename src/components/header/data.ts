@@ -1,15 +1,10 @@
-type language = {
-  code: string;
-  name: string;
-  dir?: string;
-  country_code: string;
-};
+import { LanguageType } from './types';
 
-export const languages: language[] = [
+export const languages: LanguageType[] = [
   {
     code: 'ar',
     name: 'عربي',
-    dir: 'rlt',
+    dir: 'rtl',
     country_code: 'sa'
   },
   {

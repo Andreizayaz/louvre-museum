@@ -51,8 +51,8 @@ const setI18nextConfig = async () => {
       supportedLngs: ['ar', 'cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru'],
       fallbackLng: 'en',
       detection: {
-        order: ['cookie', 'htmlTag', 'localStorage', 'path', 'subdomain'],
-        caches: ['cookie']
+        order: ['localStorage', 'htmlTag', 'path', 'subdomain'],
+        caches: ['localStorage']
       },
       react: {
         useSuspense: false

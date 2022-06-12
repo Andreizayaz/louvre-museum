@@ -3,6 +3,9 @@
 .options {
   @include flex;
 
+  padding: 10px;
+  width: 100%;
+
   &__flag,
   &__text {
     display: block;
@@ -11,6 +14,10 @@
 
   &__flag {
     margin-right: auto;
+  }
+
+  &__text {
+    width: 70%;
   }
 }
 

@@ -1,7 +1,4 @@
-import { FC, ReactElement } from 'react';
-import { changeLanguage } from 'i18next';
-
-// import cookies from 'js-cookie';
+import { ReactElement } from 'react';
 
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -10,19 +7,23 @@ import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
 import { GlobeIcon } from '../GlobeIcon';
 
-import { languages } from '../data';
+import { LanguageType } from '../types';
 
 import './DropdownMenu.scss';
 
-const DropdownMenu: FC = (): ReactElement => {
-  // const currentLanguageCode = cookies.get('i18next') || 'en';
+type DropDownPropsTypes = {
+  clickHandler: (code: string) => void;
+  languages: LanguageType[];
+  currentLanguage: string;
+  langDir: string | undefined;
+};
 
-  // const currentLanguage = languages.find((l) => l.code === currentLanguageCode);
-
-  const clickHandler = (code: string) => {
-    void changeLanguage(code);
-  };
-
+const DropdownMenu = ({
+  clickHandler,
+  languages,
+  currentLanguage,
+  langDir
+}: DropDownPropsTypes): ReactElement => {
   return (
     <PopupState variant='popover' popupId='demo-popup-menu'>
       {(popupState) => (
@@ -32,11 +33,19 @@ const DropdownMenu: FC = (): ReactElement => {
             variant='contained'
             {...bindTrigger(popupState)}
           >
+            <span className={langDir ? 'ml-auto' : 'mr-auto'}>
+              {currentLanguage}
+            </span>
             <GlobeIcon height={30} width={30} />
           </Button>
-          <Menu {...bindMenu(popupState)}>
+          <Menu {...bindMenu(popupState)} style={{ padding: 0 }}>
             {languages.map(({ code, country_code, name }) => (
-              <MenuItem key={code} onClick={popupState.close}>
+              <MenuItem
+                key={code}
+                onClick={popupState.close}
+                style={{ padding: 0 }}
+                disabled={code === currentLanguage}
+              >
                 <div className='options' onClick={() => clickHandler(code)}>
                   <span
                     className={`fi fi-${country_code} options__flag`}

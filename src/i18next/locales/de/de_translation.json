@@ -1,4 +1,8 @@
 {
+  "titles": {
+    "main_page_title": "Louvre Museum"
+  },
+
   "links": {
     "visiting": "Besuch",
     "explore": "Entdecken",

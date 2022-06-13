@@ -18,7 +18,7 @@ const App: FC = (): ReactElement => {
       <Helmet>
         <html lang={code}></html>
         <title>{t('main_page_title')}</title>
-        <body dir={dir || 'ltr'}></body>
+        <body dir={dir}></body>
       </Helmet>
       <Header />
     </>

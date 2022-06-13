@@ -8,6 +8,6 @@ export type ClassesTypes = {
 export type LanguageType = {
   code: string;
   name: string;
-  dir?: string;
+  dir: string;
   country_code: string;
 };

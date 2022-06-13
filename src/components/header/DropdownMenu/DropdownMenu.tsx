@@ -32,8 +32,12 @@ const DropdownMenu = ({
             className='dropdown-btn'
             variant='contained'
             {...bindTrigger(popupState)}
+            data-testid='dropdown-btn'
           >
-            <span className={langDir ? 'ml-auto' : 'mr-auto'}>
+            <span
+              className={langDir === 'rtl' ? 'ml-auto' : 'mr-auto'}
+              data-testid='lang-code'
+            >
               {currentLanguage}
             </span>
             <GlobeIcon height={30} width={30} />
@@ -46,11 +50,21 @@ const DropdownMenu = ({
                 style={{ padding: 0 }}
                 disabled={code === currentLanguage}
               >
-                <div className='options' onClick={() => clickHandler(code)}>
+                <div
+                  className='options'
+                  onClick={() => clickHandler(code)}
+                  data-testid={code}
+                >
                   <span
                     className={`fi fi-${country_code} options__flag`}
+                    data-testid={`flag-${country_code}`}
                   ></span>
-                  <span className='options__text'>{name}</span>
+                  <span
+                    className='options__text'
+                    data-testid={`text-${country_code}`}
+                  >
+                    {name}
+                  </span>
                 </div>
               </MenuItem>
             ))}

@@ -44,14 +44,17 @@ const Header: FC = (): ReactElement => {
   const classesForNavbar: ClassesTypes = {
     navBarClasses: 'header__navbar navbar',
     listOfLinksClasses: 'navbar__links-list links-list',
-    listItemClasses: 'links-list__list-item list-item ',
+    listItemClasses: 'links-list__list-item list-item',
     linkClasses: 'list-item__link link'
   };
 
   return (
-    <header className='header'>
-      <div className='container header__container'>
-        <a className='header__logo'></a>
+    <header className='header' data-testid='header'>
+      <div
+        className='container header__container'
+        data-testid='header-container'
+      >
+        <a className='header__logo' data-testid='header-logo'></a>
         <Navbar classes={classesForNavbar} arrayOfLinks={arrayOfLinks} />
         <DropdownMenu
           clickHandler={(code: string) => selectLanguage(code)}

@@ -12,8 +12,8 @@ const Navbar = ({ classes, arrayOfLinks }: NavbarPropsTypes): ReactElement => {
     classes;
 
   return (
-    <nav className={navBarClasses}>
-      <ul className={listOfLinksClasses}>
+    <nav className={navBarClasses} data-testid='navbar'>
+      <ul className={listOfLinksClasses} data-testid='links-list'>
         {arrayOfLinks.map((item) => (
           <li className={listItemClasses} key={item}>
             <a className={linkClasses}>{item}</a>

@@ -1,7 +1,7 @@
-import { changeLanguage } from 'i18next';
-import { FC, ReactElement } from 'react';
-import { useTranslation } from 'react-i18next';
+import { FC, ReactElement, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { changeLanguage } from 'i18next';
 
 import { setCurrentLanguage } from 'src/store/Language/reducer';
 import { selectCurrentLanguage } from 'src/store/Language';
@@ -30,16 +30,19 @@ const Header: FC = (): ReactElement => {
     t('contacts')
   ];
 
-  const selectLanguage = (code: string) => {
-    void changeLanguage(code);
-    const currentLanguageCode = localStorage.getItem('i18nextLng') || 'en';
+  const selectLanguage = useCallback(
+    (code: string) => {
+      void changeLanguage(code);
+      const currentLanguageCode = localStorage.getItem('i18nextLng') || 'en';
 
-    const currentLanguage: LanguageType = languages.find(
-      (l) => l.code === currentLanguageCode
-    ) as LanguageType;
+      const currentLanguage: LanguageType = languages.find(
+        (l) => l.code === currentLanguageCode
+      ) as LanguageType;
 
-    dispatch(setCurrentLanguage(currentLanguage));
-  };
+      dispatch(setCurrentLanguage(currentLanguage));
+    },
+    [code]
+  );
 
   const classesForNavbar: ClassesTypes = {
     navBarClasses: 'header__navbar navbar',

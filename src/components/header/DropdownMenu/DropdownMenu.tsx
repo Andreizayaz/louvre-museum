@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, memo } from 'react';
 
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -18,62 +18,64 @@ type DropDownPropsTypes = {
   langDir: string | undefined;
 };
 
-const DropdownMenu = ({
-  clickHandler,
-  languages,
-  currentLanguage,
-  langDir
-}: DropDownPropsTypes): ReactElement => {
-  return (
-    <PopupState variant='popover' popupId='demo-popup-menu'>
-      {(popupState) => (
-        <>
-          <Button
-            className='dropdown-btn'
-            variant='contained'
-            {...bindTrigger(popupState)}
-            data-testid='dropdown-btn'
-          >
-            <span
-              className={langDir === 'rtl' ? 'ml-auto' : 'mr-auto'}
-              data-testid='lang-code'
+const DropdownMenu = memo(
+  ({
+    clickHandler,
+    languages,
+    currentLanguage,
+    langDir
+  }: DropDownPropsTypes): ReactElement => {
+    return (
+      <PopupState variant='popover' popupId='demo-popup-menu'>
+        {(popupState) => (
+          <>
+            <Button
+              className='dropdown-btn'
+              variant='contained'
+              {...bindTrigger(popupState)}
+              data-testid='dropdown-btn'
             >
-              {currentLanguage}
-            </span>
-            <GlobeIcon height={30} width={30} />
-          </Button>
-          <Menu {...bindMenu(popupState)} style={{ padding: 0 }}>
-            {languages.map(({ code, country_code, name }) => (
-              <MenuItem
-                key={code}
-                onClick={popupState.close}
-                style={{ padding: 0 }}
-                disabled={code === currentLanguage}
+              <span
+                className={langDir === 'rtl' ? 'ml-auto' : 'mr-auto'}
+                data-testid='lang-code'
               >
-                <div
-                  className='options'
-                  onClick={() => clickHandler(code)}
-                  data-testid={code}
+                {currentLanguage}
+              </span>
+              <GlobeIcon height={30} width={30} />
+            </Button>
+            <Menu {...bindMenu(popupState)} style={{ padding: 0 }}>
+              {languages.map(({ code, country_code, name }) => (
+                <MenuItem
+                  key={code}
+                  onClick={popupState.close}
+                  style={{ padding: 0 }}
+                  disabled={code === currentLanguage}
                 >
-                  <span
-                    className={`fi fi-${country_code} options__flag`}
-                    data-testid={`flag-${country_code}`}
-                  ></span>
-                  <span
-                    className='options__text'
-                    data-testid={`text-${country_code}`}
+                  <div
+                    className='options'
+                    onClick={() => clickHandler(code)}
+                    data-testid={code}
                   >
-                    {name}
-                  </span>
-                </div>
-              </MenuItem>
-            ))}
-          </Menu>
-        </>
-      )}
-    </PopupState>
-  );
-};
+                    <span
+                      className={`fi fi-${country_code} options__flag`}
+                      data-testid={`flag-${country_code}`}
+                    ></span>
+                    <span
+                      className='options__text'
+                      data-testid={`text-${country_code}`}
+                    >
+                      {name}
+                    </span>
+                  </div>
+                </MenuItem>
+              ))}
+            </Menu>
+          </>
+        )}
+      </PopupState>
+    );
+  }
+);
 
 export default DropdownMenu;
 

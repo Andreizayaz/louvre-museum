@@ -1,6 +1,6 @@
 {
-  "heading": {
-    "welcome_to_react": "Bienvenue sur React et react-i18next"
+  "titles": {
+    "main_page_title": "Musée du Louvre"
   },
 
   "links": {

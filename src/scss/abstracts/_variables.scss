@@ -1,46 +1,124 @@
 /*  colors  */
 
-$main-color: #fff;
-$odd-section-btn-color: #000;
-$odd-section-text-color: #fff;
-$even-section-text-color: #000;
-$even-section-background: #fff;
-$discover-btn-background: #710707;
-$heading-line-color: #710707;
-$input-filling-range-line-color: #710707;
-$circle-bullet-hover-background-color: #710707;
-$double-arrow-hover-background-color: #710707;
-$video-controls-color: #b3b3b3;
-$odd-section-background: #030303;
-$footer-top-border-color: #666;
-$social-icon-border-color: #666;
-$video-carousel-inactive-bullet-color: #999;
-$even-section-heading-color: #9d8665;
-$text-hover-color: #9d8665;
-$btn-hover-background-color: #9d8665;
-$square-bullet-hover-background-color: #9d8665;
-$arrow-hover-color: #9d8665;
-$link-active-color: #7e6c51;
-$input-infilling-range-line-color: #c4c4c4;
-$video-carousel-active-bullet-color: #333;
-$explore-section-highlighted-text: #caaa7d;
-$welcome-carousel-active-bullet-color: #d2b183;
-$select-option-hover-background-color: #e7e7e7;
+// color-values
+$white-color: #fff;
+$light-white-color: #e7e7e7;
+$black-color: #000;
+$black-secondary: #030303;
+$semi-black: #333;
+$indian-red: #710707;
+$light-gray: #b3b3b3;
+$extra-light-gray: #c4c4c4;
+$dark-gray: #666;
+$silver-gray: #999;
+$gray-bisque: #9d8665;
+$light-bisque: #caaa7d;
+$yellow-bisque: #d2b183;
+$dark-bisque: #7e6c51;
+
+// colors-names
+$main-color: $white-color;
+$odd-section-btn-color: $black-color;
+$odd-section-text-color: $white-color;
+$even-section-text-color: $black-color;
+$even-section-background: $white-color;
+$discover-btn-background: $indian-red;
+$heading-line-color: $indian-red;
+$input-filling-range-line-color: $indian-red;
+$circle-bullet-hover-background-color: $indian-red;
+$double-arrow-hover-background-color: $indian-red;
+$video-controls-color: $light-gray;
+$header-background: $black-secondary;
+$odd-section-background: $black-secondary;
+$footer-top-border-color: $dark-gray;
+$social-icon-border-color: $dark-gray;
+$video-carousel-inactive-bullet-color: $silver-gray;
+$even-section-heading-color: $gray-bisque;
+$text-hover-color: $gray-bisque;
+$btn-hover-background-color: $gray-bisque;
+$square-bullet-hover-background-color: $gray-bisque;
+$arrow-hover-color: $gray-bisque;
+$link-active-color: $dark-bisque;
+$input-infilling-range-line-color: $extra-light-gray;
+$video-carousel-active-bullet-color: $semi-black;
+$explore-section-highlighted-text: $light-bisque;
+$welcome-carousel-active-bullet-color: $yellow-bisque;
+$select-option-hover-background-color: $light-white-color;
 
 /*  font-sizes  */
-$section-heading-font-size: 80px;
-$section-subheading-font-size: 32px;
-$section-main-text-font-size: 28px;
-$section-text-font-size: 22px;
-$link-font-size: 22px;
-$button-font-size: 22px;
-$small-text: 18px;
+
+// font-size-values
+$extra-large-font-size: 80px;
+$large-font-size: 32px;
+$medium-font-size: 28px;
+$small-font-size: 22px;
+$extra-small-font-size: 18px;
+
+// font-size-names
+$section-heading-font-size: $extra-large-font-size;
+$section-subheading-font-size: $large-font-size;
+$section-main-text-font-size: $medium-font-size;
+$section-text-font-size: $small-font-size;
+$link-font-size: $small-font-size;
+$button-font-size: $small-font-size;
+$small-text: $extra-small-font-size;
 
 /*  lines height  */
-$section-heading-line-height: 90px;
-$section-subheading-line-height: 35px;
-$section-main-text-line-height: 33px;
-$section-text-line-height: 38px;
-$link-line-height: 26px;
-$button-line-height: 26px;
-$small-text-line-height: 21px;
+
+// line-height-values
+$extra-large-line-height: 90px;
+$large-line-height: 38px;
+$medium-line-height: 35px;
+$normal-line-height: 33px;
+$small-line-height: 26px;
+$extra-small-line-height: 21px;
+
+// line-height-names
+$section-heading-line-height: $extra-large-line-height;
+$section-text-line-height: $large-line-height;
+$section-subheading-line-height: $medium-line-height;
+$section-main-text-line-height: $normal-line-height;
+$link-line-height: $small-line-height;
+$button-line-height: $small-line-height;
+$small-text-line-height: $extra-small-line-height;
+
+/*  font-weight  */
+
+// font-weight-values
+$thin-font-weight: 100;
+$light-font-weight: 300;
+$normal-font-weight: 400;
+$medium-font-weight: 500;
+$bold-font-weight: 700;
+
+// font-weight-names
+$link-font-weight: $thin-font-weight;
+$card-description-font-weight: $thin-font-weight;
+$footer-text-font-weight: $thin-font-weight;
+$plain-text-font-weight: $light-font-weight;
+$btn-text-font-weight: $light-font-weight;
+$form-labels-font-weight: $light-font-weight;
+$contacts-info-font-weight: $light-font-weight;
+$section-heading-font-weight: $normal-font-weight;
+$section-subheading-font-weight: $normal-font-weight;
+$carousel-numbers-font-weight: $normal-font-weight;
+$contacts-subheading-font-weight: $medium-font-weight;
+$form-subheading-font-weight: $bold-font-weight;
+
+/*  letter-spacing  */
+
+// letter-spacing values
+$big-letter-spacing: 5px;
+$medium-letter-spacing: 2px;
+$normal-letter-spacing: inherit;
+$small-letter-spacing: 1.65px;
+
+// letter-spacing-names
+$link-letter-spacing: $medium-letter-spacing;
+$section-heading-letter-spacing: $big-letter-spacing;
+$section-subheading-letter-spacing: $big-letter-spacing;
+$text-letter-spacing: $medium-letter-spacing;
+$button-letter-spacing: $medium-letter-spacing;
+$card-description-letter-spacing: $normal-letter-spacing;
+$common-text-letter-spacing: $normal-letter-spacing;
+$footer-info-letter-spacing: $medium-letter-spacing;

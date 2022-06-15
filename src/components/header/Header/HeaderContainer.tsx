@@ -1,14 +1,19 @@
-import { changeLanguage } from 'i18next';
 import { ReactElement, useCallback, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { changeLanguage } from 'i18next';
+
 import { DEFAULT_LANG, LOCALE_STORAGE_KEY } from 'src/constants';
 import { selectCurrentLanguage } from 'src/store/Language';
 import { setCurrentLanguage } from 'src/store/Language/reducer';
-import { languages } from '../data';
-import { ClassesTypes, LanguageType } from '../types';
 
 import Header from './Header';
+
+import { languages } from '../data';
+
+import { ClassesTypes, LanguageType } from '../types';
+
+import './Header.scss';
 
 const HeaderContainer = (): ReactElement => {
   const { code, dir } = useSelector(selectCurrentLanguage);

@@ -14,8 +14,12 @@ import i18n from 'src/i18next';
 
 import HeaderContainer from '../HeaderContainer';
 
-import { arrayOfLinks } from './testData';
-import { supportedLangs, countriesCodes, langObject } from './testData';
+import {
+  supportedLangs,
+  countriesCodes,
+  langObject,
+  arrayOfLinks
+} from './testData';
 
 expect.extend({ toMatchImageSnapshot });
 

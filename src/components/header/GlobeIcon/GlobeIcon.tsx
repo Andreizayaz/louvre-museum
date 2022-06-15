@@ -6,7 +6,7 @@ type GlobeIconPropsType = {
 };
 
 const GlobeIcon = memo(
-  ({ width = 24, height = 24 }: GlobeIconPropsType): ReactElement => (
+  ({ width, height }: GlobeIconPropsType): ReactElement => (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       width={width}

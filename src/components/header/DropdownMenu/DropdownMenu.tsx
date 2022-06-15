@@ -7,6 +7,8 @@ import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
 import { GlobeIcon } from '../GlobeIcon';
 
+import { GLOBE_ICON_HEIGHT, GLOBE_ICON_WIDTH } from 'src/constants';
+
 import { LanguageType } from '../types';
 
 import './DropdownMenu.scss';
@@ -41,7 +43,7 @@ const DropdownMenu = memo(
               >
                 {currentLanguage}
               </span>
-              <GlobeIcon height={30} width={30} />
+              <GlobeIcon height={GLOBE_ICON_HEIGHT} width={GLOBE_ICON_WIDTH} />
             </Button>
             <Menu {...bindMenu(popupState)} style={{ padding: 0 }}>
               {languages.map(({ code, country_code, name }) => (

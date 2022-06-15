@@ -5,8 +5,6 @@ import { DropdownMenu } from '../DropdownMenu';
 
 import { ClassesTypes, LanguageType } from '../types';
 
-import './Header.scss';
-
 type HeaderPropsType = {
   classesForNavbar: ClassesTypes;
   arrayOfLinks: string[];

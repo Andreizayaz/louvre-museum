@@ -12,18 +12,10 @@ import puppeteer from 'puppeteer';
 import store from 'src/store';
 import i18n from 'src/i18next';
 
-import { links as ar_links } from 'src/i18next/locales/ar/ar_translation.json';
-import { links as cn_links } from 'src/i18next/locales/cn/cn_translation.json';
-import { links as de_links } from 'src/i18next/locales/de/de_translation.json';
-import { links as en_links } from 'src/i18next/locales/en/en_translation.json';
-import { links as es_links } from 'src/i18next/locales/es/es_translation.json';
-import { links as fr_links } from 'src/i18next/locales/fr/fr_translation.json';
-import { links as it_links } from 'src/i18next/locales/it/it_translation.json';
-import { links as pt_links } from 'src/i18next/locales/pt/pt_translation.json';
-import { links as ru_links } from 'src/i18next/locales/ru/ru_translation.json';
-
 import HeaderContainer from '../HeaderContainer';
-import { arrayOfLinks, supportedLangs, countriesCodes } from './testData';
+
+import { arrayOfLinks } from './testData';
+import { supportedLangs, countriesCodes, langObject } from './testData';
 
 describe('Header', () => {
   test('render Header items', () => {
@@ -72,6 +64,8 @@ describe('Header', () => {
     const navLinks = container.getElementsByClassName('list-item__link link');
     const selectLangBtn = screen.getByRole('button');
 
+    type ObjectKey = keyof typeof langObject;
+
     supportedLangs.forEach((item: string) => {
       userEvent.click(selectLangBtn);
 
@@ -82,53 +76,13 @@ describe('Header', () => {
 
       expect(currentLanguage.textContent).toBe(item);
 
-      switch (item) {
-        case 'ar':
-          Object.values(ar_links).forEach((item: string, index: number) => {
-            expect(navLinks[index].textContent).toBe(item);
-          });
-          break;
-        case 'cn':
-          Object.values(cn_links).forEach((item: string, index: number) => {
-            expect(navLinks[index].textContent).toBe(item);
-          });
-          break;
-        case 'de':
-          Object.values(de_links).forEach((item: string, index: number) => {
-            expect(navLinks[index].textContent).toBe(item);
-          });
-          break;
-        case 'en':
-          Object.values(en_links).forEach((item: string, index: number) => {
-            expect(navLinks[index].textContent).toBe(item);
-          });
-          break;
-        case 'es':
-          Object.values(es_links).forEach((item: string, index: number) => {
-            expect(navLinks[index].textContent).toBe(item);
-          });
-          break;
-        case 'fr':
-          Object.values(fr_links).forEach((item: string, index: number) => {
-            expect(navLinks[index].textContent).toBe(item);
-          });
-          break;
-        case 'it':
-          Object.values(it_links).forEach((item: string, index: number) => {
-            expect(navLinks[index].textContent).toBe(item);
-          });
-          break;
-        case 'pt':
-          Object.values(pt_links).forEach((item: string, index: number) => {
-            expect(navLinks[index].textContent).toBe(item);
-          });
-          break;
-        case 'ru':
-          Object.values(ru_links).forEach((item: string, index: number) => {
-            expect(navLinks[index].textContent).toBe(item);
-          });
-          break;
-      }
+      const countryKey = item as ObjectKey;
+
+      Object.values(langObject[countryKey]).forEach(
+        (lang: string, index: number) => {
+          expect(navLinks[index].textContent).toBe(lang);
+        }
+      );
     });
   });
 

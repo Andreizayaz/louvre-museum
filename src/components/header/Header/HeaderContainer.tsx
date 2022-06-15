@@ -1,8 +1,8 @@
-import { FC, ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 import Header from './Header';
 
-const HeaderContainer: FC = (): ReactElement => (
+const HeaderContainer = (): ReactElement => (
   <>
     <Header />
   </>

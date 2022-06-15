@@ -1,4 +1,4 @@
-export type navbarClassesType = {
+export type NavbarClassesType = {
   navBarClasses: string;
   listOfLinksClasses: string;
   listItemClasses: string;

@@ -1,4 +1,4 @@
-import { FC, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import { selectCurrentLanguage } from './store/Language';
 
 import './App.scss';
 
-const App: FC = (): ReactElement => {
+const App = (): ReactElement => {
   const { dir, code } = useSelector(selectCurrentLanguage);
   const { t } = useTranslation('translation', { keyPrefix: 'titles' });
 

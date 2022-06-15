@@ -1,14 +1,14 @@
 import { ReactElement, memo } from 'react';
 
-import { navbarClassesType } from './types';
+import { NavbarClassesType } from './types';
 
-type NavbarPropsTypes = {
-  classes: navbarClassesType;
+type NavbarPropsType = {
+  classes: NavbarClassesType;
   arrayOfLinks: string[];
 };
 
 const Navbar = memo(
-  ({ classes, arrayOfLinks }: NavbarPropsTypes): ReactElement => {
+  ({ classes, arrayOfLinks }: NavbarPropsType): ReactElement => {
     const { navBarClasses, listOfLinksClasses, listItemClasses, linkClasses } =
       classes;
 

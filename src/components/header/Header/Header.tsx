@@ -1,4 +1,4 @@
-import { FC, ReactElement, useCallback } from 'react';
+import { ReactElement, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from 'i18next';
@@ -9,13 +9,14 @@ import { selectCurrentLanguage } from 'src/store/Language';
 import { Navbar } from '../../common';
 import { DropdownMenu } from '../DropdownMenu';
 
+import { LOCALE_STORAGE_KEY, DEFAULT_LANG } from 'src/constants';
 import { languages } from '../data';
 
 import { ClassesTypes, LanguageType } from '../types';
 
 import './Header.scss';
 
-const Header: FC = (): ReactElement => {
+const Header = (): ReactElement => {
   const { code, dir } = useSelector(selectCurrentLanguage);
   const { t } = useTranslation('translation', { keyPrefix: 'links' });
 
@@ -33,7 +34,8 @@ const Header: FC = (): ReactElement => {
   const selectLanguage = useCallback(
     (code: string) => {
       void changeLanguage(code);
-      const currentLanguageCode = localStorage.getItem('i18nextLng') || 'en';
+      const currentLanguageCode =
+        localStorage.getItem(LOCALE_STORAGE_KEY) || DEFAULT_LANG;
 
       const currentLanguage: LanguageType = languages.find(
         (l) => l.code === currentLanguageCode

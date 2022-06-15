@@ -11,11 +11,11 @@ import { LanguageType } from '../types';
 
 import './DropdownMenu.scss';
 
-type DropDownPropsTypes = {
+type DropDownPropsType = {
   clickHandler: (code: string) => void;
   languages: LanguageType[];
   currentLanguage: string;
-  langDir: string | undefined;
+  langDir: string;
 };
 
 const DropdownMenu = memo(
@@ -24,7 +24,7 @@ const DropdownMenu = memo(
     languages,
     currentLanguage,
     langDir
-  }: DropDownPropsTypes): ReactElement => {
+  }: DropDownPropsType): ReactElement => {
     return (
       <PopupState variant='popover' popupId='demo-popup-menu'>
         {(popupState) => (

@@ -5,6 +5,9 @@ import { I18nextProvider } from 'react-i18next';
 import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { toMatchImageSnapshot } from 'jest-image-snapshot';
+
+import puppeteer from 'puppeteer';
 
 import store from 'src/store';
 import i18n from 'src/i18next';
@@ -156,7 +159,6 @@ describe('Header', () => {
     const dropDownMenuItems = screen.getAllByRole('menuitem');
 
     supportedLangs.forEach((item: string, index: number) => {
-      console.log(countriesCodes);
       const optionsBlock = screen.getByTestId(item);
       expect(optionsBlock).toBeInTheDocument();
       expect(optionsBlock).toHaveClass('options');
@@ -215,4 +217,27 @@ describe('HeaderContainer', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+});
+
+expect.extend({ toMatchImageSnapshot });
+
+describe('HeaderContainer render with puppeteer', () => {
+  test('render HeaderContainer', async () => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.setViewport({
+      width: 1536,
+      height: 722,
+      deviceScaleFactor: 1
+    });
+    await page.goto('http://localhost:3000');
+
+    const header = await page.$('.header');
+    const image = await header?.screenshot();
+    expect(image).toMatchImageSnapshot({
+      customSnapshotIdentifier: 'HeaderContainerSnapshot'
+    });
+
+    await browser.close();
+  }, 10000);
 });

@@ -19,8 +19,10 @@
     "i18next": "^21.8.8",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.1",
+    "jest-image-snapshot": "^5.1.0",
     "material-ui-popup-state": "^3.1.1",
     "node-sass": "^7.0.1",
+    "puppeteer": "^14.4.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
@@ -64,6 +66,8 @@
     ]
   },
   "devDependencies": {
+    "@types/jest-image-snapshot": "^4.3.1",
+    "@types/puppeteer": "^5.4.6",
     "@types/react-helmet": "^6.1.5",
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.27.1",

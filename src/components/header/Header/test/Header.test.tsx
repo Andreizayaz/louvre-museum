@@ -17,6 +17,8 @@ import HeaderContainer from '../HeaderContainer';
 import { arrayOfLinks } from './testData';
 import { supportedLangs, countriesCodes, langObject } from './testData';
 
+expect.extend({ toMatchImageSnapshot });
+
 describe('Header', () => {
   test('render Header items', () => {
     const { container } = render(
@@ -172,8 +174,6 @@ describe('HeaderContainer', () => {
     expect(tree).toMatchSnapshot();
   });
 });
-
-expect.extend({ toMatchImageSnapshot });
 
 describe('HeaderContainer render with puppeteer', () => {
   test('render HeaderContainer', async () => {

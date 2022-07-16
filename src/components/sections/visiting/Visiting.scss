@@ -55,7 +55,7 @@
   }
 
   p.description__text {
-    margin: 25px 0 75px;
+    margin: 25px 0 100px;
 
     @include text(
       inherit,
@@ -67,7 +67,7 @@
     );
   }
 
-  button.description__button {
+  .description__button {
     padding: 28px 64px;
     @include text(
       inherit,

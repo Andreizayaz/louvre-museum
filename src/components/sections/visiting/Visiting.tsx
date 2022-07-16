@@ -1,12 +1,14 @@
 import { Dispatch, FC, ReactElement, SetStateAction } from 'react';
 
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 import { Swiper as SwiperInstance } from 'swiper';
 
 import { SwiperSlider } from 'src/components/common';
 
 import { DataForSliderType, PaginationOptionsType } from './types';
+
+import { DISCOVER_LOUVRE_LINK } from 'src/constants';
 
 type VisitingPropsTypes = {
   welcomeText: string;
@@ -46,7 +48,14 @@ const Visiting: FC<VisitingPropsTypes> = ({
         >
           {descriptionText}
         </Typography>
-        <Button className='description__button'>{btnText}</Button>
+        <a
+          className='description__button'
+          href={DISCOVER_LOUVRE_LINK}
+          target='_blank'
+          rel='noreferrer'
+        >
+          {btnText}
+        </a>
       </div>
       <div className={`visiting__slider slider ${sliderPosition}`}>
         <SwiperSlider
@@ -54,6 +63,7 @@ const Visiting: FC<VisitingPropsTypes> = ({
           manageSwiperState={manageSwiperState}
           paginationOptions={sliderOptions}
           isFraction={true}
+          fractionControlSelector='.controls__fraction'
         />
       </div>
     </div>

@@ -15,7 +15,14 @@
   "welcome_section": {
     "welcome": "Bienvenue au Louvre",
     "from_the_castle": "Du château au musée",
-    "discover_btn": "Découvrir le Louvre"
+    "discover_btn": "Découvrir le Louvre",
+    "pictures": {
+      "Mona_Lisa": "Mona Lisa",
+      "liberty": "La Liberté guidant le peuple",
+      "woman": "La Belle Ferronnière",
+      "raft_medusa": "le radeau de la méduse",
+      "astronomer": "l'astronome"
+    }
   },
 
   "virtual_tour": {

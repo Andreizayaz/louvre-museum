@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.3",
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.14.1",
@@ -20,6 +21,7 @@
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.1",
     "jest-image-snapshot": "^5.1.0",
+    "jest-transform-css": "^4.0.1",
     "material-ui-popup-state": "^3.1.1",
     "node-sass": "^7.0.1",
     "puppeteer": "^14.4.0",
@@ -31,6 +33,7 @@
     "react-scripts": "5.0.1",
     "react-test-renderer": "^18.1.0",
     "redux-persist": "^6.0.0",
+    "swiper": "^8.2.4",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
@@ -46,6 +49,18 @@
     "format-check": "prettier --check ./**/*.{js,jsx,ts,tsx,css,scss,md,json} --config ./.prettierrc",
     "format-fix": "prettier --write ./**/*.{js,jsx,ts,tsx,css,scss,md,json} --config ./.prettierrc",
     "prepare": "husky install"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "swiper/react": "swiper/react/swiper-react.js",
+      "swiper/css": "swiper/swiper.min.css"
+    },
+    "transform": {
+      "^.+\\.css$": "jest-transform-css"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(swiper|ssr-window|dom7)/)"
+    ]
   },
   "eslintConfig": {
     "extends": [

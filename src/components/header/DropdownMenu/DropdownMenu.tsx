@@ -7,7 +7,11 @@ import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
 import { GlobeIcon } from '../GlobeIcon';
 
-import { GLOBE_ICON_HEIGHT, GLOBE_ICON_WIDTH } from 'src/constants';
+import {
+  GLOBE_ICON_HEIGHT,
+  GLOBE_ICON_WIDTH,
+  RIGHT_TO_LEFT
+} from 'src/constants';
 
 import { LanguageType } from '../types';
 
@@ -38,7 +42,7 @@ const DropdownMenu = memo(
               data-testid='dropdown-btn'
             >
               <span
-                className={langDir === 'rtl' ? 'ml-auto' : 'mr-auto'}
+                className={langDir === RIGHT_TO_LEFT ? 'ml-auto' : 'mr-auto'}
                 data-testid='lang-code'
               >
                 {currentLanguage}

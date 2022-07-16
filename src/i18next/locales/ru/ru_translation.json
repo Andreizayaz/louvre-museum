@@ -15,7 +15,14 @@
   "welcome_section": {
     "welcome": "Добро пожаловать в Лувр",
     "from_the_castle": "Из замка к музею",
-    "discover_btn": "Откройте для себя Лувр"
+    "discover_btn": "Откройте для себя Лувр",
+    "pictures": {
+      "Mona_Lisa": "Мона Лиза",
+      "liberty": "Свобода, ведущая людей",
+      "woman": "Прескрасная Ферроньера",
+      "raft_medusa": "плот Медузы",
+      "astronomer": "астроном"
+    }
   },
 
   "virtual_tour": {

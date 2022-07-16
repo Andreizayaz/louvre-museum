@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { Header } from './components/header';
+import { Header, Main, Visiting } from './components';
 
 import { selectCurrentLanguage } from './store/Language';
 
@@ -21,6 +21,9 @@ const App = (): ReactElement => {
         <body dir={dir}></body>
       </Helmet>
       <Header />
+      <Main>
+        <Visiting />
+      </Main>
     </>
   );
 };

@@ -1,0 +1,90 @@
+/* stylelint-disable selector-class-pattern */
+@import 'src/scss/abstracts/mixins';
+@import 'src/scss/abstracts/variables';
+
+.visiting {
+  color: $odd-section-text-color;
+  font-family: inherit;
+  background-color: $odd-section-background;
+
+  &__container {
+    position: relative;
+    @include flex(row, wrap, space-between, normal);
+
+    height: 810px;
+  }
+
+  &__description {
+    z-index: 2;
+    width: 39.4%;
+  }
+
+  &__slider {
+    position: absolute;
+    top: 0;
+    height: 810px;
+    width: 69.5%;
+
+    &_left {
+      left: 0;
+    }
+
+    &_right {
+      right: 0;
+    }
+  }
+}
+
+.description {
+  padding-top: 150px;
+
+  h2.description__heading {
+    padding-right: 5px;
+    @include text(
+      inherit,
+      left,
+      $section-heading-font-size,
+      $section-heading-font-weight,
+      $section-heading-line-height,
+      $section-heading-letter-spacing
+    );
+
+    font-family: Forum, cursive;
+    text-transform: uppercase;
+    white-space: pre;
+  }
+
+  p.description__text {
+    margin: 25px 0 75px;
+
+    @include text(
+      inherit,
+      left,
+      $section-main-text-font-size,
+      $plain-text-font-weight,
+      $section-main-text-line-height,
+      $text-letter-spacing
+    );
+  }
+
+  button.description__button {
+    padding: 28px 64px;
+    @include text(
+      inherit,
+      center,
+      $button-font-size,
+      $btn-text-font-weight,
+      $button-line-height,
+      $button-letter-spacing
+    );
+
+    text-transform: none;
+    background-color: $discover-btn-background;
+    border-radius: 10px;
+    transition: all 1s;
+
+    &:hover {
+      background-color: $btn-hover-background-color;
+    }
+  }
+}

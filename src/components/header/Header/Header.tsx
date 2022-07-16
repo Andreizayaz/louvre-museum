@@ -1,6 +1,6 @@
 import { memo, ReactElement } from 'react';
 
-import { Navbar } from '../../common';
+import { Navbar } from 'src/components/common';
 import { DropdownMenu } from '../DropdownMenu';
 
 import { ClassesTypes, LanguageType } from '../types';

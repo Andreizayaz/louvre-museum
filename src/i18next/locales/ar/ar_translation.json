@@ -15,7 +15,14 @@
   "welcome_section": {
     "welcome": "مرحبًا بكم في متحف اللوفر",
     "from_the_castle": "من القلعة الى المتحف",
-    "discover_btn": "اكتشف متحف اللوفر"
+    "discover_btn": "اكتشف متحف اللوفر",
+    "pictures": {
+      "Mona_Lisa": "موناليزا",
+      "liberty": "الحرية تقود الشعب",
+      "woman": "لا بيل فيرونيير",
+      "raft_medusa": "طوف ميدوسا",
+      "astronomer": "الفلكي"
+    }
   },
 
   "virtual_tour": {

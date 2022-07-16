@@ -15,7 +15,14 @@
   "welcome_section": {
     "welcome": "歡迎來到盧浮宮",
     "from_the_castle": "從城堡到博物館",
-    "discover_btn": "探索盧浮宮"
+    "discover_btn": "探索盧浮宮",
+    "pictures": {
+      "Mona_Lisa": "蒙娜麗莎",
+      "liberty": "自由引導人民",
+      "woman": "美麗的費羅尼埃",
+      "raft_medusa": "美杜莎之筏",
+      "astronomer": "天文學家"
+    }
   },
 
   "virtual_tour": {

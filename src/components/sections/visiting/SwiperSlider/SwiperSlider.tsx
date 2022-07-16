@@ -1,13 +1,10 @@
-import { FC, ReactElement, useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Dispatch, FC, ReactElement, SetStateAction, useRef } from 'react';
 
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper as SwiperInstance } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SwiperControls } from './SwiperControls';
-
-import { pictures } from 'src/components/sections/visiting/data';
 
 import { SLIDER_GRADIENT } from 'src/constants';
 
@@ -16,38 +13,38 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import './SwiperSlider.scss';
-import { useSelector } from 'react-redux';
-import { selectCurrentLanguage } from 'src/store/Language';
+import { DataForSliderType, PaginationOptionsType } from '../types';
 
-const SwiperSlider: FC = (): ReactElement => {
-  const [t] = useTranslation('translation', {
-    keyPrefix: 'welcome_section.pictures'
-  });
+type SwiperSliderPropsTypes = {
+  dataForSlider: DataForSliderType[];
+  manageSwiperState: Dispatch<SetStateAction<SwiperInstance | null>>;
+  fractionControlSelector?: string;
+  paginationOptions: PaginationOptionsType;
+  isFraction: boolean;
+};
 
-  const { dir } = useSelector(selectCurrentLanguage);
-
+const SwiperSlider: FC<SwiperSliderPropsTypes> = ({
+  dataForSlider,
+  manageSwiperState,
+  fractionControlSelector,
+  paginationOptions,
+  isFraction
+}): ReactElement => {
   const fractionRef = useRef(null);
-
-  const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
-
-  useEffect(() => {
-    if (swiper) {
-      swiper.rtlTranslate = dir === 'rtl';
-    }
-  }, [swiper, dir]);
 
   return (
     <>
       <Swiper
         onSwiper={(swiper: SwiperInstance) => {
-          console.log('init');
-          setSwiper(swiper);
-          const fractionsBlock = document.querySelector('.controls__fraction');
+          manageSwiperState(swiper);
+          const fractionsBlock = fractionControlSelector
+            ? document.querySelector(fractionControlSelector)
+            : '';
           if (fractionsBlock) {
             fractionsBlock.innerHTML = `<span class="fraction__current">01</span>|<span class="fraction__total">${
-              pictures.length < 10
-                ? '0' + pictures.length.toString()
-                : pictures.length
+              dataForSlider.length < 10
+                ? '0' + dataForSlider.length.toString()
+                : dataForSlider.length
             }</span>`;
           }
         }}
@@ -55,23 +52,13 @@ const SwiperSlider: FC = (): ReactElement => {
         slidesPerView={1}
         loop={true}
         pagination={{
-          clickable: true,
-          bulletClass: 'pagination__bullet',
-          bulletActiveClass: 'pagination__bullet_active',
-          el: '.controls__pagination',
-          renderBullet: (index, className) => {
-            return `<span class=${className}></span>`;
-          },
-          renderFraction: (currentClass, totalClass) => {
-            return `<span class=${currentClass}></span>|
-              <span class=${totalClass}></span>`;
-          }
+          ...paginationOptions
         }}
         onSlideChange={(Swiper) => {
-          if (fractionRef.current) {
+          if (fractionRef.current && isFraction) {
             const fragment: HTMLElement = fractionRef.current;
             let current = Swiper.realIndex + 1;
-            const totalSlide = pictures.length;
+            const totalSlide = dataForSlider.length;
             if (current > totalSlide) current = 1;
             const currSlide = current < 10 ? `0${current}` : current;
             const totalSlides = totalSlide < 10 ? `0${totalSlide}` : totalSlide;
@@ -82,10 +69,10 @@ const SwiperSlider: FC = (): ReactElement => {
         modules={[Pagination, Navigation, Autoplay]}
         grabCursor={true}
         style={{ height: '750px', width: '100%' }}
-        autoplay={{ delay: 1000 }}
+        autoplay={{ delay: 1000, disableOnInteraction: false }}
         speed={1500}
       >
-        {pictures.map(({ src, translationKey }, index) => (
+        {dataForSlider.map(({ src, text }, index) => (
           <SwiperSlide key={index}>
             <div
               key={index}
@@ -95,7 +82,7 @@ const SwiperSlider: FC = (): ReactElement => {
                 backgroundImage: `${SLIDER_GRADIENT}, url(${src})`,
                 backgroundRepeat: 'no-repeat'
               }}
-              title={t(translationKey)}
+              title={text}
             ></div>
           </SwiperSlide>
         ))}

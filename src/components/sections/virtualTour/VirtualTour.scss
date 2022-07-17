@@ -1,0 +1,110 @@
+@import 'src/scss/abstracts/mixins';
+@import 'src/scss/abstracts/variables';
+@import 'animate.css';
+
+.virtual-tour {
+  padding: 75px 0;
+
+  &__container {
+    overflow: hidden;
+  }
+
+  &__heading {
+    color: $even-section-heading-color;
+    font-family: Forum, serif;
+    font-weight: $section-heading-font-weight;
+    font-size: $section-heading-font-size;
+    line-height: $section-heading-line-height;
+    text-transform: uppercase;
+    letter-spacing: $section-heading-letter-spacing;
+
+    &::after {
+      display: block;
+      margin-top: 25px;
+      content: ' ';
+      border-bottom: 3px solid $heading-line-color;
+    }
+  }
+
+  &__gallery-img {
+    @include flex;
+
+    column-gap: 60px;
+    row-gap: 75px;
+    margin-top: 75px;
+  }
+}
+
+.gallery-img {
+  position: relative;
+  left: -101%;
+  transition: all 1s;
+
+  &_visible {
+    left: 0;
+  }
+
+  &__item {
+    display: block;
+    width: 30%;
+  }
+
+  &__link {
+    &:hover .description-img__heading::after {
+      width: 100%;
+    }
+  }
+}
+
+.card {
+  &__img {
+    margin-bottom: 25px;
+    height: 285px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.description-img {
+  color: $even-section-text-color;
+
+  &__heading {
+    font-family: Forum, serif;
+    font-weight: $section-subheading-font-weight;
+    font-size: $section-subheading-font-size;
+    line-height: $section-subheading-line-height;
+    letter-spacing: $section-subheading-letter-spacing;
+    text-transform: uppercase;
+
+    &::after {
+      margin: 10px 0;
+      width: 69%;
+      display: block;
+      content: ' ';
+      border-bottom: 2px solid $heading-line-color;
+      transition: all 1s;
+    }
+  }
+
+  &__content {
+    margin-top: 10px;
+  }
+}
+
+.content {
+  font-family: Roboto, Arial, sans-serif;
+
+  &__heading {
+    margin-bottom: 10px;
+    font-size: $section-text-font-size;
+    font-weight: $card-description-font-weight;
+    line-height: $link-line-height;
+  }
+
+  &__text {
+    font-size: $small-text;
+    font-weight: $card-description-font-weight;
+    line-height: $small-text-line-height;
+  }
+}

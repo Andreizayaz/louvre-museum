@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { Header, Main, Visiting } from './components';
+import { Header, Main, Visiting, VirtualTour } from './components';
 
 import { selectCurrentLanguage } from './store/Language';
 
@@ -23,6 +23,7 @@ const App = (): ReactElement => {
       <Header />
       <Main>
         <Visiting />
+        <VirtualTour />
       </Main>
     </>
   );

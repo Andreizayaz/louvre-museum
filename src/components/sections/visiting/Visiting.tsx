@@ -32,7 +32,7 @@ const Visiting: FC<VisitingPropsTypes> = ({
   manageSwiperState,
   sliderOptions
 }): ReactElement => (
-  <div className='visiting'>
+  <section className='visiting'>
     <div className='visiting__container container'>
       <div className='visiting__description description'>
         <Typography
@@ -67,7 +67,7 @@ const Visiting: FC<VisitingPropsTypes> = ({
         />
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default Visiting;

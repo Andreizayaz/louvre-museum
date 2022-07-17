@@ -1,0 +1,72 @@
+@import 'src/scss/abstracts/mixins';
+@import 'src/scss/abstracts/variables';
+
+.picture-explore {
+  background: $odd-section-background;
+  overflow: hidden;
+
+  &__container {
+    &_visible {
+      right: 0 !important;
+    }
+  }
+
+  &__container.container {
+    position: relative;
+    right: -101%;
+
+    @include flex(row, nowrap, space-between, normal);
+
+    column-gap: 59px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    transition: all 1s;
+  }
+
+  &__picture-content {
+    width: 46%;
+  }
+
+  &__compare-slider {
+    height: 100%;
+    width: 50%;
+  }
+}
+
+.picture-content {
+  &__heading {
+    color: $odd-section-text-color;
+    font-family: Forum, serif;
+    font-style: normal;
+    font-weight: $section-heading-font-weight;
+    font-size: $section-heading-font-size;
+    line-height: $section-heading-line-height;
+    letter-spacing: $section-heading-letter-spacing;
+    text-transform: uppercase;
+
+    &::after {
+      display: block;
+      margin-top: 25px;
+      content: ' ';
+      border-bottom: 3px solid $heading-line-color;
+    }
+  }
+
+  &__description {
+    @include flex(column);
+
+    row-gap: 25px;
+    margin-top: 75px;
+    color: $odd-section-text-color;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: $plain-text-font-weight;
+    font-size: $section-text-font-size;
+    line-height: $section-text-line-height;
+    text-align: left;
+  }
+}
+
+span.highlighted-text {
+  color: $explore-section-highlighted-text;
+}

@@ -27,6 +27,7 @@
     "node-sass": "^7.0.1",
     "puppeteer": "^14.4.0",
     "react": "^18.1.0",
+    "react-compare-slider": "^2.2.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.17.0",

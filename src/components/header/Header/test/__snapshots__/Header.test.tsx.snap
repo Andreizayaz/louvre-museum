@@ -26,6 +26,7 @@ exports[`HeaderContainer render HeaderContainer component to match snapshot 1`] 
         >
           <a
             className="list-item__link link"
+            href="#virtual-tour"
           >
             Посещение
           </a>
@@ -35,6 +36,7 @@ exports[`HeaderContainer render HeaderContainer component to match snapshot 1`] 
         >
           <a
             className="list-item__link link"
+            href="#picture-explore"
           >
             Обозрение
           </a>
@@ -44,6 +46,7 @@ exports[`HeaderContainer render HeaderContainer component to match snapshot 1`] 
         >
           <a
             className="list-item__link link"
+            href="#video"
           >
             Видео
           </a>
@@ -53,6 +56,7 @@ exports[`HeaderContainer render HeaderContainer component to match snapshot 1`] 
         >
           <a
             className="list-item__link link"
+            href="#gallery"
           >
             Галлерея
           </a>
@@ -62,6 +66,7 @@ exports[`HeaderContainer render HeaderContainer component to match snapshot 1`] 
         >
           <a
             className="list-item__link link"
+            href="#tickets"
           >
             Билеты
           </a>
@@ -71,6 +76,7 @@ exports[`HeaderContainer render HeaderContainer component to match snapshot 1`] 
         >
           <a
             className="list-item__link link"
+            href="#contacts"
           >
             Контакты
           </a>
@@ -101,6 +107,11 @@ exports[`HeaderContainer render HeaderContainer component to match snapshot 1`] 
       <span
         className="mr-auto"
         data-testid="lang-code"
+        style={
+          Object {
+            "fontWeight": 300,
+          }
+        }
       >
         ru
       </span>

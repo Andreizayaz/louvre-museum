@@ -21,14 +21,41 @@ const HeaderContainer = (): ReactElement => {
 
   const dispatch = useDispatch();
 
-  const arrayOfLinks: string[] = [
+  const arrayOfLinks = [
+    {
+      href: '#virtual-tour',
+      linkText: t('visiting')
+    },
+    {
+      href: '#picture-explore',
+      linkText: t('explore')
+    },
+    {
+      href: '#video',
+      linkText: t('video')
+    },
+    {
+      href: '#gallery',
+      linkText: t('gallery')
+    },
+    {
+      href: '#tickets',
+      linkText: t('tickets')
+    },
+    {
+      href: '#contacts',
+      linkText: t('contacts')
+    }
+  ];
+
+  /* const arrayOfLinks: string[] = [
     t('visiting'),
     t('explore'),
     t('video'),
     t('gallery'),
     t('tickets'),
     t('contacts')
-  ];
+  ]; */
 
   const selectLanguage = useCallback(
     (code: string = DEFAULT_LANG) => {

@@ -30,7 +30,11 @@ export const PictureExplore: FC<PictureExplorePropsTypes> = ({
   );
 
   return (
-    <section ref={pictureExploreRef} className='picture-explore'>
+    <section
+      ref={pictureExploreRef}
+      className='picture-explore'
+      id='picture-explore'
+    >
       <div
         className={`picture-explore__container container ${
           pictureExploreIsVisible ? 'picture-explore__container_visible' : ''

@@ -1,10 +1,10 @@
 import { ReactElement, memo } from 'react';
 
-import { NavbarClassesType } from './types';
+import { NavbarClassesType, LinkTypes } from './types';
 
 type NavbarPropsType = {
   classes: NavbarClassesType;
-  arrayOfLinks: string[];
+  arrayOfLinks: LinkTypes[];
 };
 
 const Navbar = memo(
@@ -15,9 +15,11 @@ const Navbar = memo(
     return (
       <nav className={navBarClasses} data-testid='navbar'>
         <ul className={listOfLinksClasses} data-testid='links-list'>
-          {arrayOfLinks.map((item) => (
-            <li className={listItemClasses} key={item}>
-              <a className={linkClasses}>{item}</a>
+          {arrayOfLinks.map(({ href, linkText }) => (
+            <li className={listItemClasses} key={linkText}>
+              <a href={href} className={linkClasses}>
+                {linkText}
+              </a>
             </li>
           ))}
         </ul>

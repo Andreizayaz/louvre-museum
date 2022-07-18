@@ -42,6 +42,7 @@ const DropdownMenu = memo(
               data-testid='dropdown-btn'
             >
               <span
+                style={{ fontWeight: 300 }}
                 className={langDir === RIGHT_TO_LEFT ? 'ml-auto' : 'mr-auto'}
                 data-testid='lang-code'
               >

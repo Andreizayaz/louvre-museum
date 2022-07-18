@@ -3,11 +3,11 @@ import { memo, ReactElement } from 'react';
 import { Navbar } from 'src/components/common';
 import { DropdownMenu } from '../DropdownMenu';
 
-import { ClassesTypes, LanguageType } from '../types';
+import { ClassesTypes, LanguageType, LinkTypes } from '../types';
 
 type HeaderPropsType = {
   classesForNavbar: ClassesTypes;
-  arrayOfLinks: string[];
+  arrayOfLinks: LinkTypes[];
   selectLanguage: (code: string) => void;
   code: string;
   dir: string;

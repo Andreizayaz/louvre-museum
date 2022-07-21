@@ -1,0 +1,1 @@
+export { ScreenResize } from './ScreenResize';

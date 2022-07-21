@@ -1,0 +1,12 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.video-controls {
+  @include flex;
+
+  padding: 24px 30px;
+  width: 1440px;
+  background: $video-controls-background;
+}
+
+

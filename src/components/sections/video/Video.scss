@@ -1,0 +1,19 @@
+@import 'src/scss/abstracts/mixins';
+@import 'src/scss/abstracts/variables';
+
+.video-section {
+  background-color: $even-section-background;
+
+  &__container.container {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  &__video-description {
+    @include flex;
+
+    flex-wrap: nowrap;
+    column-gap: 115px;
+    margin-bottom: 75px;
+  }
+}

@@ -1,0 +1,23 @@
+@import 'src/scss/abstracts/variables';
+
+.video-description {
+  &__heading {
+    color: $even-section-heading-color;
+    width: 43%;
+    font-family: Forum, serif;
+    font-weight: $section-heading-font-weight;
+    font-size: $section-heading-font-size;
+    line-height: $section-heading-line-height;
+    letter-spacing: $section-heading-letter-spacing;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    width: 51%;
+    color: $even-section-text-color;
+    font-family: Roboto, sans-serif;
+    font-weight: $plain-text-font-weight;
+    font-size: $section-text-font-size;
+    line-height: $section-text-line-height;
+  }
+}

@@ -1,0 +1,34 @@
+.play-section {
+  display: flex;
+  width: 72.5%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.play {
+  &__absolute-btn {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    height: 220px;
+    width: 220px;
+    transform: translate(-50%, -50%);
+  }
+
+  &__btn {
+    width: 23px;
+    height: 31px;
+    background-image: url('./icons/play_control.svg');
+    background-size: cover;
+  }
+}
+
+.absolute-btn {
+  background-image: url('./icons/absolute_play.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.react-player__play-icon {
+  display: none !important;
+}

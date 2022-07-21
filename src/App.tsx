@@ -8,7 +8,8 @@ import {
   Main,
   Visiting,
   VirtualTour,
-  PictureExplore
+  PictureExplore,
+  Video
 } from './components';
 
 import { selectCurrentLanguage } from './store/Language';
@@ -31,6 +32,7 @@ const App = (): ReactElement => {
         <Visiting />
         <VirtualTour />
         <PictureExplore />
+        <Video />
       </Main>
     </>
   );

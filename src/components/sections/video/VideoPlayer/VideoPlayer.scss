@@ -1,3 +1,7 @@
 .react-player {
   display: none;
 }
+
+video {
+  object-fit: cover;
+}

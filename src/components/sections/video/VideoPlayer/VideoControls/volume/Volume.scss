@@ -9,9 +9,16 @@
   }
 }
 
-button.volume__btn {
+.volume__btn {
   height: 31px;
   width: 38px;
-  background-image: url('./icons/volume.svg');
   background-size: cover;
+
+  &_play {
+    background-image: url('./icons/volume.svg');
+  }
+
+  &_pause {
+    background-image: url('./icons/mute.svg');
+  }
 }

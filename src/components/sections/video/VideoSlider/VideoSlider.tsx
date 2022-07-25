@@ -1,4 +1,4 @@
-import { FC, ReactElement, useState } from 'react';
+import { FC, ReactElement, useRef, useState } from 'react';
 
 import { FreeMode, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,9 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { videoData } from '../data';
 
 import { SwiperControls } from 'src/components/common';
-import { VidePlayer } from '../VideoPlayer';
+import { VideoPlayer } from '../VideoPlayer';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
@@ -17,6 +16,8 @@ import './VideoSlider.scss';
 
 export const VideoSlider: FC = (): ReactElement => {
   const [videoIndexActive, setVideoIndexActive] = useState(0);
+
+  const videoRef = useRef<HTMLDivElement>(null);
 
   const paginationOptions = {
     clickable: true,
@@ -38,23 +39,23 @@ export const VideoSlider: FC = (): ReactElement => {
 
   return (
     <div className='video-block'>
-      <div className='video-block__top-slider'>
+      <div ref={videoRef} className='video-block__top-slider'>
         {videoData
           .filter(({ id }) => id === videoIndexActive)
           .map(({ id, srcVideo, posterVideo }) => (
-            <VidePlayer
+            <VideoPlayer
               key={id}
               srcVideo={srcVideo}
               posterVideo={posterVideo}
               height='650px'
               width='100%'
+              videoRef={videoRef}
             />
           ))}
       </div>
       <div className='video-block__bottom-slider bottom-slider'>
         <Swiper
           onSlideChange={(Swiper) => {
-            console.log(Swiper.realIndex);
             setVideoIndexActive(Swiper.realIndex);
           }}
           style={{ position: 'relative' }}

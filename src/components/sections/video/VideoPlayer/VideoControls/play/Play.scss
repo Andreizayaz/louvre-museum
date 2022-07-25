@@ -21,12 +21,26 @@
     background-image: url('./icons/play_control.svg');
     background-size: cover;
   }
+
+  &__btn_pause{
+    background-image: url('./icons/pause_control.svg');
+  }
 }
 
 .absolute-btn {
+  height: 100%;
+  width:100%;
   background-image: url('./icons/absolute_play.svg');
   background-size: cover;
   cursor: pointer;
+
+  &_play{
+    display: block;
+  }
+
+  &_pause{
+    display: none;
+  }
 }
 
 .react-player__play-icon {

@@ -14,4 +14,5 @@ export type VideoPlayerContextType = {
   played: number;
   controlsRef: RefObject<HTMLDivElement> | null;
   isFullScreen: boolean;
+  isPlayerClicked: boolean;
 };

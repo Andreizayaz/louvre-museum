@@ -45,6 +45,7 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
   });
 
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [isPlayerClicked, setIsPlayerClicked] = useState(false);
 
   const [reactPlayerHeight, setReactPlayerHeight] = useState(height);
 
@@ -58,6 +59,9 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
       ...videoState,
       playing: !videoState.playing
     });
+    if (!isPlayerClicked) {
+      setIsPlayerClicked(true);
+    }
   };
 
   const handleVolume = (e: ChangeEvent<HTMLInputElement>) => {
@@ -83,6 +87,13 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
   const handleFullScreen = async () => {
     await screenfull.toggle(videoRef.current as Element);
     setIsFullScreen(!isFullScreen);
+  };
+
+  const handlePreview = () => {
+    setVideoState({ ...videoState, playing: true });
+    if (!isPlayerClicked) {
+      setIsPlayerClicked(true);
+    }
   };
 
   const muteVolume = () => {
@@ -141,12 +152,14 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
       refPlayer={refPlayer}
       handleProgress={handleProgress}
       handleStartVideo={handleStartVideo}
+      handlePreview={handlePreview}
       loadedSeconds={videoState.loadedSeconds}
       playedSeconds={videoState.playedSeconds}
       played={videoState.played}
       controlsRef={controlsRef}
       isFullScreen={isFullScreen}
       videoRef={videoRef}
+      isPlayerClicked={isPlayerClicked}
     />
   );
 };

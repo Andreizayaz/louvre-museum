@@ -16,7 +16,8 @@ export const VideoPlayerContext = createContext<VideoPlayerContextType>({
   playedSeconds: 0,
   played: 0,
   controlsRef: null,
-  isFullScreen: false
+  isFullScreen: false,
+  isPlayerClicked: false
 });
 
 export const useVideoPlayerContext = (): VideoPlayerContextType =>

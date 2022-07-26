@@ -28,8 +28,10 @@ type VideoPlayerPropsTypes = {
   controlsRef: RefObject<HTMLDivElement>;
   videoRef: RefObject<HTMLDivElement>;
   isFullScreen: boolean;
+  isPlayerClicked: boolean;
   handleProgress: (e: any) => void;
   handleStartVideo: () => void;
+  handlePreview: () => void;
 };
 
 export const VideoPlayer: FC<VideoPlayerPropsTypes> = ({
@@ -42,13 +44,14 @@ export const VideoPlayer: FC<VideoPlayerPropsTypes> = ({
   refPlayer,
   handleProgress,
   handleStartVideo,
+  handlePreview,
   loadedSeconds,
   playedSeconds,
   played,
   controlsRef,
-  isFullScreen
+  isFullScreen,
+  isPlayerClicked
 }): ReactElement => {
-  console.log('React height from props: ', reactPlayerHeight);
   return (
     <>
       <ReactPlayer
@@ -60,6 +63,8 @@ export const VideoPlayer: FC<VideoPlayerPropsTypes> = ({
         {...reactPlayerOptions}
         onProgress={handleProgress}
         onStart={handleStartVideo}
+        onClickPreview={handlePreview}
+        /* style={{ height: `${isFullScreen ? 'calc(100vh - 65px)' : '650px'}` }} */
       />
       <VideoPlayerContext.Provider
         value={{
@@ -69,7 +74,8 @@ export const VideoPlayer: FC<VideoPlayerPropsTypes> = ({
           playedSeconds,
           played,
           controlsRef,
-          isFullScreen
+          isFullScreen,
+          isPlayerClicked
         }}
       >
         <VideoControls />

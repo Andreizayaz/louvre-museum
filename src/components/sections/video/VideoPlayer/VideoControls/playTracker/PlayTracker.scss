@@ -1,3 +1,5 @@
+@import 'src/scss/abstracts/mixins';
+
 .play-tracker {
   width: 93%;
 
@@ -23,6 +25,12 @@
       background: #fff;
     }
   }
+
+  &__time {
+    @include flex;
+
+    color: #fff;
+}
 }
 
 .play {

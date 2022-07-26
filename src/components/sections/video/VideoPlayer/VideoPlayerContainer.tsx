@@ -7,8 +7,17 @@ import {
   useRef,
   useState
 } from 'react';
-
 import ReactPlayer from 'react-player';
+
+import {
+  WHITE_SPACE
+  /* LOWERCASE_LETTER_F,
+  LOWERCASE_LETTER_M,
+  UPPERCASE_LETTER_F,
+  UPPERCASE_LETTER_M,
+  COMMA,
+  DOT */
+} from 'src/constants';
 
 import screenfull from 'screenfull';
 
@@ -36,7 +45,8 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
     loadedSeconds: 1,
     playedSeconds: 0,
     played: 0,
-    duration: 0
+    duration: 0,
+    isFinished: false
   });
 
   const [mutedState, setMutedState] = useState({
@@ -78,10 +88,12 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
   const handleProgressTrack = (e: ChangeEvent<HTMLInputElement>) =>
     refPlayer?.current?.seekTo(Number(e.target.value));
 
-  const handleStartVideo = () => {
-    if (videoState.playedSeconds) {
+  const handleStartOrResumeVideo = () => {
+    if (videoState.playedSeconds && !videoState.isFinished) {
       refPlayer?.current?.seekTo(Number(videoState.playedSeconds));
     }
+
+    setVideoState({ ...videoState, playing: true, isFinished: false });
   };
 
   const handleFullScreen = async () => {
@@ -95,6 +107,9 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
       setIsPlayerClicked(true);
     }
   };
+
+  const handleVideoPlayFinish = () =>
+    setVideoState({ ...videoState, playing: false, isFinished: true });
 
   const muteVolume = () => {
     const { volume } = videoState;
@@ -117,20 +132,51 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
   useEffect(() => {
     setVideoState({
       ...videoState,
-      light: !videoState.playing ? posterVideo : ''
+      light: !videoState.playing && !isPlayerClicked ? posterVideo : ''
     });
   }, [playing]);
 
   useEffect(() => {
     const isExistRef = videoRef.current && controlsRef.current;
     if (isFullScreen && isExistRef) {
-      setReactPlayerHeight(`${300 + 500}px`);
-      console.log('From useEffect:', videoRef.current?.offsetHeight);
-      console.log('From useEffect:', controlsRef.current?.offsetHeight);
+      setReactPlayerHeight(
+        `${
+          videoRef.current?.offsetHeight - controlsRef.current?.offsetHeight
+        }px`
+      );
     } else {
       setReactPlayerHeight(height);
     }
   }, [isFullScreen]);
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    e.preventDefault();
+    if (!isPlayerClicked) {
+      return;
+    }
+
+    const playedSecondsBeforeKeyDown = videoState.playedSeconds;
+    console.log(playedSecondsBeforeKeyDown);
+
+    switch (e.key) {
+      case WHITE_SPACE:
+        e.preventDefault();
+        handlePlay();
+        refPlayer.current?.seekTo(playedSecondsBeforeKeyDown);
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', (e) => handleKeyDown(e), {
+      once: true
+    });
+
+    return document.removeEventListener('keydown', (e) => handleKeyDown(e));
+  });
 
   const funcs = {
     handlePlay,
@@ -151,8 +197,10 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
       controlOptions={videoState}
       refPlayer={refPlayer}
       handleProgress={handleProgress}
-      handleStartVideo={handleStartVideo}
+      handleStartOrResumeVideo={handleStartOrResumeVideo}
       handlePreview={handlePreview}
+      handleVideoPlayStart={handleStartOrResumeVideo}
+      handleVideoPlayFinish={handleVideoPlayFinish}
       loadedSeconds={videoState.loadedSeconds}
       playedSeconds={videoState.playedSeconds}
       played={videoState.played}

@@ -30,8 +30,10 @@ type VideoPlayerPropsTypes = {
   isFullScreen: boolean;
   isPlayerClicked: boolean;
   handleProgress: (e: any) => void;
-  handleStartVideo: () => void;
+  handleStartOrResumeVideo: () => void;
   handlePreview: () => void;
+  handleVideoPlayFinish: () => void;
+  handleVideoPlayStart: () => void;
 };
 
 export const VideoPlayer: FC<VideoPlayerPropsTypes> = ({
@@ -43,8 +45,9 @@ export const VideoPlayer: FC<VideoPlayerPropsTypes> = ({
   controlOptions,
   refPlayer,
   handleProgress,
-  handleStartVideo,
+  handleStartOrResumeVideo,
   handlePreview,
+  handleVideoPlayFinish,
   loadedSeconds,
   playedSeconds,
   played,
@@ -54,18 +57,20 @@ export const VideoPlayer: FC<VideoPlayerPropsTypes> = ({
 }): ReactElement => {
   return (
     <>
-      <ReactPlayer
-        ref={refPlayer}
-        url={srcVideo}
-        controls={false}
-        height={reactPlayerHeight}
-        width={width}
-        {...reactPlayerOptions}
-        onProgress={handleProgress}
-        onStart={handleStartVideo}
-        onClickPreview={handlePreview}
-        /* style={{ height: `${isFullScreen ? 'calc(100vh - 65px)' : '650px'}` }} */
-      />
+      <div onClick={controlFuncs.handlePlay} style={{ cursor: 'pointer' }}>
+        <ReactPlayer
+          ref={refPlayer}
+          url={srcVideo}
+          controls={false}
+          height={reactPlayerHeight}
+          width={width}
+          {...reactPlayerOptions}
+          onProgress={handleProgress}
+          onPlay={handleStartOrResumeVideo}
+          onClickPreview={handlePreview}
+          onEnded={handleVideoPlayFinish}
+        />
+      </div>
       <VideoPlayerContext.Provider
         value={{
           ...controlFuncs,

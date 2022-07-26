@@ -6,7 +6,7 @@ import { useVideoPlayerContext } from '../../videoPlayerContext';
 
 import { getTime } from './helpers';
 
-import { DisplayPlayedTime } from './DisplayPlayTime';
+import { DisplayPlayTime, DisplayProgressPlayTime } from './displayTime';
 
 import './PlayTracker.scss';
 
@@ -28,7 +28,10 @@ export const PlayTracker: FC<PlayTrackerPropsTypes> = ({
   return (
     <div className='play-tracker'>
       {isPlayerClicked && (
-        <DisplayPlayedTime playedTime={playedTime} totalTime={totalTime} />
+        <DisplayProgressPlayTime
+          playedTime={playedTime}
+          positionLeft={`${played * 100}`}
+        />
       )}
       <Tracker
         trackerContainerClasses='play__tracker'
@@ -38,6 +41,7 @@ export const PlayTracker: FC<PlayTrackerPropsTypes> = ({
         step={1}
         handleInputChange={(e) => handleProgressTrack(e)}
       />
+      {isPlayerClicked && <DisplayPlayTime totalTime={totalTime} />}
     </div>
   );
 };

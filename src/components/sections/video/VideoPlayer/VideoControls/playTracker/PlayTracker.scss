@@ -27,14 +27,29 @@
   }
 
   &__time {
+    position: relative;
     @include flex;
 
     color: #fff;
-}
+  }
 }
 
 .play {
   &__tracker {
     width: 100%;
   }
+}
+
+.time-progress {
+  height: 16px;
+
+  &__text {
+    position: relative;
+    display: none;
+    color: #fff;
+  }
+}
+
+.play-tracker:hover .time-progress__text {
+  display: block;
 }

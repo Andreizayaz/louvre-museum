@@ -18,14 +18,16 @@ export const Play: FC = (): ReactElement => {
           onClick={handlePlay}
         ></button>
       </div>
-      <div className='play__absolute-btn'>
-        <button
-          className={`absolute-btn ${
-            playing ? 'absolute-btn_pause' : 'absolute-btn_play'
-          }`}
-          onClick={handlePlay}
-        ></button>
-      </div>
+      {!playing && (
+        <div className='play__absolute-btn'>
+          <button
+            className={`absolute-btn ${
+              playing ? 'absolute-btn_pause' : 'absolute-btn_play'
+            }`}
+            onClick={handlePlay}
+          ></button>
+        </div>
+      )}
       <PlayTracker
         played={played}
         playedSeconds={playedSeconds}

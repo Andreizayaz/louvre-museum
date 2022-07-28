@@ -1,0 +1,15 @@
+export { default as pic_1 } from './01_galery1.jpg';
+export { default as pic_2 } from './02_galery2.jpg';
+export { default as pic_3 } from './03_galery3.jpg';
+export { default as pic_4 } from './04_galery4.jpg';
+export { default as pic_5 } from './05_galery5.jpg';
+export { default as pic_6 } from './06_galery6.jpg';
+export { default as pic_7 } from './07_galery7.jpg';
+export { default as pic_8 } from './08_galery8.jpg';
+export { default as pic_9 } from './09_galery9.jpg';
+export { default as pic_10 } from './10_galery10.jpg';
+export { default as pic_11 } from './11_galery11.jpg';
+export { default as pic_12 } from './12_galery12.jpg';
+export { default as pic_13 } from './01_galery13.jpg';
+export { default as pic_14 } from './14_galery14.jpg';
+export { default as pic_15 } from './15_galery15.jpg';

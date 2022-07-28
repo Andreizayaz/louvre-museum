@@ -1,7 +1,12 @@
-import { FC, ReactElement, useRef, useState } from 'react';
+import { FC, ReactElement, useRef, useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-import { FreeMode, Navigation, Pagination } from 'swiper';
+import { Navigation, Pagination } from 'swiper';
+import { Swiper as SwiperInstance } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { selectCurrentLanguage } from 'src/store/Language';
+import { RIGHT_TO_LEFT } from 'src/constants';
 
 import { videoData } from '../data';
 
@@ -15,9 +20,17 @@ import 'swiper/css/navigation';
 import './VideoSlider.scss';
 
 export const VideoSlider: FC = (): ReactElement => {
+  const { dir } = useSelector(selectCurrentLanguage);
   const [videoIndexActive, setVideoIndexActive] = useState(0);
+  const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
 
   const videoRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (swiper) {
+      swiper.rtlTranslate = dir === RIGHT_TO_LEFT;
+    }
+  }, [swiper, dir]);
 
   const paginationOptions = {
     clickable: true,
@@ -55,6 +68,9 @@ export const VideoSlider: FC = (): ReactElement => {
       </div>
       <div className='video-block__bottom-slider bottom-slider'>
         <Swiper
+          onSwiper={(swiper: SwiperInstance) => {
+            setSwiper(swiper);
+          }}
           onSlideChange={(Swiper) => {
             setVideoIndexActive(Swiper.realIndex);
           }}
@@ -64,7 +80,7 @@ export const VideoSlider: FC = (): ReactElement => {
           slidesPerView={3}
           freeMode={true}
           watchSlidesProgress={true}
-          modules={[FreeMode, Navigation, Pagination]}
+          modules={[Navigation, Pagination]}
           navigation={{
             prevEl: '.bottom-direction__prev',
             nextEl: '.bottom-direction__next'

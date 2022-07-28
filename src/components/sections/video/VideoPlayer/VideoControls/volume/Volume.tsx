@@ -1,13 +1,17 @@
 import { FC, ReactElement } from 'react';
 
-import { Tracker } from '../tracker';
-
 import { useVideoPlayerContext } from '../../videoPlayerContext';
+
+import { Tracker } from '../tracker';
 
 import './Volume.scss';
 
 export const Volume: FC = (): ReactElement => {
-  const { volume, handleVolume, muteVolume } = useVideoPlayerContext();
+  const {
+    reactPlayerOptions: { volume },
+    handleVolume,
+    muteVolume
+  } = useVideoPlayerContext();
 
   return (
     <div className='volume'>

@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, createRef, useContext } from 'react';
 
 import { VideoPlayerContextType } from './types';
 
@@ -10,8 +10,21 @@ export const VideoPlayerContext = createContext<VideoPlayerContextType>({
   handleFullScreen: async () => {
     await new Promise((resolve) => resolve(undefined));
   },
-  playing: false,
-  volume: 0,
+  handlePreview: () => undefined,
+  handleProgress: () => undefined,
+  handleStartOrResumeVideo: () => undefined,
+  handleVideoPlayFinish: () => undefined,
+
+  posterVideo: '',
+  reactPlayerHeight: '',
+  reactPlayerOptions: {
+    light: '',
+    playing: false,
+    volume: 0 /* playbackRate: 1 */
+  },
+  refPlayer: createRef(),
+  srcVideo: '',
+  width: '',
   loadedSeconds: 0,
   playedSeconds: 0,
   played: 0,

@@ -1,14 +1,19 @@
 import { FC, ReactElement } from 'react';
 
-import { PlayTracker } from '../playTracker';
-
 import { useVideoPlayerContext } from '../../videoPlayerContext';
+
+import { PlayTracker } from '../playTracker';
 
 import './Play.scss';
 
 export const Play: FC = (): ReactElement => {
-  const { playing, handlePlay, played, playedSeconds, handleProgressTrack } =
-    useVideoPlayerContext();
+  const {
+    reactPlayerOptions: { playing },
+    played,
+    playedSeconds,
+    handlePlay,
+    handleProgressTrack
+  } = useVideoPlayerContext();
 
   return (
     <div className='play-section'>

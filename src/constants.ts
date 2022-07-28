@@ -18,5 +18,13 @@ export const LOWERCASE_LETTER_M = 'm';
 export const UPPERCASE_LETTER_M = 'M';
 export const LOWERCASE_LETTER_F = 'f';
 export const UPPERCASE_LETTER_F = 'F';
+export const SHIFT__KEY = 'Shift';
 export const COMMA = ',';
 export const DOT = '.';
+export const ESCAPE_KEY = 'Escape';
+export const ENTER_KEY = 'Enter';
+
+/* Playback rates */
+export const MAX_PLAYBACK_RATE = 2;
+export const MIN_PLAYBACK_RATE = 0.25;
+export const INCREASE_DECREASE_RATE_STEP = 0.25;

@@ -8,18 +8,30 @@ import {
   useState
 } from 'react';
 import ReactPlayer from 'react-player';
+import { useDispatch, useSelector } from 'react-redux';
+
+import screenfull from 'screenfull';
+
+import { selectVideoParams } from 'src/store/VideoPlayer';
+import { changePlaying, changeVolume } from 'src/store/VideoPlayer/reducer';
 
 import {
-  WHITE_SPACE
-  /* LOWERCASE_LETTER_F,
+  WHITE_SPACE,
+  LOWERCASE_LETTER_F,
   LOWERCASE_LETTER_M,
   UPPERCASE_LETTER_F,
   UPPERCASE_LETTER_M,
+  /*SHIFT__KEY,
   COMMA,
-  DOT */
+  DOT, 
+  MAX_PLAYBACK_RATE,
+  MIN_PLAYBACK_RATE,
+  INCREASE_DECREASE_RATE_STEP,
+  ENTER_KEY,  */
+  ESCAPE_KEY
 } from 'src/constants';
 
-import screenfull from 'screenfull';
+import { VideoPlayerContext } from './videoPlayerContext';
 
 import { VideoPlayer } from './VideoPlayer';
 
@@ -38,14 +50,16 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
   width,
   videoRef
 }): ReactElement => {
+  const { playing, volume } = useSelector(selectVideoParams);
+  const dispatch = useDispatch();
+
   const [videoState, setVideoState] = useState({
-    playing: false,
     light: posterVideo,
-    volume: 0,
     loadedSeconds: 1,
     playedSeconds: 0,
     played: 0,
     duration: 0,
+    playbackRate: 1,
     isFinished: false
   });
 
@@ -54,31 +68,43 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
     volumeBeforeMute: 0
   });
 
+  /* const [playbackRate, setPlayBackRate] = useState(1); */
+
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isPlayerClicked, setIsPlayerClicked] = useState(false);
-
   const [reactPlayerHeight, setReactPlayerHeight] = useState(height);
 
-  const { playing } = videoState;
+  const { light } = videoState;
+  const { loadedSeconds, playedSeconds, played } = videoState;
 
   const refPlayer = useRef<ReactPlayer>(null);
   const controlsRef = useRef<HTMLDivElement>(null);
 
   const handlePlay = () => {
-    setVideoState({
-      ...videoState,
-      playing: !videoState.playing
-    });
+    dispatch(changePlaying(!playing));
     if (!isPlayerClicked) {
       setIsPlayerClicked(true);
     }
   };
 
+  /* const handleMaxPlayBackRate = () => {
+    if (playbackRate === MAX_PLAYBACK_RATE) {
+      return;
+    }
+
+    setPlayBackRate(playbackRate + INCREASE_DECREASE_RATE_STEP);
+  };
+
+  const handleMinPlayBackRate = () => {
+    if (playbackRate === MIN_PLAYBACK_RATE) {
+      return;
+    }
+
+    setPlayBackRate(playbackRate - INCREASE_DECREASE_RATE_STEP);
+  }; */
+
   const handleVolume = (e: ChangeEvent<HTMLInputElement>) => {
-    setVideoState({
-      ...videoState,
-      volume: parseFloat(e.target.value)
-    });
+    dispatch(changeVolume(parseFloat(e.target.value)));
   };
 
   const handleProgress = (e: ChangeEvent<HTMLInputElement>) => {
@@ -93,7 +119,8 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
       refPlayer?.current?.seekTo(Number(videoState.playedSeconds));
     }
 
-    setVideoState({ ...videoState, playing: true, isFinished: false });
+    setVideoState({ ...videoState, isFinished: false });
+    dispatch(changePlaying(true));
   };
 
   const handleFullScreen = async () => {
@@ -102,37 +129,88 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
   };
 
   const handlePreview = () => {
-    setVideoState({ ...videoState, playing: true });
+    dispatch(changePlaying(true));
     if (!isPlayerClicked) {
       setIsPlayerClicked(true);
     }
   };
 
-  const handleVideoPlayFinish = () =>
-    setVideoState({ ...videoState, playing: false, isFinished: true });
+  const handleVideoPlayFinish = () => {
+    setVideoState({ ...videoState, isFinished: true });
+    dispatch(changePlaying(false));
+  };
 
   const muteVolume = () => {
-    const { volume } = videoState;
     const { isMuted } = mutedState;
     if (!isMuted) {
       volume && setMutedState({ volumeBeforeMute: volume, isMuted: true });
-      setVideoState({
-        ...videoState,
-        volume: 0
-      });
+      dispatch(changeVolume(0));
     } else {
       setMutedState({ ...mutedState, isMuted: false });
-      setVideoState({
-        ...videoState,
-        volume: mutedState.volumeBeforeMute
-      });
+      dispatch(changeVolume(mutedState.volumeBeforeMute));
     }
   };
+
+  const handleKeyDown = async (e: KeyboardEvent) => {
+    e.preventDefault();
+    if (!isPlayerClicked) {
+      return;
+    }
+
+    /* if (e.key === SHIFT__KEY && e.repeat && e.key === COMMA) {
+      console.log('comma');
+      handleMaxPlayBackRate();
+      return;
+    }
+
+    if (e.shiftKey && e.key === DOT) {
+      console.log('dot');
+      handleMinPlayBackRate();
+      return;
+    } */
+
+    switch (e.key) {
+      case WHITE_SPACE:
+        //e.preventDefault();
+        handlePlay();
+        /* if (playing) {
+          refPlayer.current?.seekTo(videoState.playedSeconds);
+        } */
+        break;
+
+      case LOWERCASE_LETTER_M || UPPERCASE_LETTER_M:
+        console.log('mute');
+        muteVolume();
+        break;
+      case LOWERCASE_LETTER_F || UPPERCASE_LETTER_F:
+        await handleFullScreen();
+        break;
+      case ESCAPE_KEY:
+        if (isFullScreen) {
+          await handleFullScreen();
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
+  //document.addEventListener('keydown', handleKeyDown, { once: true });
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown, { once: true });
+
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  });
+
+  useEffect(() => {
+    dispatch(changePlaying(false));
+  }, []);
 
   useEffect(() => {
     setVideoState({
       ...videoState,
-      light: !videoState.playing && !isPlayerClicked ? posterVideo : ''
+      light: !playing && !isPlayerClicked ? posterVideo : ''
     });
   }, [playing]);
 
@@ -149,66 +227,39 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
     }
   }, [isFullScreen]);
 
-  const handleKeyDown = (e: KeyboardEvent) => {
-    e.preventDefault();
-    if (!isPlayerClicked) {
-      return;
-    }
-
-    const playedSecondsBeforeKeyDown = videoState.playedSeconds;
-    console.log(playedSecondsBeforeKeyDown);
-
-    switch (e.key) {
-      case WHITE_SPACE:
-        e.preventDefault();
-        handlePlay();
-        refPlayer.current?.seekTo(playedSecondsBeforeKeyDown);
-        break;
-
-      default:
-        break;
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('keydown', (e) => handleKeyDown(e), {
-      once: true
-    });
-
-    return document.removeEventListener('keydown', (e) => handleKeyDown(e));
-  });
-
   const funcs = {
     handlePlay,
     handleVolume,
     muteVolume,
     handleProgressTrack,
-    handleFullScreen
+    handleFullScreen,
+    handlePreview,
+    handleProgress,
+    handleStartOrResumeVideo,
+    handleVideoPlayFinish
   };
 
+  const reactPlayerOptions = { playing, light, volume /* , playbackRate */ };
+  const trackPlayerOptions = { loadedSeconds, playedSeconds, played };
+  const controlsOptions = { isFullScreen, isPlayerClicked };
+
   return (
-    <VideoPlayer
-      reactPlayerHeight={reactPlayerHeight}
-      posterVideo={posterVideo}
-      srcVideo={srcVideo}
-      width={width}
-      reactPlayerOptions={videoState}
-      controlFuncs={funcs}
-      controlOptions={videoState}
-      refPlayer={refPlayer}
-      handleProgress={handleProgress}
-      handleStartOrResumeVideo={handleStartOrResumeVideo}
-      handlePreview={handlePreview}
-      handleVideoPlayStart={handleStartOrResumeVideo}
-      handleVideoPlayFinish={handleVideoPlayFinish}
-      loadedSeconds={videoState.loadedSeconds}
-      playedSeconds={videoState.playedSeconds}
-      played={videoState.played}
-      controlsRef={controlsRef}
-      isFullScreen={isFullScreen}
-      videoRef={videoRef}
-      isPlayerClicked={isPlayerClicked}
-    />
+    <VideoPlayerContext.Provider
+      value={{
+        ...funcs,
+        ...trackPlayerOptions,
+        ...controlsOptions,
+        reactPlayerOptions,
+        controlsRef,
+        srcVideo,
+        posterVideo,
+        reactPlayerHeight,
+        refPlayer,
+        width
+      }}
+    >
+      <VideoPlayer />
+    </VideoPlayerContext.Provider>
   );
 };
 

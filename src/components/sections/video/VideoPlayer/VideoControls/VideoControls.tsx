@@ -1,10 +1,10 @@
 import { FC, ReactElement } from 'react';
 
+import { useVideoPlayerContext } from '../videoPlayerContext';
+
 import { Play } from './play';
 import { Volume } from './volume';
 import { ScreenResize } from './screenResize';
-
-import { useVideoPlayerContext } from '../videoPlayerContext';
 
 import './VideoControls.scss';
 

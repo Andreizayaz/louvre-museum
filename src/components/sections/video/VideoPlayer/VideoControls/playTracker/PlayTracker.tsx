@@ -1,12 +1,12 @@
 import { ChangeEvent, FC, ReactElement } from 'react';
 
-import { Tracker } from '../tracker';
-
 import { useVideoPlayerContext } from '../../videoPlayerContext';
 
-import { getTime } from './helpers';
+import { Tracker } from '../tracker';
 
 import { DisplayPlayTime, DisplayProgressPlayTime } from './displayTime';
+
+import { getTime } from './helpers';
 
 import './PlayTracker.scss';
 

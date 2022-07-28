@@ -1,0 +1,1 @@
+export { SwiperControls } from './SwiperControls';

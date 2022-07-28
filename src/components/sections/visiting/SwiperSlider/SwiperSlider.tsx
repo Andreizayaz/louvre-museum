@@ -4,7 +4,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper as SwiperInstance } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { SwiperControls } from './SwiperControls';
+import { SwiperControls } from 'src/components/common';
 
 import { SLIDER_GRADIENT } from 'src/constants';
 
@@ -31,6 +31,15 @@ const SwiperSlider: FC<SwiperSliderPropsTypes> = ({
   isFraction
 }): ReactElement => {
   const fractionRef = useRef(null);
+
+  const sliderControlsClasses = {
+    swiperControls: 'swiper__controls controls',
+    fractionClasses: 'controls__fraction',
+    paginationClasses: 'controls__pagination',
+    directionClasses: 'controls__direction direction',
+    prevDirectionClasses: 'direction__prev',
+    nextDirectionClasses: 'direction__next'
+  };
 
   return (
     <>
@@ -87,7 +96,11 @@ const SwiperSlider: FC<SwiperSliderPropsTypes> = ({
           </SwiperSlide>
         ))}
       </Swiper>
-      <SwiperControls refElem={fractionRef} />
+      <SwiperControls
+        refElem={fractionRef}
+        isFraction={true}
+        swiperControlsClasses={sliderControlsClasses}
+      />
     </>
   );
 };

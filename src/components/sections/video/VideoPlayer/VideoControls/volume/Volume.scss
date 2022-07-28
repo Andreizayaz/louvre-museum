@@ -1,0 +1,24 @@
+.volume {
+  width: 17.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__tracker {
+    width: 64.5%;
+  }
+}
+
+.volume__btn {
+  height: 31px;
+  width: 38px;
+  background-size: cover;
+
+  &_play {
+    background-image: url('./icons/volume.svg');
+  }
+
+  &_pause {
+    background-image: url('./icons/mute.svg');
+  }
+}

@@ -4,7 +4,7 @@ import { Typography } from '@mui/material';
 
 import { Swiper as SwiperInstance } from 'swiper';
 
-import { SwiperSlider } from 'src/components/common';
+import { SwiperSlider } from './SwiperSlider';
 
 import { DataForSliderType, PaginationOptionsType } from './types';
 

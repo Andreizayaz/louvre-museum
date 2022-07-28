@@ -59,5 +59,10 @@
     &:hover {
       color: $text-hover-color;
     }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
   }
 }

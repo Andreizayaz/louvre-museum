@@ -1,0 +1,91 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.video-block {
+  &__top-slider {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  &__bottom-slider {
+    position: relative;
+  }
+}
+
+.bottom-slider-controls {
+  position: relative;
+  width: 100%;
+
+  &__wrapper {
+    @include flex;
+
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 14%;
+    min-width: 200px;
+  }
+
+  &__bottom-pagination {
+    @include flex;
+
+    margin: 0 auto;
+    width: 70% !important;
+    min-width: 140px !important;
+  }
+
+  &__direction {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.bottom-pagination {
+  &__bullet {
+    width: 12px;
+    height: 12px;
+    background: $video-carousel-inactive-bullet-color;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 1s;
+
+    &:hover {
+      background-color: $circle-bullet-hover-background-color;
+    }
+
+    &_active {
+      background-color: $video-carousel-active-bullet-color;
+    }
+  }
+}
+
+.bottom-direction {
+  &__prev,
+  &__next {
+    position: absolute;
+    background-size: cover;
+    height: 12px;
+    width: 10px;
+    cursor: pointer;
+    transition: all 1s;
+  }
+
+  &__prev {
+    left: 0;
+    background-image: url('./icons/prev.svg');
+
+    &:hover {
+      background-image: url('./icons/prev_hover.svg');
+    }
+  }
+
+  &__next {
+    right: 0;
+    background-image: url('./icons/next.svg');
+
+    &:hover {
+      background-image: url('./icons/next_hover.svg');
+    }
+  }
+}

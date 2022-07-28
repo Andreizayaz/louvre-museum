@@ -1,0 +1,18 @@
+.__rcs-handle-root {
+  cursor: grab !important;
+}
+
+.__rcs-handle-line {
+  width: 3px !important;
+}
+
+.__rcs-handle-button {
+  height: 39px !important;
+  width: 39px !important;
+  backdrop-filter: none !important;
+  border-width: 3px !important;
+
+  & div {
+    display: none !important;
+  }
+}

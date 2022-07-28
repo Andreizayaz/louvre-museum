@@ -1,0 +1,55 @@
+@import 'src/scss/abstracts/mixins';
+
+.play-tracker {
+  width: 93%;
+
+  &__progress {
+    background: linear-gradient(
+      to right,
+      #710707 0%,
+      #710707 50%,
+      #c4c4c4 50%,
+      #c4c4c4 100%
+    );
+    width: 100%;
+    height: 7px;
+    outline: none;
+    appearance: none;
+
+    &::-webkit-slider-thumb {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      appearance: none;
+      cursor: pointer;
+      background: #fff;
+    }
+  }
+
+  &__time {
+    position: relative;
+    @include flex;
+
+    color: #fff;
+  }
+}
+
+.play {
+  &__tracker {
+    width: 100%;
+  }
+}
+
+.time-progress {
+  height: 16px;
+
+  &__text {
+    position: relative;
+    display: none;
+    color: #fff;
+  }
+}
+
+.play-tracker:hover .time-progress__text {
+  display: block;
+}

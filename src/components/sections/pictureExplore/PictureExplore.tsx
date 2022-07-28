@@ -25,7 +25,7 @@ export const PictureExplore: FC<PictureExplorePropsTypes> = ({
 }): ReactElement => {
   const { ref: pictureExploreRef, inView: pictureExploreIsVisible } = useInView(
     {
-      threshold: 0.45
+      threshold: 0.2
     }
   );
 

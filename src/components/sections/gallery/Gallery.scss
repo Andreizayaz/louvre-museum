@@ -1,0 +1,54 @@
+@import 'src/scss/abstracts/mixins';
+@import 'src/scss/abstracts/variables';
+
+.gallery {
+  padding-top: 75px;
+  color: $odd-section-text-color;
+  background: #030303;
+}
+
+.inner-content {
+  &__heading {
+    margin-bottom: 75px;
+    font-family: Forum, serif;
+    font-weight: $section-heading-font-weight;
+    font-size: $section-heading-font-size;
+    line-height: $section-heading-line-height;
+    letter-spacing: $section-heading-letter-spacing;
+    text-transform: uppercase;
+  }
+
+  &__images {
+    max-height: 1960px;
+    overflow: hidden;
+  }
+}
+
+.images-list {
+  @include flex;
+
+  max-height: 3000px;
+  flex-direction: column;
+  column-gap: 36px;
+  row-gap: 24px;
+
+  &__item {
+    position: relative;
+    height: fit-content;
+    width: 31.6%;
+    transform: translateY(50px);
+
+    &:nth-child(3n) {
+      order: 3;
+    }
+
+    &:nth-child(3n + 1) {
+      order: 1;
+    }
+
+    &:nth-child(3n + 2) {
+      order: 2;
+      transform: none;
+    }
+  }
+}

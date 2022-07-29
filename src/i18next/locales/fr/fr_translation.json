@@ -53,7 +53,25 @@
   },
 
   "art_gallery": {
-    "section_heading": "Galerie d'art"
+    "section_heading": "Galerie d'art",
+    "pictures": {
+      "psyche_revived": "Psyché ravivée par le baiser de Cupidon",
+      "Diana_of_Versailles": "Diane de Versailles",
+      "slave": "Esclave rebelle et esclave mourant",
+      "winged_victory": "Victoire ailée de Samothrace",
+      "Venus_de_Milo": "Vénus de Milo",
+      "Virgin_and_Child": "La Vierge et l'Enfant avec sainte Anne",
+      "Mona_Lisa": "Mona Lisa",
+      "louvre_gallery": "Galerie du Louvre",
+      "greek_beauty": "Beauté grecque idéale",
+      "islamic_art": "Art islamique",
+      "liberty": "La Liberté guidant le peuple",
+      "louvre_sculptures": "Sculptures du Louvre",
+      "hermaphroditus": "Hermaphrodite endormi",
+      "woman": "La Belle Ferronnière",
+      "louvre": "Musée du Louvre"
+    },
+    "view": "Voir plus"
   },
 
   "buy_tickets": {

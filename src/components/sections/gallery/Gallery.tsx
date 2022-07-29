@@ -9,11 +9,13 @@ import './Gallery.scss';
 type GalleryPropsTypes = {
   heading: string;
   galleryData: galleryDataType[];
+  viewMore: string;
 };
 
 export const Gallery: FC<GalleryPropsTypes> = ({
   heading,
-  galleryData
+  galleryData,
+  viewMore
 }): ReactElement => (
   <section id='gallery' className='gallery'>
     <div className='gallery__container container'>
@@ -24,7 +26,13 @@ export const Gallery: FC<GalleryPropsTypes> = ({
             {galleryData
               .sort(() => Math.random() - 0.5)
               .map(({ id, href, src, title }) => (
-                <GalleryCard key={id} href={href} src={src} title={title} />
+                <GalleryCard
+                  key={id}
+                  href={href}
+                  src={src}
+                  title={title}
+                  viewMore={viewMore}
+                />
               ))}
           </div>
         </div>

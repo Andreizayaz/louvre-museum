@@ -6,8 +6,19 @@ import { galleryData } from './data';
 import { Gallery } from './Gallery';
 
 const GalleryContainer: FC = (): ReactElement => {
-  const { t } = useTranslation('translation', { keyPrefix: 'art_gallery' });
-  return <Gallery galleryData={galleryData} heading={t('section_heading')} />;
+  const [t1] = useTranslation('translation', { keyPrefix: 'art_gallery' });
+  const [t2] = useTranslation('translation', {
+    keyPrefix: 'art_gallery.pictures'
+  });
+  return (
+    <Gallery
+      galleryData={galleryData.map((item) => {
+        return { ...item, title: t2(item.translationKey) };
+      })}
+      heading={t1('section_heading')}
+      viewMore={t1('view')}
+    />
+  );
 };
 
 export default GalleryContainer;

@@ -6,12 +6,14 @@ type GalleryCardPropsTypes = {
   title: string;
   src: string;
   href: string;
+  viewMore: string;
 };
 
 export const GalleryCard: FC<GalleryCardPropsTypes> = ({
   title,
   src,
-  href
+  href,
+  viewMore
 }): ReactElement => {
   const cardRef = useRef<HTMLDivElement>();
 
@@ -31,7 +33,7 @@ export const GalleryCard: FC<GalleryCardPropsTypes> = ({
     window.addEventListener('scroll', reveal);
 
     return () => window.removeEventListener('scroll', reveal);
-  });
+  }, []);
 
   return (
     <div
@@ -49,7 +51,7 @@ export const GalleryCard: FC<GalleryCardPropsTypes> = ({
           target='_blank'
           rel='noreferrer'
         >
-          View More
+          {viewMore}
         </a>
       </div>
     </div>

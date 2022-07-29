@@ -53,7 +53,25 @@
   },
 
   "art_gallery": {
-    "section_heading": "Kunstgalerie"
+    "section_heading": "Kunstgalerie",
+    "pictures": {
+      "psyche_revived": "Psyche wiederbelebt durch Amors Kuss",
+      "Diana_of_Versailles": "Diana von Versailles",
+      "slave": "Rebellischer Sklave und sterbender Sklave",
+      "winged_victory": "Geflügelter Sieg von Samothrake",
+      "Venus_de_Milo": "Venus von Milo",
+      "Virgin_and_Child": "Die Jungfrau und Kind mit Saint Anne",
+      "Mona_Lisa": "Mona Lisa",
+      "louvre_gallery": "Louvre-Galerie",
+      "greek_beauty": "Ideale griechische Schönheit",
+      "islamic_art": "Islamische Kunst",
+      "liberty": "Freiheit führt das Volk",
+      "louvre_sculptures": "Louvre-Skulpturen",
+      "hermaphroditus": "Schlafender Hermaphrodit",
+      "woman": "La Belle Ferronniere",
+      "louvre": "Louvre"
+    },
+    "view": "mehr sehen"
   },
 
   "buy_tickets": {

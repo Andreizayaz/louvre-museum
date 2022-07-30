@@ -5,6 +5,7 @@
   ],
   "rules": {
     "no-descending-specificity": null,
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "color-function-notation": "legacy"
   }
 }

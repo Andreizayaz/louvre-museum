@@ -53,7 +53,25 @@
   },
 
   "art_gallery": {
-    "section_heading": "Art Gallery"
+    "section_heading": "Art Gallery",
+    "pictures": {
+      "psyche_revived": "Psyche Revived by Cupid's Kiss",
+      "Diana_of_Versailles": "Diana of Versailles",
+      "slave": "Rebellious Slave and Dying Slave",
+      "winged_victory": "Winged Victory of Samothrace",
+      "Venus_de_Milo": "Venus de Milo",
+      "Virgin_and_Child": "The Virgin and Child with Saint Anne",
+      "Mona_Lisa": "Mona Lisa",
+      "louvre_gallery": "Louvre Gallery",
+      "greek_beauty": "Ideal greek beauty",
+      "islamic_art": "Islamic Art",
+      "liberty": "Liberty Leading the People",
+      "louvre_sculptures": "Louvre Sculptures",
+      "hermaphroditus": "Sleeping Hermaphroditus",
+      "woman": "La Belle Ferronnière",
+      "louvre": "Louvre"
+    },
+    "view": "view more"
   },
 
   "buy_tickets": {

@@ -53,7 +53,25 @@
   },
 
   "art_gallery": {
-    "section_heading": "美術館"
+    "section_heading": "美術館",
+    "pictures": {
+      "psyche_revived": "被丘比特之吻喚醒的普賽克",
+      "Diana_of_Versailles": "凡爾賽的戴安娜",
+      "slave": "叛逆的奴隸和垂死的奴隸",
+      "winged_victory": "薩莫色雷斯的有翼勝利",
+      "Venus_de_Milo": "米洛維納斯",
+      "Virgin_and_Child": "聖母子與聖安妮",
+      "Mona_Lisa": "蒙娜麗莎",
+      "louvre_gallery": "盧浮宮畫廊",
+      "greek_beauty": "理想的希臘美女",
+      "islamic_art": "伊斯蘭藝術",
+      "liberty": "自由引導人民",
+      "louvre_sculptures": "盧浮宮雕塑",
+      "hermaphroditus": "睡覺的雌雄同體",
+      "woman": "美麗的費羅尼埃",
+      "louvre": "盧浮宮"
+    },
+    "view": "查看更多"
   },
 
   "buy_tickets": {

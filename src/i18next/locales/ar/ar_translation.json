@@ -53,7 +53,25 @@
   },
 
   "art_gallery": {
-    "section_heading": "معرض الفنون"
+    "section_heading": "معرض الفنون",
+    "pictures": {
+      "psyche_revived": "إحياء النفس من قبلة كيوبيد",
+      "Diana_of_Versailles": "ديانا من فرساي",
+      "slave": "العبد المتمرد والعبد المحتضر",
+      "winged_victory": "انتصار مجنح لساموثريس",
+      "Venus_de_Milo": "فينوس دي ميلو",
+      "Virgin_and_Child": "العذراء والطفل مع القديسة حنة",
+      "Mona_Lisa": "موناليزا",
+      "louvre_gallery": "معرض اللوفر",
+      "greek_beauty": "الجمال اليوناني المثالي",
+      "islamic_art": "الفن الإسلامي",
+      "liberty": "الحرية تقود الشعب",
+      "louvre_sculptures": "منحوتات اللوفر",
+      "hermaphroditus": "النوم خنثى",
+      "woman": "لا بيل فيرونيير",
+      "louvre": "متحف اللوفر"
+    },
+    "view": "عرض المزيد"
   },
 
   "buy_tickets": {

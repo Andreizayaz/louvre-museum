@@ -84,7 +84,14 @@
     "basic_18": "Fondamentale 18",
     "senior_65": "Anziano 65",
     "total": "Totale",
-    "buy_btn": "Acquista ora"
+    "buy_btn": "Acquista ora",
+    "pictures": {
+      "Venus_giving": "Venere dona armatura ad Enea",
+      "appearance_angel": "Aspetto dell'angelo Agar",
+      "family": "Alessandro e la famiglia di Dario",
+      "cupid": "Amore e Psiche",
+      "Hercules": "Ercole al bivio"
+    }
   },
 
   "contacts": {

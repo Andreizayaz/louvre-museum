@@ -84,7 +84,14 @@
     "basic_18": "Básico 18",
     "senior_65": "Mayor 65",
     "total": "Total",
-    "buy_btn": "Comprar ahora"
+    "buy_btn": "Comprar ahora",
+    "pictures": {
+      "Venus_giving": "Venus dando armadura a Eneas",
+      "appearance_angel": "Aparición del ángel Agar",
+      "family": "Alejandro y la familia de Darío",
+      "cupid": "cupido y psique",
+      "Hercules": "Hércules en la encrucijada"
+    }
   },
 
   "contacts": {

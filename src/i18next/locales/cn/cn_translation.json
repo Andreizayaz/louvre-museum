@@ -84,7 +84,14 @@
     "basic_18": "基本 18",
     "senior_65": "高級 65",
     "total": "全部的",
-    "buy_btn": "立即購買"
+    "buy_btn": "立即購買",
+    "pictures": {
+      "Venus_giving": "維納斯給埃涅阿斯盔甲",
+      "appearance_angel": "天使夏甲的出現",
+      "family": "亞歷山大和大流士家族",
+      "cupid": "丘比特和普賽克",
+      "Hercules": "Hercules at the crossroads"
+    }
   },
 
   "contacts": {

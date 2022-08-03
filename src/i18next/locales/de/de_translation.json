@@ -84,7 +84,14 @@
     "basic_18": "Basis 18",
     "senior_65": "Senior 65",
     "total": "Gesamt",
-    "buy_btn": "Kaufe jetzt"
+    "buy_btn": "Kaufe jetzt",
+    "pictures": {
+      "Venus_giving": "Venus gibt Aeneas Rüstung",
+      "appearance_angel": "Erscheinung des Engels Hagar",
+      "family": "Alexander und die Familie von Darius",
+      "cupid": "Amor und Psyche",
+      "Hercules": "Herkules an der Kreuzung"
+    }
   },
 
   "contacts": {

@@ -5,5 +5,6 @@ export {
   VirtualTour,
   PictureExplore,
   Video,
-  Gallery
+  Gallery,
+  Tickets
 } from './sections';

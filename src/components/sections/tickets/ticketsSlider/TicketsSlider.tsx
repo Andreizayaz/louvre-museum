@@ -1,7 +1,7 @@
-import { FC, ReactElement } from 'react';
+import { Dispatch, FC, ReactElement, SetStateAction } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
+import { Swiper as SwiperInstance, Autoplay } from 'swiper';
 
 import { picturesType } from '../types';
 
@@ -10,13 +10,18 @@ import './TicketsSlider.scss';
 
 type TicketsSliderPropsTypes = {
   pictures: picturesType[];
+  manageSwiperState: Dispatch<SetStateAction<SwiperInstance | null>>;
 };
 
 export const TicketsSlider: FC<TicketsSliderPropsTypes> = ({
-  pictures
+  pictures,
+  manageSwiperState
 }): ReactElement => (
   <div className='ticket-swiper'>
     <Swiper
+      onSwiper={(swiper: SwiperInstance) => {
+        manageSwiperState(swiper);
+      }}
       slidesPerView={1}
       autoplay={{
         delay: 1000,

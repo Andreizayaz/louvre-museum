@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 
-import currentLanguageReducer from './Language/reducer';
-import videoPlayerReducer from './VideoPlayer/reducer';
+import { currentLanguageReducer } from './Language';
+import { videoPlayerReducer } from './VideoPlayer';
+import { ticketInfoReducer } from './Tickets';
 
 const rootReducer = combineReducers({
   currentLanguage: currentLanguageReducer,
-  videoPlayerState: videoPlayerReducer
+  videoPlayerState: videoPlayerReducer,
+  ticketInfo: ticketInfoReducer
 });
 
 export default rootReducer;

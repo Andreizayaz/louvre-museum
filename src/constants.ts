@@ -28,3 +28,14 @@ export const ENTER_KEY = 'Enter';
 export const MAX_PLAYBACK_RATE = 2;
 export const MIN_PLAYBACK_RATE = 0.25;
 export const INCREASE_DECREASE_RATE_STEP = 0.25;
+
+/* Ticket cost */
+export const PERMANENT_BASIC = 20;
+export const TEMPORARY_BASIC = 25;
+export const COMBINED_BASIC = 40;
+
+export const PERMANENT_SENIOR = 10;
+export const TEMPORARY_SENIOR = 12.5;
+export const COMBINED_SENIOR = 20;
+
+export const MAX_TICKETS_COUNT = 5;

@@ -85,12 +85,12 @@
     "senior_65": "Senior 65",
     "total": "Total",
     "buy_btn": "Buy Now",
-    "pictures":{
-      "Venus_giving":"Venus giving armor to Aeneas",
-      "appearance_angel":"Appearance of the angel Hagar",
-      "family":"Alexander and the family of Darius",
-      "cupid":"Cupid and Psyche",
-      "Hercules":"Hercules at the crossroads"
+    "pictures": {
+      "Venus_giving": "Venus giving armor to Aeneas",
+      "appearance_angel": "Appearance of the angel Hagar",
+      "family": "Alexander and the family of Darius",
+      "cupid": "Cupid and Psyche",
+      "Hercules": "Hercules at the crossroads"
     }
   },
 

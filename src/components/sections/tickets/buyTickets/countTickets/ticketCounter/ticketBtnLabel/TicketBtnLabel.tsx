@@ -8,8 +8,8 @@ export const TicketBtnLabel: FC<TicketBtnLabelPropsTypes> = ({
   ticketCounter
 }): ReactElement => (
   <div className='ticket-btn-label'>
-    <button className='ticket-btn-label__btn btn __btn_minus'></button>
+    <button className='ticket-btn-label__btn btn_minus'></button>
     <p className='ticket-btn-label__text'>{ticketCounter}</p>
-    <button className='ticket-btn-label__btn btn __btn_plus'></button>
+    <button className='ticket-btn-label__btn btn_plus'></button>
   </div>
 );

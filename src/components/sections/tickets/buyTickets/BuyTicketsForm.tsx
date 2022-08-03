@@ -5,7 +5,9 @@ import { CountTickets } from './countTickets';
 
 export const BuyTicketsForm: FC = (): ReactElement => (
   <div className='buy-tickets'>
-    <RadioOptionsGroup />
-    <CountTickets />
+    <form className='buy-tickets__form'>
+      <RadioOptionsGroup />
+      <CountTickets />
+    </form>
   </div>
 );

@@ -5,6 +5,8 @@ import { CountTickets } from './CountTickets';
 
 import { ticketHeadings } from './data';
 
+import './CountTickets.scss';
+
 const CountTicketsContainer: FC = (): ReactElement => {
   const { t } = useTranslation('translation', { keyPrefix: 'buy_tickets' });
   return (
@@ -12,6 +14,7 @@ const CountTicketsContainer: FC = (): ReactElement => {
       counterHeadings={ticketHeadings.map(({ translationKey }) => {
         return { heading: `${t(`${translationKey}`)}+` };
       })}
+      heading={t('amount')}
       total={t('total')}
       btnText={t('buy_btn')}
     />

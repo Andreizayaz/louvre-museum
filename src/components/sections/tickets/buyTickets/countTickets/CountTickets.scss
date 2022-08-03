@@ -1,0 +1,62 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.count-tickets {
+  display: flex;
+  flex-direction: column;
+  row-gap: 52px;
+  width: 26%;
+  color: $even-section-text-color;
+  font-family: Roboto, Arial, sans-serif;
+
+  &__total {
+    @include text(
+      inherit,
+      right,
+      $section-main-text-font-size,
+      $form-subheading-font-weight,
+      $section-main-text-line-height
+    );
+  }
+}
+
+.amount {
+  width: 86%;
+  margin-left: auto;
+
+  &__heading {
+    margin-bottom: 25px;
+    @include text(
+      inherit,
+      right,
+      $section-main-text-font-size,
+      $form-subheading-font-weight,
+      $section-main-text-line-height
+    );
+  }
+}
+
+.buy-btn {
+  display: block;
+  width: 100%;
+  min-width: 175px;
+  padding: 15px 0;
+  font-family: inherit;
+  @include text(
+    $odd-section-text-color,
+    center,
+    $button-font-size,
+    $btn-text-font-weight,
+    $button-line-height,
+    $button-letter-spacing
+  );
+
+  background: $odd-section-btn-color;
+  border-radius: 2px;
+  transition: all 1s;
+
+  &:hover {
+    color: $odd-section-text-color;
+    background: $btn-hover-background-color;
+  }
+}

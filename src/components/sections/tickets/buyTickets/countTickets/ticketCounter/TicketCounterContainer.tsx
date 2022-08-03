@@ -2,6 +2,8 @@ import { FC, ReactElement } from 'react';
 
 import { TicketCounter } from './TicketCounter';
 
+import './TicketCounter.scss';
+
 type TicketCounterContainerPropsTypes = {
   counterHeading: string;
 };

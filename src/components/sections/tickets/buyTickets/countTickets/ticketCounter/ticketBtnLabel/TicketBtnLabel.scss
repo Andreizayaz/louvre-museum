@@ -1,0 +1,42 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.ticket-btn-label {
+  @include flex;
+
+  column-gap: 30px;
+  padding: 3px 6px;
+  border: 3px solid $odd-section-btn-color;  
+
+  &__btn {
+    height: 38px;
+    width: 19px;
+  }
+}
+
+p.ticket-btn-label__text {
+  @include text(
+    inherit,
+    center,
+    $section-text-font-size,
+    $form-labels-font-weight,
+    $small-line-height
+  );
+}
+
+.btn {
+  &_minus,
+  &_plus {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &_minus {
+    background-image: url('./icons/01_minus_sign.svg');
+  }
+
+  &_plus {
+    background-image: url('./icons/02_plus_sign.svg');
+  }
+}

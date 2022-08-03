@@ -5,6 +5,8 @@ import { picturesData } from './data';
 
 import { Tickets } from './Tickets';
 
+import './Tickets.scss';
+
 const TicketsContainer: FC = (): ReactElement => {
   const [t1] = useTranslation('translation', { keyPrefix: 'buy_tickets' });
   const [t2] = useTranslation('translation', {

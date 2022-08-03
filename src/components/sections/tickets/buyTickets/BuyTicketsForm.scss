@@ -1,0 +1,13 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.buy-tickets {
+  width: 45.8%;
+  
+  &__form {
+    @include flex;
+
+    align-items: unset;
+    row-gap: 215px;
+  }
+}

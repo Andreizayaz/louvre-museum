@@ -5,6 +5,8 @@ import { RadioOptionsGroup } from './RadioOptionsGroup';
 
 import { optionsLabels } from './data';
 
+import './RadioOptionsGroup.scss';
+
 const RadioOptionsGroupContainer: FC = (): ReactElement => {
   const { t } = useTranslation('translation', { keyPrefix: 'buy_tickets' });
   return (

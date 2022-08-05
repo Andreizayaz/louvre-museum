@@ -20,8 +20,12 @@
   row-gap: 7px;
 }
 
-.css-vqmohf-MuiButtonBase-root-MuiRadio-root {
+span.css-vqmohf-MuiButtonBase-root-MuiRadio-root {
   margin-right: auto;
+
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 span.css-ahj2mt-MuiTypography-root {
@@ -34,4 +38,8 @@ span.css-ahj2mt-MuiTypography-root {
     $button-line-height,
     none
   );
+}
+
+span.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
+  color: $even-section-text-color;
 }

@@ -1,1 +1,1 @@
-export { default as TicketCounter } from './TicketCounterContainer';
+export { TicketCounter } from './TicketCounter';

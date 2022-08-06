@@ -1,11 +1,17 @@
-import { FC, ReactElement } from 'react';
+import { FC, FormEvent, ReactElement } from 'react';
 
 import { RadioOptionsGroup } from '../radioOptionsGroup';
 import { CountTickets } from '../countTickets';
 
-export const BuyTicketsForm: FC = (): ReactElement => (
+type BuyTicketsFormPropsTypes = {
+  handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
+};
+
+export const BuyTicketsForm: FC<BuyTicketsFormPropsTypes> = ({
+  handleSubmit
+}): ReactElement => (
   <div className='buy-tickets'>
-    <form className='buy-tickets__form'>
+    <form className='buy-tickets__form' onSubmit={handleSubmit}>
       <RadioOptionsGroup />
       <CountTickets />
     </form>

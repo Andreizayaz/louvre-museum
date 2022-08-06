@@ -1,6 +1,7 @@
 import { FC, ReactElement } from 'react';
 
 import { TicketCounter } from '../ticketCounter';
+import { CountTicketsContext } from './countTicketsContext';
 
 import { counterHeadingsType } from './types';
 
@@ -20,8 +21,13 @@ export const CountTickets: FC<CountTicketsPropsTypes> = ({
   <div className='count-tickets'>
     <div className='count-tickets__amount amount'>
       <h3 className='amount__heading'>{heading}</h3>
-      {counterHeadings.map(({ heading }) => (
-        <TicketCounter key={heading} counterHeading={heading} />
+      {counterHeadings.map(({ heading, btnNames, ticketsCount }) => (
+        <CountTicketsContext.Provider
+          key={heading}
+          value={{ heading, btnNames, ticketsCount }}
+        >
+          <TicketCounter key={heading} counterHeading={heading} />
+        </CountTicketsContext.Provider>
       ))}
     </div>
     <h4 className='count-tickets__total'>{total} &euro; 220</h4>

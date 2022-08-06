@@ -30,6 +30,8 @@ export const MIN_PLAYBACK_RATE = 0.25;
 export const INCREASE_DECREASE_RATE_STEP = 0.25;
 
 /* Ticket cost */
+export const BASIC_TICKET_TYPE = 'basic';
+export const SENIOR_TICKET_TYPE = 'senior';
 export const PERMANENT_BASIC = 20;
 export const TEMPORARY_BASIC = 25;
 export const COMBINED_BASIC = 40;

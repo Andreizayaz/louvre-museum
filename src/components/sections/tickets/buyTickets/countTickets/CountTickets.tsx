@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react';
 
-import { TicketCounter } from '../ticketCounter';
+import { TicketCounter } from './ticketCounter';
 import { CountTicketsContext } from './countTicketsContext';
 
 import { counterHeadingsType } from './types';

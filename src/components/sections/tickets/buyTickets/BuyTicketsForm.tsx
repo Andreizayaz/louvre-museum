@@ -1,7 +1,7 @@
 import { FC, FormEvent, ReactElement } from 'react';
 
-import { RadioOptionsGroup } from '../radioOptionsGroup';
-import { CountTickets } from '../countTickets';
+import { RadioOptionsGroup } from './radioOptionsGroup';
+import { CountTickets } from './countTickets';
 
 type BuyTicketsFormPropsTypes = {
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;

@@ -6,8 +6,10 @@ import React, {
   useState
 } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { setTicketInfo } from 'src/store/Tickets';
-import { TicketsContext } from '../ticketsContext';
+
+import { TicketsContext } from './ticketsContext';
 
 import { BuyTicketsForm } from './BuyTicketsForm';
 
@@ -30,7 +32,6 @@ const BuyTicketsFormContainer: FC = (): ReactElement => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setVisitorData({ ...visitorData, ticketType: e.target.value });
-    console.log({ ...visitorData, ticketType: e.target.value });
     dispatch(setTicketInfo({ ...visitorData, ticketType: e.target.value }));
   };
 

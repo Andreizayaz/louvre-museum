@@ -10,7 +10,7 @@ import { RIGHT_TO_LEFT } from 'src/constants';
 
 import { Tickets } from './Tickets';
 
-import { picturesData } from './data';
+import { picturesData } from './ticketsSlider/data';
 
 import './Tickets.scss';
 

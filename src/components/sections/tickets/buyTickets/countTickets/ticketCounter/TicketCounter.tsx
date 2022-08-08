@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react';
 
-import { TicketBtnLabel } from '../ticketBtnLabel';
+import { TicketBtnLabel } from './ticketBtnLabel';
 
 import './TicketCounter.scss';
 

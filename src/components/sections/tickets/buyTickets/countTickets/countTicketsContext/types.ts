@@ -1,4 +1,4 @@
-import { namesContent } from './../../ticketsContext/types';
+import { namesContent } from 'src/components/sections/tickets/buyTickets/ticketsContext';
 
 export type countTicketsContextType = {
   heading: string;

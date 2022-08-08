@@ -9,6 +9,7 @@ type CountTicketsPropsTypes = {
   counterHeadings: counterHeadingsType[];
   heading: string;
   total: string;
+  totalPrice: number;
   btnText: string;
 };
 
@@ -16,6 +17,7 @@ export const CountTickets: FC<CountTicketsPropsTypes> = ({
   counterHeadings,
   heading,
   total,
+  totalPrice,
   btnText
 }): ReactElement => (
   <div className='count-tickets'>
@@ -30,7 +32,9 @@ export const CountTickets: FC<CountTicketsPropsTypes> = ({
         </CountTicketsContext.Provider>
       ))}
     </div>
-    <h4 className='count-tickets__total'>{total} &euro; 220</h4>
+    <h4 className='count-tickets__total'>
+      {total} &euro; {totalPrice}
+    </h4>
     <div className='count-tickets__btn-wrapper'>
       <button className='buy-btn'>{btnText}</button>
     </div>

@@ -17,7 +17,8 @@ import './CountTickets.scss';
 const CountTicketsContainer: FC = (): ReactElement => {
   const { t } = useTranslation('translation', { keyPrefix: 'buy_tickets' });
   const { btnNames } = useTicketsContext();
-  const { basicTicketCount, seniorTicketCount } = useSelector(selectTicket);
+  const { basicTicketCount, seniorTicketCount, totalPrice } =
+    useSelector(selectTicket);
 
   return (
     <CountTickets
@@ -34,6 +35,7 @@ const CountTicketsContainer: FC = (): ReactElement => {
       })}
       heading={t('amount')}
       total={t('total')}
+      totalPrice={totalPrice}
       btnText={t('buy_btn')}
     />
   );

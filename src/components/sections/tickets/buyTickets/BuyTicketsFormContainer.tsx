@@ -1,27 +1,28 @@
-import React, {
-  ChangeEvent,
-  FC,
-  FormEvent,
-  ReactElement,
-  useState
-} from 'react';
-import { useDispatch } from 'react-redux';
+import { ChangeEvent, FC, FormEvent, ReactElement } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { setTicketInfo } from 'src/store/Tickets';
+import { selectTicket, setTicketInfo } from 'src/store/Tickets';
+
+import {
+  BASIC_MINUS,
+  BASIC_PLUS,
+  SENIOR_MINUS,
+  SENIOR_PLUS
+} from 'src/constants';
 
 import { TicketsContext } from './ticketsContext';
 
 import { BuyTicketsForm } from './BuyTicketsForm';
 
+import { getTotalPrice, getTicketsCount } from './helpers';
+
 import './BuyTicketsForm.scss';
+import { VisitorType } from 'src/store/Tickets/types';
 
 const BuyTicketsFormContainer: FC = (): ReactElement => {
-  const [visitorData, setVisitorData] = useState({
-    ticketType: '',
-    basicTicketCount: 0,
-    seniorTicketCount: 0,
-    totalPrice: 0
-  });
+  const visitorData: VisitorType = JSON.parse(
+    JSON.stringify(useSelector(selectTicket))
+  );
 
   const dispatch = useDispatch();
 
@@ -31,13 +32,41 @@ const BuyTicketsFormContainer: FC = (): ReactElement => {
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setVisitorData({ ...visitorData, ticketType: e.target.value });
-    dispatch(setTicketInfo({ ...visitorData, ticketType: e.target.value }));
+    const { name, value } = e.target;
+    visitorData[name] = value;
+    visitorData.totalPrice = getTotalPrice(
+      visitorData.ticketType,
+      visitorData.basicTicketCount,
+      visitorData.seniorTicketCount
+    );
+    dispatch(setTicketInfo(visitorData));
   };
 
   const handleClick = (e: any) => {
     e.preventDefault();
-    console.log(e.target.name);
+    const { name } = e.target;
+
+    if (name === BASIC_MINUS || name === BASIC_PLUS) {
+      visitorData.basicTicketCount = getTicketsCount(
+        name as string,
+        visitorData.basicTicketCount
+      );
+    }
+
+    if (name === SENIOR_MINUS || name === SENIOR_PLUS) {
+      visitorData.seniorTicketCount = getTicketsCount(
+        name as string,
+        visitorData.seniorTicketCount
+      );
+    }
+
+    visitorData.totalPrice = getTotalPrice(
+      visitorData.ticketType,
+      visitorData.basicTicketCount,
+      visitorData.seniorTicketCount
+    );
+
+    dispatch(setTicketInfo(visitorData));
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {

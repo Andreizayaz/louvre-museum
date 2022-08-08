@@ -2,6 +2,8 @@ import { ChangeEvent, FC, ReactElement } from 'react';
 
 import { RadioGroup, FormControlLabel, Radio } from '@mui/material';
 
+import { TICKET_TYPE_RADIO_NAME } from 'src/constants';
+
 import { optionsType } from './types';
 
 type RadioOptionsGroupPropsTypes = {
@@ -28,7 +30,7 @@ export const RadioOptionsGroup: FC<RadioOptionsGroupPropsTypes> = ({
               value={label}
               control={<Radio />}
               label={label}
-              name={label}
+              name={TICKET_TYPE_RADIO_NAME}
               checked={label === ticketType ? true : false}
             />
           ))}

@@ -30,8 +30,21 @@ export const MIN_PLAYBACK_RATE = 0.25;
 export const INCREASE_DECREASE_RATE_STEP = 0.25;
 
 /* Ticket cost */
+// Ticket types
+export const PERMANENT_EXHIBITION = 'Permanent exhibition';
+export const TEMPORARY_EXHIBITION = 'Temporary exhibition';
+export const COMBINED_EXHIBITION = 'Combined Admission';
+
 export const BASIC_TICKET_TYPE = 'basic';
 export const SENIOR_TICKET_TYPE = 'senior';
+
+// Actions types
+export const BASIC_PLUS = 'basic-plus';
+export const BASIC_MINUS = 'basic-minus';
+export const SENIOR_PLUS = 'senior-plus';
+export const SENIOR_MINUS = 'senior-minus';
+
+// Ticket consts
 export const PERMANENT_BASIC = 20;
 export const TEMPORARY_BASIC = 25;
 export const COMBINED_BASIC = 40;
@@ -40,4 +53,7 @@ export const PERMANENT_SENIOR = 10;
 export const TEMPORARY_SENIOR = 12.5;
 export const COMBINED_SENIOR = 20;
 
-export const MAX_TICKETS_COUNT = 5;
+export const MAX_TICKETS_COUNT = 15;
+
+// Ticket cost form fields names
+export const TICKET_TYPE_RADIO_NAME = 'ticketType';

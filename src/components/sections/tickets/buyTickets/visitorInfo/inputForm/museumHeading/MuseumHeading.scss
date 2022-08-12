@@ -1,0 +1,40 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.museum-heading {
+  margin-bottom: 60px;
+
+  &__logo {
+    height: 41px;
+    width: 85px;
+    background-image: url('./icons/logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__heading {
+    margin-bottom: 15px;
+    color: $even-section-heading-color;
+    font-family: Forum, serif;
+    font-weight: $section-heading-font-weight;
+    font-size: 50px;
+    line-height: 55px;
+    text-transform: uppercase;
+  }
+
+  &__subheading {
+    color: $heading-line-color;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: $section-heading-font-weight;
+    font-size: $small-text;
+    line-height: $small-text-line-height;
+
+    &::after {
+      display: block;
+      margin-top: 10px;
+      content: ' ';
+      border-bottom: 3px solid $heading-line-color;
+      opacity: 0.9;
+    }
+  }
+}

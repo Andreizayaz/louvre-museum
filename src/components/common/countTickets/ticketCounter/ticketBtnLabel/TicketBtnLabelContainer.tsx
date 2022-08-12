@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react';
 
-import { useTicketsContext } from '../../../ticketsContext';
+import { useTicketsContext } from 'src/components/sections/tickets/buyTickets/ticketsContext';
 import { useCountTicketsContext } from '../../countTicketsContext';
 
 import { TicketBtnLabel } from './TicketBtnLabel';

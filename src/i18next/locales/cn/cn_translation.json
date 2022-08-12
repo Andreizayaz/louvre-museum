@@ -91,6 +91,21 @@
       "family": "亞歷山大和大流士家族",
       "cupid": "丘比特和普賽克",
       "Hercules": "Hercules at the crossroads"
+    },
+    "booking_tickets": {
+      "booking": "訂票",
+      "tour_to_louvre": "盧浮宮之旅",
+      "date": "日期",
+      "time": "時間",
+      "name": "姓名",
+      "mail": "郵件",
+      "phone": "電話",
+      "ticket_type": "票種",
+      "entry_ticket": "入場券",
+      "basic": "基本的",
+      "senior": "高級的",
+      "overview": "概述",
+      "book": "書"
     }
   },
 

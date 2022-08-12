@@ -91,6 +91,21 @@
       "family": "Alexandre et la famille de Darius",
       "cupid": "Cupidon et Psyché",
       "Hercules": "Hercule à la croisée des chemins"
+    },
+    "booking_tickets": {
+      "booking": "Réservation de billets",
+      "tour_to_louvre": "Visite du Louvre",
+      "date": "Date",
+      "time": "Temps",
+      "name": "Nom",
+      "mail": "courrier",
+      "phone": "Téléphoner",
+      "ticket_type": "Type de billet",
+      "entry_ticket": "Billet d'entrée",
+      "basic": "De base",
+      "senior": "Senior",
+      "overview": "Aperçu",
+      "book": "Livre"
     }
   },
 

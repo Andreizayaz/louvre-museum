@@ -1,0 +1,1 @@
+export { MuseumHeading } from './MuseumHeading';

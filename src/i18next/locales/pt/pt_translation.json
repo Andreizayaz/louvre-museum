@@ -91,6 +91,21 @@
       "family": "Alexandre e a família de Dario",
       "cupid": "Cupido e Psique",
       "Hercules": "Hércules na encruzilhada"
+    },
+    "booking_tickets": {
+      "booking": "Reserva de bilhetes",
+      "tour_to_louvre": "Passeio ao Louvre",
+      "date": "Encontro",
+      "time": "Tempo",
+      "name": "Nome",
+      "mail": "E-mail",
+      "phone": "Telefone",
+      "ticket_type": "Tipo de bilhete",
+      "entry_ticket": "Bilhete de entrada",
+      "basic": "Básico",
+      "senior": "Senior",
+      "overview": "Visão geral",
+      "book": "Livro"
     }
   },
 

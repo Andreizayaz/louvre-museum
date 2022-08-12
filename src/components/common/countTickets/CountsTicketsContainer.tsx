@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { selectTicket } from 'src/store/Tickets';
 
-import { useTicketsContext } from '../ticketsContext';
+import { useTicketsContext } from 'src/components/sections/tickets/buyTickets/ticketsContext';
 
 import { CountTickets } from './CountTickets';
 

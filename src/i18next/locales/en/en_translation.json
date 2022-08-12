@@ -91,6 +91,21 @@
       "family": "Alexander and the family of Darius",
       "cupid": "Cupid and Psyche",
       "Hercules": "Hercules at the crossroads"
+    },
+    "booking_tickets": {
+      "booking": "Booking tickets",
+      "tour_to_louvre": "Tour to Louvre",
+      "date": "Date",
+      "time": "Time",
+      "name": "Name",
+      "mail": "E-mail",
+      "phone": "Phone",
+      "ticket_type": "Ticket Type",
+      "entry_ticket": "Entry ticket",
+      "basic": "Basic",
+      "senior": "Senior",
+      "overview": "Overview",
+      "book": "Book"
     }
   },
 

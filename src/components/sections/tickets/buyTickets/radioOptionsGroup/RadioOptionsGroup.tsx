@@ -24,14 +24,14 @@ export const RadioOptionsGroup: FC<RadioOptionsGroupPropsTypes> = ({
       <h3 className='radio-options__heading'>{heading}</h3>
       <div className='radio-options__options-list'>
         <RadioGroup onChange={(e) => handleChange(e)}>
-          {options.map(({ label }) => (
+          {options.map(({ label, value }) => (
             <FormControlLabel
               key={label}
-              value={label}
+              value={value}
               control={<Radio />}
               label={label}
               name={TICKET_TYPE_RADIO_NAME}
-              checked={label === ticketType ? true : false}
+              checked={value === ticketType ? true : false}
             />
           ))}
         </RadioGroup>

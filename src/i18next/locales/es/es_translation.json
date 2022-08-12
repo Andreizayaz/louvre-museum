@@ -91,6 +91,21 @@
       "family": "Alejandro y la familia de Darío",
       "cupid": "cupido y psique",
       "Hercules": "Hércules en la encrucijada"
+    },
+    "booking_tickets": {
+      "booking": "reserva de entradas",
+      "tour_to_louvre": "Visita al Museo del Louvre",
+      "date": "Fecha",
+      "time": "Tiempo",
+      "name": "Nombre",
+      "mail": "correo",
+      "phone": "Teléfono",
+      "ticket_type": "tipo de billete",
+      "entry_ticket": "Boleto de entrada",
+      "basic": "Básico",
+      "senior": "Sénior",
+      "overview": "Visión general",
+      "book": "Libro"
     }
   },
 

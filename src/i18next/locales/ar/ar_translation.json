@@ -91,6 +91,21 @@
       "family": "الإسكندر وعائلة داريوس",
       "cupid": "كيوبيد والنفسية",
       "Hercules": "هرقل عند مفترق طرق"
+    },
+    "booking_tickets": {
+      "booking": "تذاكر الحجز",
+      "tour_to_louvre": "جولة في متحف اللوفر",
+      "date": "تاريخ",
+      "time": "زمن",
+      "name": "اسم",
+      "mail": "بريد",
+      "phone": "هاتف",
+      "ticket_type": "نوع التذكرة",
+      "entry_ticket": "تذكرة دخول",
+      "basic": "أساسي",
+      "senior": "كبير",
+      "overview": "ملخص",
+      "book": "الكتاب"
     }
   },
 

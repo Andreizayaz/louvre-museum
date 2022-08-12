@@ -19,8 +19,8 @@ const RadioOptionsGroupContainer: FC = (): ReactElement => {
   return (
     <RadioOptionsGroup
       heading={t('ticket_type')}
-      options={optionsLabels.map(({ translationKey }) => {
-        return { label: t(`${translationKey}`) };
+      options={optionsLabels.map(({ translationKey, value }) => {
+        return { label: t(`${translationKey}`), value };
       })}
       handleChange={handleChange}
       ticketType={ticketType}

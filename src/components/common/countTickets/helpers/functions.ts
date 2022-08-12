@@ -1,5 +1,8 @@
 import { BASIC_TICKET_TYPE, SENIOR_TICKET_TYPE } from 'src/constants';
-import { btnNamesType, namesContent } from '../../ticketsContext';
+import {
+  btnNamesType,
+  namesContent
+} from 'src/components/sections/tickets/buyTickets/ticketsContext';
 
 export const getBtnNames = (
   btnNames: btnNamesType,

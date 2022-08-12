@@ -91,6 +91,21 @@
       "family": "Alexander und die Familie von Darius",
       "cupid": "Amor und Psyche",
       "Hercules": "Herkules an der Kreuzung"
+    },
+    "booking_tickets": {
+      "booking": "Karten buchen",
+      "tour_to_louvre": "Tour zum Louvre",
+      "date": "Datum",
+      "time": "Zeit",
+      "name": "Name",
+      "mail": "Email",
+      "phone": "Telefon",
+      "ticket_type": "Art des Tickets",
+      "entry_ticket": "Eintrittskarte",
+      "basic": "Basic",
+      "senior": "Senior",
+      "overview": "Überblick",
+      "book": "Buch"
     }
   },
 

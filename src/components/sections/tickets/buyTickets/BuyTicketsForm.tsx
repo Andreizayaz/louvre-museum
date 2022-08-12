@@ -1,7 +1,8 @@
 import { FC, FormEvent, ReactElement } from 'react';
 
 import { RadioOptionsGroup } from './radioOptionsGroup';
-import { CountTickets } from './countTickets';
+import { CountTickets } from 'src/components/common';
+import { VisitorInfo } from './visitorInfo';
 
 type BuyTicketsFormPropsTypes = {
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
@@ -14,6 +15,7 @@ export const BuyTicketsForm: FC<BuyTicketsFormPropsTypes> = ({
     <form className='buy-tickets__form' onSubmit={handleSubmit}>
       <RadioOptionsGroup />
       <CountTickets />
+      <VisitorInfo />
     </form>
   </div>
 );

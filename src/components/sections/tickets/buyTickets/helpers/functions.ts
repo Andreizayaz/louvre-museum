@@ -1,7 +1,7 @@
 import {
   TEMPORARY_EXHIBITION,
   PERMANENT_EXHIBITION,
-  COMBINED_EXHIBITION,
+  COMBINED_ADMISSION,
   TEMPORARY_BASIC,
   PERMANENT_BASIC,
   COMBINED_BASIC,
@@ -31,7 +31,7 @@ export const getTotalPrice = (
         basicTicketCount * PERMANENT_BASIC +
         seniorTicketCount * PERMANENT_SENIOR
       );
-    case COMBINED_EXHIBITION:
+    case COMBINED_ADMISSION:
       return (
         basicTicketCount * COMBINED_BASIC + seniorTicketCount * COMBINED_SENIOR
       );

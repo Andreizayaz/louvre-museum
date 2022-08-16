@@ -105,7 +105,9 @@
       "basic": "Básico",
       "senior": "Senior",
       "overview": "Visão geral",
-      "book": "Livro"
+      "book": "Livro",
+      "min_alert": "A contagem de ingressos não pode ser negativa",
+      "max_alert": "A contagem de ingressos não pode ser superior a "
     }
   },
 

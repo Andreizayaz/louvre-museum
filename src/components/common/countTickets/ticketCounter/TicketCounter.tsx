@@ -2,17 +2,23 @@ import { FC, ReactElement } from 'react';
 
 import { TicketBtnLabel } from './ticketBtnLabel';
 
-import './TicketCounter.scss';
+import { ticketBtnLabelClassesTypes } from './ticketBtnLabel/types';
+
+import { TicketCounterClassesTypes } from './types';
 
 type TicketCounterPropsTypes = {
   counterHeading: string;
+  ticketCounterClasses: TicketCounterClassesTypes;
+  ticketBtnLabelClasses: ticketBtnLabelClassesTypes;
 };
 
 export const TicketCounter: FC<TicketCounterPropsTypes> = ({
-  counterHeading
+  counterHeading,
+  ticketCounterClasses: { ticketCounter, ticketCounterHeading },
+  ticketBtnLabelClasses
 }): ReactElement => (
-  <div className='ticket-counter'>
-    <h4 className='ticket-counter__heading'>{counterHeading}</h4>
-    <TicketBtnLabel />
+  <div className={ticketCounter}>
+    <h4 className={ticketCounterHeading}>{counterHeading}</h4>
+    <TicketBtnLabel classesTicketBtnLabel={ticketBtnLabelClasses} />
   </div>
 );

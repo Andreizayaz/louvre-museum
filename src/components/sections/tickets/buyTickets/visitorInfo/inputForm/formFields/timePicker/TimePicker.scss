@@ -4,6 +4,10 @@
 .time-wrapper {
   position: relative;
 
+  &:focus{
+    border-color: $even-section-heading-color;
+  }
+
   &__time-overlay {
     position: absolute;
     top: 0;

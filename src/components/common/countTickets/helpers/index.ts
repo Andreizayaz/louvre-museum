@@ -1,1 +1,6 @@
-export { getBtnNames, getTicketsCount } from './functions';
+export {
+  getBtnNames,
+  getTicketsCount,
+  isMinAlert,
+  isMaxAlert
+} from './functions';

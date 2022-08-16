@@ -1,0 +1,77 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.entry-ticket {
+  padding: 15px;
+  padding-top: 10px;
+  width: 100%;
+  border: 1px solid $black-secondary;
+
+  &-counter {
+    position: relative;
+    @include flex;
+
+    flex-wrap: nowrap;
+    margin-right: auto;
+    margin-bottom: 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__heading {
+      font-family: Roboto, Arial, sans-serif;
+      font-weight: $normal-font-weight;
+      font-size: $small-text;
+      line-height: $small-text-line-height;
+      color: $black-secondary;
+    }
+  }
+}
+
+.entry-btn-label {
+  display: flex;
+  flex-wrap: nowrap;
+  border: 1px solid $black-secondary;
+
+  &__btn {
+    width: 35px;
+    height: 25px;
+    background-color: $black-secondary;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 25px;
+  }
+}
+
+.entry-btn_minus {
+  background-image: url('./icons/01_minus_icon.svg');
+}
+
+.entry-btn_plus {
+  background-image: url('./icons/02_plus_icon.svg');
+}
+
+.entry__heading {
+  margin-bottom: 15px;
+  color: $even-section-heading-color;
+  font-family: Forum, serif;
+  font-weight: $section-heading-font-weight;
+  font-size: $small-text;
+  line-height: 20px;
+
+  &::after {
+    display: block;
+    content: ' ';
+    margin-top: 5px;
+    border-bottom: 2px solid #740c11;
+  }
+}

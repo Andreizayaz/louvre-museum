@@ -8,13 +8,29 @@ import { useTicketsContext } from 'src/components/sections/tickets/buyTickets/ti
 
 import { CountTickets } from './CountTickets';
 
+import { countTicketsClassesTypes, ticketsHeadingsTypes } from './types';
+import { TicketCounterClassesTypes } from './ticketCounter/types';
+import { ticketBtnLabelClassesTypes } from './ticketCounter/ticketBtnLabel/types';
+
 import { getBtnNames, getTicketsCount } from './helpers';
 
-import { ticketHeadings } from './data';
+type CountTicketsContainerPropsTypes = {
+  heading: string;
+  ticketHeadings: ticketsHeadingsTypes[];
+  countTicketsClasses: countTicketsClassesTypes;
+  ticketCounterClasses: TicketCounterClassesTypes;
+  ticketBtnLabelClasses: ticketBtnLabelClassesTypes;
+  isPriceWrapper?: boolean;
+};
 
-import './CountTickets.scss';
-
-const CountTicketsContainer: FC = (): ReactElement => {
+const CountTicketsContainer: FC<CountTicketsContainerPropsTypes> = ({
+  heading,
+  ticketHeadings,
+  countTicketsClasses,
+  ticketCounterClasses,
+  ticketBtnLabelClasses,
+  isPriceWrapper
+}): ReactElement => {
   const { t } = useTranslation('translation', { keyPrefix: 'buy_tickets' });
   const { btnNames } = useTicketsContext();
   const { basicTicketCount, seniorTicketCount, totalPrice } =
@@ -22,9 +38,9 @@ const CountTicketsContainer: FC = (): ReactElement => {
 
   return (
     <CountTickets
-      counterHeadings={ticketHeadings.map(({ translationKey, type }) => {
+      counterHeadings={ticketHeadings.map(({ heading, type }) => {
         return {
-          heading: `${t(`${translationKey}`)}+`,
+          heading: heading,
           btnNames: getBtnNames(btnNames, type),
           ticketsCount: getTicketsCount(
             basicTicketCount,
@@ -33,10 +49,14 @@ const CountTicketsContainer: FC = (): ReactElement => {
           )
         };
       })}
-      heading={t('amount')}
+      countTicketsClasses={countTicketsClasses}
+      ticketCounterClasses={ticketCounterClasses}
+      ticketBtnLabelClasses={ticketBtnLabelClasses}
+      heading={heading}
       total={t('total')}
       totalPrice={totalPrice}
       btnText={t('buy_btn')}
+      isPriceWrapper={isPriceWrapper}
     />
   );
 };

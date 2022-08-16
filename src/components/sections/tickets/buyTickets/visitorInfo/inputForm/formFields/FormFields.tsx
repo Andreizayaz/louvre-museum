@@ -25,21 +25,34 @@ export const FormFields: FC<formFieldsPropsTypes> = ({
   dateAndTimeData,
   dataForSelect
 }): ReactElement => (
-  <div className='ticket-form'>
+  <form className='ticket-form'>
     <div className='ticket-form__date-and-time'>
-      {dateAndTimeData.map(({ type, placeholder }) => {
+      {dateAndTimeData.map(({ type, placeholder }, index) => {
         if (type === DATE_TYPE) {
-          return <DatePicker key={placeholder} placeholder={placeholder} />;
+          return (
+            <DatePicker
+              key={placeholder}
+              placeholder={placeholder}
+              tabIndexEl={index + 1}
+            />
+          );
         }
         if (type === TIME_TYPE) {
-          return <TimePicker key={placeholder} placeholder={placeholder} />;
+          return (
+            <TimePicker
+              key={placeholder}
+              placeholder={placeholder}
+              tabIndexEl={index + 1}
+            />
+          );
         }
       })}
     </div>
 
-    {inputGroupData.map(({ iconClasses, name, placeholder }) => (
+    {inputGroupData.map(({ iconClasses, name, placeholder }, index) => (
       <InputGroup
         key={name}
+        tabIndexEl={index + 3}
         inputIconClasses={iconClasses}
         name={name}
         placeholder={placeholder}
@@ -47,5 +60,5 @@ export const FormFields: FC<formFieldsPropsTypes> = ({
     ))}
     <SelectOptions dataForSelect={dataForSelect} />
     <EntryTicket />
-  </div>
+  </form>
 );

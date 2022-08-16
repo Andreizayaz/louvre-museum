@@ -3,11 +3,17 @@ import { FC, ReactElement } from 'react';
 import { TicketCounter } from './ticketCounter';
 import { CountTicketsContext } from './countTicketsContext';
 
-import { counterHeadingsType } from './types';
+import { TicketCounterClassesTypes } from './ticketCounter/types';
+import { ticketBtnLabelClassesTypes } from './ticketCounter/ticketBtnLabel/types';
+import { counterHeadingsType, countTicketsClassesTypes } from './types';
 
 type CountTicketsPropsTypes = {
   counterHeadings: counterHeadingsType[];
+  countTicketsClasses: countTicketsClassesTypes;
+  ticketCounterClasses: TicketCounterClassesTypes;
+  ticketBtnLabelClasses: ticketBtnLabelClassesTypes;
   heading: string;
+  isPriceWrapper?: boolean;
   total: string;
   totalPrice: number;
   btnText: string;
@@ -15,28 +21,49 @@ type CountTicketsPropsTypes = {
 
 export const CountTickets: FC<CountTicketsPropsTypes> = ({
   counterHeadings,
+  countTicketsClasses: {
+    countTickets,
+    amount,
+    amountHeading,
+    priceWrapper,
+    countTicketsTotal,
+    btnWrapper,
+    buyBtn
+  },
+  ticketCounterClasses,
+  ticketBtnLabelClasses,
   heading,
+  isPriceWrapper = false,
   total,
   totalPrice,
   btnText
 }): ReactElement => (
-  <div className='count-tickets'>
-    <div className='count-tickets__amount amount'>
-      <h3 className='amount__heading'>{heading}</h3>
+  <div className={countTickets}>
+    <div className={amount}>
+      <h3 className={amountHeading}>{heading}</h3>
       {counterHeadings.map(({ heading, btnNames, ticketsCount }) => (
         <CountTicketsContext.Provider
           key={heading}
           value={{ heading, btnNames, ticketsCount }}
         >
-          <TicketCounter key={heading} counterHeading={heading} />
+          <TicketCounter
+            key={heading}
+            counterHeading={heading}
+            ticketCounterClasses={ticketCounterClasses}
+            ticketBtnLabelClasses={ticketBtnLabelClasses}
+          />
         </CountTicketsContext.Provider>
       ))}
     </div>
-    <h4 className='count-tickets__total'>
-      {total} &euro; {totalPrice}
-    </h4>
-    <div className='count-tickets__btn-wrapper'>
-      <button className='buy-btn'>{btnText}</button>
-    </div>
+    {isPriceWrapper && (
+      <div className={priceWrapper}>
+        <h4 className={countTicketsTotal}>
+          {total} &euro; {totalPrice}
+        </h4>
+        <div className={btnWrapper}>
+          <button className={buyBtn}>{btnText}</button>
+        </div>
+      </div>
+    )}
   </div>
 );

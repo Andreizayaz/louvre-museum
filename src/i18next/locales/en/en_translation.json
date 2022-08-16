@@ -105,7 +105,9 @@
       "basic": "Basic",
       "senior": "Senior",
       "overview": "Overview",
-      "book": "Book"
+      "book": "Book",
+      "min_alert": "Tickets count can't be negative",
+      "max_alert": "Tickets count can't be more than "
     }
   },
 

@@ -4,6 +4,10 @@
 .date-wrapper {
   position: relative;
 
+  &:focus {
+    border-color: $even-section-heading-color;
+  }
+
   &__date-overlay {
     position: absolute;
     top: 0;

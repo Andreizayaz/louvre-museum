@@ -2,8 +2,9 @@
 @import 'src/scss/abstracts/mixins';
 
 .select-wrapper {
-  width: 100%;
   position: relative;
+  min-height: 45px;
+  width: 100%;
 
   &__select-placeholder {
     position: absolute;
@@ -16,6 +17,8 @@
 
     padding: 15px;
     height: fit-content;
+    max-height: 45px;
+    overflow: hidden;
     border: 1px solid $black-color;
     background-color: $white-color;
   }
@@ -58,4 +61,24 @@
 
 .css-1n7v3ny-option {
   cursor: pointer;
+}
+
+.css-b62m3t-container {
+  max-height: 100%;
+}
+
+div.css-yt9ioa-option,
+div.css-1n7v3ny-option {
+  padding: 12px 42px;
+  color: $black-secondary;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: $plain-text-font-weight;
+  font-size: $small-text;
+  line-height: $small-text-line-height;
+  transition: all 0.5s;
+
+  &:hover,
+  &::selection {
+    background-color: #e7e7e7;
+  }
 }

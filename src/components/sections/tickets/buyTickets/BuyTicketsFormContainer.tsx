@@ -1,5 +1,6 @@
 import { ChangeEvent, FC, FormEvent, ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import { selectTicket, setTicketInfo } from 'src/store/Tickets';
 
@@ -10,26 +11,33 @@ import {
   SENIOR_PLUS
 } from 'src/constants';
 
+import { VisitorType } from 'src/store/Tickets/types';
+
 import { TicketsContext } from './ticketsContext';
 
 import { BuyTicketsForm } from './BuyTicketsForm';
 
+import { ticketHeadings } from './data';
+
+import {
+  btnNames,
+  countTicketsClasses,
+  ticketBtnLabelClasses,
+  ticketCounterClasses
+} from './data';
+
 import { getTotalPrice, getTicketsCount } from './helpers';
 
 import './BuyTicketsForm.scss';
-import { VisitorType } from 'src/store/Tickets/types';
 
 const BuyTicketsFormContainer: FC = (): ReactElement => {
+  const { t } = useTranslation('translation', { keyPrefix: 'buy_tickets' });
+
   const visitorData: VisitorType = JSON.parse(
     JSON.stringify(useSelector(selectTicket))
   );
 
   const dispatch = useDispatch();
-
-  const btnNames = {
-    basic: { minus: 'basic-minus', plus: 'basic-plus' },
-    senior: { minus: 'senior-minus', plus: 'senior-plus' }
-  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -75,7 +83,17 @@ const BuyTicketsFormContainer: FC = (): ReactElement => {
 
   return (
     <TicketsContext.Provider value={{ btnNames, handleChange, handleClick }}>
-      <BuyTicketsForm handleSubmit={handleSubmit} />
+      <BuyTicketsForm
+        ticketHeadings={ticketHeadings.map(({ translationKey, type }) => {
+          return { heading: `${t(translationKey)}+`, type };
+        })}
+        heading={t('amount')}
+        countTicketsClasses={countTicketsClasses}
+        ticketCounterClasses={ticketCounterClasses}
+        ticketBtnLabelClasses={ticketBtnLabelClasses}
+        isPriceWrapper={true}
+        handleSubmit={handleSubmit}
+      />
     </TicketsContext.Provider>
   );
 };

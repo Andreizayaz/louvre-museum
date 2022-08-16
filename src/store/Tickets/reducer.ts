@@ -11,7 +11,12 @@ const initialState: initialStateType = {
     ticketType: '',
     basicTicketCount: 0,
     seniorTicketCount: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    dateVisit: '',
+    timeVisit: '',
+    name: '',
+    mail: '',
+    phone: ''
   }
 };
 

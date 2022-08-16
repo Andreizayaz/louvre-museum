@@ -105,7 +105,9 @@
       "basic": "Di base",
       "senior": "Anziano",
       "overview": "Panoramica",
-      "book": "Prenotare"
+      "book": "Prenotare",
+      "min_alert": "Il conteggio dei biglietti non può essere negativo",
+      "max_alert": "Il conteggio dei biglietti non può essere superiore a "
     }
   },
 

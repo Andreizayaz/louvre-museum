@@ -35,6 +35,8 @@ export const PERMANENT_EXHIBITION = 'Permanent exhibition';
 export const TEMPORARY_EXHIBITION = 'Temporary exhibition';
 export const COMBINED_ADMISSION = 'Combined Admission';
 
+export const TICKET_TYPE = 'ticketType';
+
 export const BASIC_TICKET_TYPE = 'basic';
 export const SENIOR_TICKET_TYPE = 'senior';
 
@@ -59,3 +61,7 @@ export const MAX_TICKETS_COUNT = 15;
 export const TICKET_TYPE_RADIO_NAME = 'ticketType';
 export const DATE_TYPE = 'date';
 export const TIME_TYPE = 'time';
+
+/* Colors */
+export const ACTIVE_BORDER_COLOR = '#9d8665';
+export const COMMON_BORDER_COLOR = '#030303';

@@ -1,4 +1,8 @@
-import { BASIC_TICKET_TYPE, SENIOR_TICKET_TYPE } from 'src/constants';
+import {
+  BASIC_TICKET_TYPE,
+  MAX_TICKETS_COUNT,
+  SENIOR_TICKET_TYPE
+} from 'src/constants';
 import {
   btnNamesType,
   namesContent
@@ -32,3 +36,9 @@ export const getTicketsCount = (
       return 0;
   }
 };
+
+export const isMinAlert = (countTickets: number): boolean =>
+  countTickets === 0 ? true : false;
+
+export const isMaxAlert = (countTickets: number): boolean =>
+  countTickets === MAX_TICKETS_COUNT ? true : false;

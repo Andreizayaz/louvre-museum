@@ -105,7 +105,9 @@
       "basic": "Básico",
       "senior": "Sénior",
       "overview": "Visión general",
-      "book": "Libro"
+      "book": "Libro",
+      "min_alert": "El conteo de boletos no puede ser negativo",
+      "max_alert": "El conteo de boletos no puede ser más de "
     }
   },
 

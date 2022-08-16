@@ -105,7 +105,9 @@
       "basic": "基本的",
       "senior": "高級的",
       "overview": "概述",
-      "book": "書"
+      "book": "書",
+      "min_alert": "票數不能超過",
+      "max_alert": "票數不能超過 "
     }
   },
 

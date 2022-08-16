@@ -8,7 +8,11 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 import { selectTicket, setTicketInfo, VisitorType } from 'src/store/Tickets';
-import { ACTIVE_BORDER_COLOR, COMMON_BORDER_COLOR } from 'src/constants';
+import {
+  ACTIVE_BORDER_COLOR,
+  COMMON_BORDER_COLOR,
+  REB_BORDER_COLOR
+} from 'src/constants';
 
 import { OverlayInput } from '../overlayInput';
 import { ValidateError } from '../validateError';
@@ -57,9 +61,14 @@ const PickDate: FC<DatePickerPropsTypes> = ({
       return;
     }
 
+    if (isValidateError) {
+      setBorderColor(REB_BORDER_COLOR);
+      return;
+    }
+
     setBorderColor(COMMON_BORDER_COLOR);
     !visitorInfo.dateVisit.trim().length && setIsValidateError(true);
-  }, [isOpen]);
+  }, [isOpen, isValidateError]);
 
   return (
     <ClickAwayListener onClickAway={closeDatePicker}>
@@ -90,7 +99,9 @@ const PickDate: FC<DatePickerPropsTypes> = ({
             minDate={new Date()}
           />
         </LocalizationProvider>
-        {isValidateError && <ValidateError errorText={'error'} />}
+        {isValidateError && (
+          <ValidateError errorText={"date field can't be empty"} />
+        )}
       </div>
     </ClickAwayListener>
   );

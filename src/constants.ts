@@ -65,3 +65,14 @@ export const TIME_TYPE = 'time';
 /* Colors */
 export const ACTIVE_BORDER_COLOR = '#9d8665';
 export const COMMON_BORDER_COLOR = '#030303';
+export const REB_BORDER_COLOR = '#710707';
+
+/* Form input names */
+export const NAME = 'name';
+export const MAIL = 'mail';
+export const PHONE = 'phone';
+
+export const NAME_MATCH = /^([^0-9]*)$/;
+export const EMAIL_MATCH = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
+export const PHONE_MATCH =
+  /^[+]?[(]?[0-9 ]{3}[)]?[-\s.]?[0-9 ]{3}[-\s.]?[0-9 ]{4,6}$/;

@@ -1,5 +1,7 @@
 export {
   getVisitDate,
   getVisitTime,
-  getTicketsCountHeading
+  getTicketsCountHeading,
+  validateInput,
+  normalizePhoneNumber
 } from './functions';

@@ -25,7 +25,7 @@ export const FormFields: FC<formFieldsPropsTypes> = ({
   dateAndTimeData,
   dataForSelect
 }): ReactElement => (
-  <form className='ticket-form'>
+  <div className='ticket-form'>
     <div className='ticket-form__date-and-time'>
       {dateAndTimeData.map(({ type, placeholder }, index) => {
         if (type === DATE_TYPE) {
@@ -60,5 +60,5 @@ export const FormFields: FC<formFieldsPropsTypes> = ({
     ))}
     <SelectOptions dataForSelect={dataForSelect} />
     <EntryTicket />
-  </form>
+  </div>
 );

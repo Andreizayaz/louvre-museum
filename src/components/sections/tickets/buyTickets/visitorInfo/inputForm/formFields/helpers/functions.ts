@@ -1,4 +1,7 @@
-import { ticketsHeadingsTypes } from 'src/components/common/countTickets/types';
+import parsePhoneNumberFromString, {
+  isValidPhoneNumber
+} from 'libphonenumber-js';
+
 import {
   TEMPORARY_EXHIBITION,
   PERMANENT_EXHIBITION,
@@ -10,10 +13,17 @@ import {
   COMBINED_BASIC,
   COMBINED_SENIOR,
   BASIC_TICKET_TYPE,
-  SENIOR_TICKET_TYPE
+  SENIOR_TICKET_TYPE,
+  NAME,
+  MAIL,
+  PHONE,
+  EMAIL_MATCH,
+  NAME_MATCH
 } from 'src/constants';
 
-import { totalPriceObjectType } from './types';
+import { ticketsHeadingsTypes } from 'src/components/common/countTickets/types';
+
+import { totalPriceObjectType, errorObjectType } from './types';
 
 const getZero = (n: number): string => (n < 10 ? `0${n}` : `${n}`);
 
@@ -82,4 +92,54 @@ export const getTicketsCountHeading = (
     heading: '',
     type: ''
   };
+};
+
+export const validateInput = (name: string, value: string): errorObjectType => {
+  if (!value.trim().length) {
+    return {
+      isError: true,
+      errorText: `Field '${name}' can't be empty`
+    };
+  }
+
+  if (name === NAME) {
+    if (!value.match(NAME_MATCH)) {
+      return {
+        isError: true,
+        errorText: `Field '${name}' can't contain numbers`
+      };
+    }
+  }
+
+  if (name === MAIL) {
+    if (!value.match(EMAIL_MATCH)) {
+      return {
+        isError: true,
+        errorText: `Field '${name}' doesn't match email format`
+      };
+    }
+  }
+
+  if (name === PHONE) {
+    if (!isValidPhoneNumber(value)) {
+      return {
+        isError: true,
+        errorText: `Field '${name}' doesn't match phone number format`
+      };
+    }
+  }
+
+  return {
+    isError: false,
+    errorText: ''
+  };
+};
+
+export const normalizePhoneNumber = (value: string): string => {
+  const phoneNumber = parsePhoneNumberFromString(value);
+  if (!phoneNumber) {
+    return value;
+  }
+
+  return phoneNumber.formatInternational();
 };

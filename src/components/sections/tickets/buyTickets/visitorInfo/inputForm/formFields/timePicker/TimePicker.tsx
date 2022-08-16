@@ -8,7 +8,11 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 import { selectTicket, setTicketInfo, VisitorType } from 'src/store/Tickets';
-import { ACTIVE_BORDER_COLOR, COMMON_BORDER_COLOR } from 'src/constants';
+import {
+  ACTIVE_BORDER_COLOR,
+  COMMON_BORDER_COLOR,
+  REB_BORDER_COLOR
+} from 'src/constants';
 
 import { OverlayInput } from '../overlayInput';
 import { ValidateError } from '../validateError';
@@ -52,9 +56,14 @@ const pickTime: FC<TimePickerPropsTypes> = ({
       return;
     }
 
+    if (isValidateError) {
+      setBorderColor(REB_BORDER_COLOR);
+      return;
+    }
+
     setBorderColor(COMMON_BORDER_COLOR);
     !visitorInfo.timeVisit.trim().length && setIsValidateError(true);
-  }, [isOpen]);
+  }, [isOpen, isValidateError]);
 
   return (
     <ClickAwayListener onClickAway={closeTimePicker}>
@@ -79,9 +88,15 @@ const pickTime: FC<TimePickerPropsTypes> = ({
             }}
             renderInput={(params) => <TextField {...params} />}
             open={isOpen}
+            ampm={false}
+            ampmInClock={false}
+            minTime={new Date(0, 0, 0, 8)}
+            maxTime={new Date(0, 0, 0, 22, 0)}
           />
         </LocalizationProvider>
-        {isValidateError && <ValidateError errorText={'error'} />}
+        {isValidateError && (
+          <ValidateError errorText={"time field can't be empty"} />
+        )}
       </div>
     </ClickAwayListener>
   );

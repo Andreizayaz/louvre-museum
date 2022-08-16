@@ -8,6 +8,7 @@ import { selectTicket, setTicketInfo, VisitorType } from 'src/store/Tickets';
 import {
   ACTIVE_BORDER_COLOR,
   COMMON_BORDER_COLOR,
+  REB_BORDER_COLOR,
   TICKET_TYPE
 } from 'src/constants';
 
@@ -56,6 +57,11 @@ export const SelectOptions: FC<selectOptionsPropsTypes> = ({
       return;
     }
 
+    if (isValidateError) {
+      setBorderColor(REB_BORDER_COLOR);
+      return;
+    }
+
     setBorderColor(COMMON_BORDER_COLOR);
     !visitorData.ticketType.trim().length && setIsValidateError(true);
   }, [isOpen]);
@@ -84,7 +90,9 @@ export const SelectOptions: FC<selectOptionsPropsTypes> = ({
           menuIsOpen={isOpen}
           onChange={changeHandler}
         />
-        {isValidateError && <ValidateError errorText={'error'} />}
+        {isValidateError && (
+          <ValidateError errorText={"ticket type field can't be empty"} />
+        )}
       </div>
     </ClickAwayListener>
   );

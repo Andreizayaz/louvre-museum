@@ -1,0 +1,8 @@
+@import 'src/scss/abstracts/variables';
+
+.output-form {
+  padding: 25px 30px;
+  min-width: 530px;
+  max-width: 530px;
+  border: 1px solid $black-secondary;
+}

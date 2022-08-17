@@ -1,0 +1,26 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.icon-and-description {
+  @include flex;
+  
+  flex-wrap: nowrap;
+  column-gap: 15px;
+}
+
+.icon-time {
+  height: 15px;
+  width: 15px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.description-time {
+  width: 91%;
+  color: $black-secondary;
+  font-weight: $plain-text-font-weight;
+  font-size: $small-text;
+  line-height: $small-text-line-height;
+  text-align: left;
+  word-break: break-word;
+}

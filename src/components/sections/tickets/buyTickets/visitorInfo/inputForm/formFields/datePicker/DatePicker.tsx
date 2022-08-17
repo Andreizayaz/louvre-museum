@@ -81,7 +81,7 @@ const PickDate: FC<DatePickerPropsTypes> = ({
           overlayClasses={overlayClasses}
           placeholder={
             visitorInfo.dateVisit.trim().length
-              ? visitorInfo.dateVisit
+              ? new Date(visitorInfo.dateVisit).toLocaleDateString()
               : placeholder
           }
           isOpen={isOpen}

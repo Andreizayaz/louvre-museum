@@ -108,6 +108,29 @@
       "book": "Prenotare",
       "min_alert": "Il conteggio dei biglietti non può essere negativo",
       "max_alert": "Il conteggio dei biglietti non può essere superiore a "
+    },
+    "week_days": {
+      "sunday": "domenica",
+      "monday": "lunedì",
+      "tuesday": "martedì",
+      "wednesday": "mercoledì",
+      "thursday": "giovedì",
+      "friday": "venerdì",
+      "saturday": "Sabato"
+    },
+    "months": {
+      "january": "gennaio",
+      "february": "febbraio",
+      "march": "marzo",
+      "april": "aprile",
+      "may": "Maggio",
+      "june": "giugno",
+      "july": "july",
+      "august": "agosto",
+      "september": "settembre",
+      "october": "ottobre",
+      "november": "novembre",
+      "december": "dicembre"
     }
   },
 

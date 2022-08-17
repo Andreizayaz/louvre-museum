@@ -18,8 +18,7 @@ import {
 import './EntryTicket.scss';
 
 const EntryTicketContainer: FC = (): ReactElement => {
-  const { basicTicketCount, seniorTicketCount, ticketType } =
-    useSelector(selectTicket);
+  const { ticketType } = useSelector(selectTicket);
 
   const [t1] = useTranslation('translation', {
     keyPrefix: 'buy_tickets'
@@ -33,13 +32,7 @@ const EntryTicketContainer: FC = (): ReactElement => {
     <EntryTicket
       heading={t2('entry_ticket')}
       ticketHeadings={ticketHeadings.map(({ translationKey, type }) =>
-        getTicketsCountHeading(
-          `${t1(translationKey)}`,
-          type,
-          ticketType,
-          basicTicketCount,
-          seniorTicketCount
-        )
+        getTicketsCountHeading(`${t1(translationKey)}`, type, ticketType)
       )}
       countTicketsClasses={countTicketsClasses}
       ticketCounterClasses={ticketCounterClasses}

@@ -108,6 +108,29 @@
       "book": "Livre",
       "min_alert": "Le nombre de tickets ne peut pas être négatif",
       "max_alert": "Le nombre de billets ne peut pas dépasser "
+    },
+    "week_days": {
+      "sunday": "dimanche",
+      "monday": "Lundi",
+      "tuesday": "mardi",
+      "wednesday": "mercredi",
+      "thursday": "jeudi",
+      "friday": "Vendredi",
+      "saturday": "samedi"
+    },
+    "months": {
+      "january": "janvier",
+      "february": "février",
+      "march": "Mars",
+      "april": "avril",
+      "may": "peut",
+      "june": "juin",
+      "july": "juillet",
+      "august": "août",
+      "september": "septembre",
+      "october": "octobre",
+      "november": "novembre",
+      "december": "décembre"
     }
   },
 

@@ -108,6 +108,29 @@
       "book": "Livro",
       "min_alert": "A contagem de ingressos não pode ser negativa",
       "max_alert": "A contagem de ingressos não pode ser superior a "
+    },
+    "week_days": {
+      "sunday": "Domingo",
+      "monday": "Segunda-feira",
+      "tuesday": "terça",
+      "wednesday": "quarta-feira",
+      "thursday": "quinta-feira",
+      "friday": "Sexta-feira",
+      "saturday": "sábado"
+    },
+    "months": {
+      "january": "janeiro",
+      "february": "fevereiro",
+      "march": "março",
+      "april": "abril",
+      "may": "poderia",
+      "june": "Junho",
+      "july": "Julho",
+      "august": "agosto",
+      "september": "setembro",
+      "october": "Outubro",
+      "november": "novembro",
+      "december": "dezembro"
     }
   },
 

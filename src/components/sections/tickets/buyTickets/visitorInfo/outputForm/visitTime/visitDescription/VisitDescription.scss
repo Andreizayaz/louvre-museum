@@ -1,0 +1,31 @@
+@import 'src/scss/abstracts/variables';
+
+.visit-description {
+  width: 45%;
+  font-family: Roboto, Arial, sans-serif;
+
+  &__heading {
+    color: #272727;
+    font-weight: $medium-font-weight;
+    font-size: $section-subheading-font-size;
+    line-height: $section-text-line-height;
+    text-align: left;
+  }
+
+  &__subheading {
+    margin-top: 2px;
+    margin-bottom: 7px;
+    color: #740c11;
+    font-weight: $medium-font-weight;
+    font-size: $section-text-font-size;
+    line-height: $small-line-height;
+    opacity: 0.9;
+  }
+
+  &__time-and-type {
+    display: flex;
+    flex-direction: column;
+    column-gap: 5px;
+    row-gap: 10px;
+  }
+}

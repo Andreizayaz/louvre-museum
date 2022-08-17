@@ -23,16 +23,20 @@ import {
 
 import { ticketsHeadingsTypes } from 'src/components/common/countTickets/types';
 
-import { totalPriceObjectType, errorObjectType } from './types';
+import {
+  totalPriceObjectType,
+  errorObjectType,
+  pricePerCategoryType
+} from './types';
 
 const getZero = (n: number): string => (n < 10 ? `0${n}` : `${n}`);
 
-export const getVisitDate = (date: Date): string => date.toLocaleDateString();
+export const getVisitDate = (date: Date): string => date.toString();
 
 export const getVisitTime = (date: Date): string =>
   `${getZero(date.getHours())} : ${getZero(date.getMinutes())}`;
 
-const getTotalPriceByCategories = (
+export const getTotalPriceByCategories = (
   ticketType: string,
   basicTicketsCount: number,
   seniorTicketsCount: number
@@ -61,29 +65,48 @@ const getTotalPriceByCategories = (
   }
 };
 
+const getPricePerCategory = (ticketType: string): pricePerCategoryType => {
+  switch (ticketType) {
+    case TEMPORARY_EXHIBITION:
+      return {
+        basicPrice: TEMPORARY_BASIC,
+        seniorPrice: TEMPORARY_SENIOR
+      };
+    case PERMANENT_EXHIBITION:
+      return {
+        basicPrice: PERMANENT_BASIC,
+        seniorPrice: PERMANENT_SENIOR
+      };
+    case COMBINED_ADMISSION:
+      return {
+        basicPrice: COMBINED_BASIC,
+        seniorPrice: COMBINED_SENIOR
+      };
+    default:
+      return {
+        basicPrice: 0,
+        seniorPrice: 0
+      };
+  }
+};
+
 export const getTicketsCountHeading = (
   heading: string,
   type: string,
-  ticketType: string,
-  basicTicketsCount: number,
-  seniorTicketsCount: number
+  ticketType: string
 ): ticketsHeadingsTypes => {
-  const { basicTotalPrice, seniorTotalPrice } = getTotalPriceByCategories(
-    ticketType,
-    basicTicketsCount,
-    seniorTicketsCount
-  );
+  const { basicPrice, seniorPrice } = getPricePerCategory(ticketType);
 
   if (type === BASIC_TICKET_TYPE) {
     return {
-      heading: `${heading}+ (${basicTotalPrice} \u20AC)`,
+      heading: `${heading}+ (${basicPrice} \u20AC)`,
       type
     };
   }
 
   if (type === SENIOR_TICKET_TYPE) {
     return {
-      heading: `${heading}+ (${seniorTotalPrice} \u20AC)`,
+      heading: `${heading}+ (${seniorPrice} \u20AC)`,
       type
     };
   }

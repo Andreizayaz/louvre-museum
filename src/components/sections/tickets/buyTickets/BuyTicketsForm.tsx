@@ -20,6 +20,8 @@ type BuyTicketsFormPropsTypes = {
   ticketCounterClasses: TicketCounterClassesTypes;
   ticketBtnLabelClasses: ticketBtnLabelClassesTypes;
   isPriceWrapper: boolean;
+  isDisabledBuyBtn: boolean;
+  isVisibleVisitorInfo: boolean;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
 };
 
@@ -30,6 +32,8 @@ export const BuyTicketsForm: FC<BuyTicketsFormPropsTypes> = ({
   ticketCounterClasses,
   ticketBtnLabelClasses,
   isPriceWrapper,
+  isDisabledBuyBtn,
+  isVisibleVisitorInfo,
   handleSubmit
 }): ReactElement => (
   <div className='buy-tickets'>
@@ -42,8 +46,9 @@ export const BuyTicketsForm: FC<BuyTicketsFormPropsTypes> = ({
         ticketCounterClasses={ticketCounterClasses}
         ticketBtnLabelClasses={ticketBtnLabelClasses}
         isPriceWrapper={isPriceWrapper}
+        isDisabledBuyBtn={isDisabledBuyBtn}
       />
-      <VisitorInfo />
+      {isVisibleVisitorInfo && <VisitorInfo />}
     </form>
   </div>
 );

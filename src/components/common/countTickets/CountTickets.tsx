@@ -14,6 +14,7 @@ type CountTicketsPropsTypes = {
   ticketBtnLabelClasses: ticketBtnLabelClassesTypes;
   heading: string;
   isPriceWrapper?: boolean;
+  isDisabledBuyBtn?: boolean;
   total: string;
   totalPrice: number;
   btnText: string;
@@ -34,6 +35,7 @@ export const CountTickets: FC<CountTicketsPropsTypes> = ({
   ticketBtnLabelClasses,
   heading,
   isPriceWrapper = false,
+  isDisabledBuyBtn = true,
   total,
   totalPrice,
   btnText
@@ -61,7 +63,9 @@ export const CountTickets: FC<CountTicketsPropsTypes> = ({
           {total} &euro; {totalPrice}
         </h4>
         <div className={btnWrapper}>
-          <button className={buyBtn}>{btnText}</button>
+          <button className={buyBtn} disabled={isDisabledBuyBtn}>
+            {btnText}
+          </button>
         </div>
       </div>
     )}

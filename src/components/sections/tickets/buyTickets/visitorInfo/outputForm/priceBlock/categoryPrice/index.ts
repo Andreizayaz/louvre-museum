@@ -1,0 +1,1 @@
+export { CategoryPrice } from './CategoryPrice';

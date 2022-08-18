@@ -104,6 +104,7 @@
       "entry_ticket": "Eintrittskarte",
       "basic": "Basic",
       "senior": "Senior",
+      "total": "Gesamt",
       "overview": "Überblick",
       "book": "Buch",
       "min_alert": "Die Anzahl der Tickets darf nicht negativ sein",

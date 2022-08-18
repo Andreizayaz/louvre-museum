@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { selectTicket } from 'src/store/Tickets';
 
-import { getTicketsCountHeading } from '../helpers';
+import { getTicketsCountHeading } from '../../../helpers';
 
 import { EntryTicket } from './EntryTicket';
 

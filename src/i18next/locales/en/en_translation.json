@@ -104,6 +104,7 @@
       "entry_ticket": "Entry ticket",
       "basic": "Basic",
       "senior": "Senior",
+      "total": "Total",
       "overview": "Overview",
       "book": "Book",
       "min_alert": "Tickets count can't be negative",

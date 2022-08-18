@@ -21,6 +21,7 @@ type CountTicketsContainerPropsTypes = {
   ticketCounterClasses: TicketCounterClassesTypes;
   ticketBtnLabelClasses: ticketBtnLabelClassesTypes;
   isPriceWrapper?: boolean;
+  isDisabledBuyBtn?: boolean;
 };
 
 const CountTicketsContainer: FC<CountTicketsContainerPropsTypes> = ({
@@ -29,7 +30,8 @@ const CountTicketsContainer: FC<CountTicketsContainerPropsTypes> = ({
   countTicketsClasses,
   ticketCounterClasses,
   ticketBtnLabelClasses,
-  isPriceWrapper
+  isPriceWrapper,
+  isDisabledBuyBtn
 }): ReactElement => {
   const { t } = useTranslation('translation', { keyPrefix: 'buy_tickets' });
   const { btnNames } = useTicketsContext();
@@ -57,6 +59,7 @@ const CountTicketsContainer: FC<CountTicketsContainerPropsTypes> = ({
       totalPrice={totalPrice}
       btnText={t('buy_btn')}
       isPriceWrapper={isPriceWrapper}
+      isDisabledBuyBtn={isDisabledBuyBtn}
     />
   );
 };

@@ -1,0 +1,40 @@
+@import 'src/scss/abstracts/mixins';
+@import 'src/scss/abstracts/variables';
+
+.category-price {
+  @include flex;
+
+  flex-wrap: nowrap;
+  color: $black-secondary;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: $normal-font-weight;
+
+  &__count-and-text {
+    @include flex;
+
+    flex-wrap: nowrap;
+    column-gap: 10px;
+    margin-right: auto;
+  }
+  
+  &__tickets-count {
+    @include flex;
+
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 0 5px;
+    height: 20px;
+    width: 32px;
+    color: #a4a4a3;
+    font-size: $small-text;
+    line-height: $small-text-line-height;
+    background: $black-secondary;
+    border-radius: 3px;
+  }
+
+  &__type-and-per-price,
+  &__total-by-category {
+    font-size: $section-text-font-size;
+    line-height: $small-line-height;
+  }
+}

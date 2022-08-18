@@ -1,1 +1,1 @@
-export { default as OutputForm } from './OutputFormContainer';
+export { OutputForm } from './OutputForm';

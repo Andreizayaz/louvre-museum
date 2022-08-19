@@ -22,6 +22,11 @@ import { getVisitTime } from '../helpers';
 import { overlayClasses, styleTransformProps } from './data';
 
 import './TimePicker.scss';
+import {
+  selectErrorObject,
+  setValidateError,
+  ValidateErrorsTypes
+} from 'src/store/ValidateError';
 
 type TimePickerPropsTypes = { placeholder: string; tabIndexEl: number };
 
@@ -34,8 +39,13 @@ const pickTime: FC<TimePickerPropsTypes> = ({
   const [isValidateError, setIsValidateError] = useState(false);
 
   const dispatch = useDispatch();
+
   const visitorInfo: VisitorType = JSON.parse(
     JSON.stringify(useSelector(selectTicket))
+  );
+
+  const errorObject: ValidateErrorsTypes = JSON.parse(
+    JSON.stringify(useSelector(selectErrorObject))
   );
 
   const toggleTimePicker = () => setIsOpen(!isOpen);
@@ -48,6 +58,11 @@ const pickTime: FC<TimePickerPropsTypes> = ({
   const closeTimePicker = () => {
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    errorObject.timeVisit.isError = isValidateError;
+    dispatch(setValidateError(errorObject));
+  }, [isValidateError]);
 
   useEffect(() => {
     if (isOpen) {

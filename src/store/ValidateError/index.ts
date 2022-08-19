@@ -1,2 +1,3 @@
 export { validateErrorReducer, setValidateError } from './reducer';
-export { selectIsValidateError } from './selector';
+export { selectErrorObject } from './selector';
+export type { ValidateErrorsTypes } from './types';

@@ -20,6 +20,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "animate.css": "^4.1.1",
+    "concurrently": "^7.3.0",
     "husky": "^8.0.1",
     "i18next": "^21.8.8",
     "i18next-browser-languagedetector": "^6.1.4",
@@ -60,6 +61,7 @@
     "lint-fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "format-check": "prettier --check ./**/*.{js,jsx,ts,tsx,css,scss,md,json} --config ./.prettierrc",
     "format-fix": "prettier --write ./**/*.{js,jsx,ts,tsx,css,scss,md,json} --config ./.prettierrc",
+    "fix": "concurrently \"yarn stylelint-fix\" \"yarn lint-fix\" \"yarn format-fix\"",
     "prepare": "husky install"
   },
   "jest": {

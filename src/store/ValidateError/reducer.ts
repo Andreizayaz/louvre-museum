@@ -1,13 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ValidateErrorActionType } from './types';
+import { ValidateErrorsTypes, ValidateErrorActionType } from './types';
+
+import { initialData } from './initialData';
 
 type initialStateType = {
-  isValidateError: boolean;
+  validateErrorsObj: ValidateErrorsTypes;
 };
 
 const initialState: initialStateType = {
-  isValidateError: false
+  validateErrorsObj: initialData
 };
 
 const slice = createSlice({
@@ -15,7 +17,7 @@ const slice = createSlice({
   name: 'validateErrorObj',
   reducers: {
     setValidateError: (state, action: ValidateErrorActionType) => {
-      state.isValidateError = action.payload;
+      state.validateErrorsObj = action.payload;
     }
   }
 });

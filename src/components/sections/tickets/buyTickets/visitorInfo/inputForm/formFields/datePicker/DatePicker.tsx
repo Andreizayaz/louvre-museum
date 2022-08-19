@@ -22,6 +22,11 @@ import { getVisitDate } from '../helpers';
 import { overlayClasses, styleTransformProps } from './data';
 
 import './DatePicker.scss';
+import {
+  selectErrorObject,
+  setValidateError,
+  ValidateErrorsTypes
+} from 'src/store/ValidateError';
 
 type DatePickerPropsTypes = {
   placeholder: string;
@@ -37,8 +42,13 @@ const PickDate: FC<DatePickerPropsTypes> = ({
   const [borderColor, setBorderColor] = useState(COMMON_BORDER_COLOR);
 
   const dispatch = useDispatch();
+
   const visitorInfo: VisitorType = JSON.parse(
     JSON.stringify(useSelector(selectTicket))
+  );
+
+  const errorObject: ValidateErrorsTypes = JSON.parse(
+    JSON.stringify(useSelector(selectErrorObject))
   );
 
   const closeDatePicker = () => {
@@ -53,6 +63,11 @@ const PickDate: FC<DatePickerPropsTypes> = ({
     visitorInfo.dateVisit = getVisitDate(value as Date);
     dispatch(setTicketInfo(visitorInfo));
   };
+
+  useEffect(() => {
+    errorObject.dateVisit.isError = isValidateError;
+    dispatch(setValidateError(errorObject));
+  }, [isValidateError]);
 
   useEffect(() => {
     if (isOpen) {

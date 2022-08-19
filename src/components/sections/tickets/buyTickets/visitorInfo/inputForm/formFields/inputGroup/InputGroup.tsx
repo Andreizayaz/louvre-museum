@@ -1,7 +1,12 @@
-import { FC, ReactElement, useRef, useState } from 'react';
+import { FC, ReactElement, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectTicket, setTicketInfo, VisitorType } from 'src/store/Tickets';
+import {
+  selectErrorObject,
+  setValidateError,
+  ValidateErrorsTypes
+} from 'src/store/ValidateError';
 import {
   ACTIVE_BORDER_COLOR,
   COMMON_BORDER_COLOR,
@@ -38,6 +43,9 @@ export const InputGroup: FC<inputGroupPropsTypes> = ({
   const visitorInfo: VisitorType = JSON.parse(
     JSON.stringify(useSelector(selectTicket))
   );
+  const errorObject: ValidateErrorsTypes = JSON.parse(
+    JSON.stringify(useSelector(selectErrorObject))
+  );
 
   const getBorderColor = () =>
     document.activeElement === inputRef.current
@@ -61,6 +69,11 @@ export const InputGroup: FC<inputGroupPropsTypes> = ({
     visitorInfo[name] = value.trim();
     dispatch(setTicketInfo(visitorInfo));
   };
+
+  useEffect(() => {
+    errorObject[name].isError = errorObj.isError;
+    dispatch(setValidateError(errorObject));
+  }, [errorObj]);
 
   return (
     <div className='input-wrapper'>

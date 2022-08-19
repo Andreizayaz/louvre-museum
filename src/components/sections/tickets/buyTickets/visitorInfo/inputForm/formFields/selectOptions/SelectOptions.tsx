@@ -20,6 +20,11 @@ import { ValidateError } from '../validateError';
 import { dataForSelectType } from '../types';
 
 import './SelectOptions.scss';
+import {
+  selectErrorObject,
+  setValidateError,
+  ValidateErrorsTypes
+} from 'src/store/ValidateError';
 
 type selectOptionsPropsTypes = {
   dataForSelect: dataForSelectType;
@@ -33,8 +38,13 @@ export const SelectOptions: FC<selectOptionsPropsTypes> = ({
   const [isValidateError, setIsValidateError] = useState(false);
 
   const dispatch = useDispatch();
+
   const visitorData: VisitorType = JSON.parse(
     JSON.stringify(useSelector(selectTicket))
+  );
+
+  const errorObject: ValidateErrorsTypes = JSON.parse(
+    JSON.stringify(useSelector(selectErrorObject))
   );
 
   const changeHandler = (data: SingleValue<optionsType>) => {
@@ -49,6 +59,11 @@ export const SelectOptions: FC<selectOptionsPropsTypes> = ({
   };
 
   const awayClickHandler = () => setIsOpen(false);
+
+  useEffect(() => {
+    errorObject.dateVisit.isError = isValidateError;
+    dispatch(setValidateError(errorObject));
+  }, [isValidateError]);
 
   useEffect(() => {
     if (isOpen) {

@@ -1,4 +1,5 @@
 import { RootStateType } from '../index';
+import { ValidateErrorsTypes } from './types';
 
-export const selectIsValidateError = (state: RootStateType): boolean =>
-  state.validateError.isValidateError;
+export const selectErrorObject = (state: RootStateType): ValidateErrorsTypes =>
+  state.validateError.validateErrorsObj;

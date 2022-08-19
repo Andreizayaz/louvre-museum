@@ -68,6 +68,8 @@ export const COMMON_BORDER_COLOR = '#030303';
 export const REB_BORDER_COLOR = '#710707';
 
 /* Form input names */
+export const DATE_VISIT = 'dateVisit';
+export const TIME_VISIT = 'timeVisit';
 export const NAME = 'name';
 export const MAIL = 'mail';
 export const PHONE = 'phone';

@@ -20,7 +20,7 @@ export const Tickets: FC<TicketsPropsTypes> = ({
   manageSwiperState
 }): ReactElement => {
   const { ref: ticketsRef, inView: ticketsIsVisible } = useInView({
-    threshold: 0.3
+    threshold: 0.1
   });
   return (
     <section ref={ticketsRef} id='tickets' className='tickets'>

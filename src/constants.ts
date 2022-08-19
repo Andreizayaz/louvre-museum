@@ -78,3 +78,10 @@ export const NAME_MATCH = /^([^0-9]*)$/;
 export const EMAIL_MATCH = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
 export const PHONE_MATCH =
   /^[+]?[(]?[0-9 ]{3}[)]?[-\s.]?[0-9 ]{3}[-\s.]?[0-9 ]{4,6}$/;
+
+/* Contacts constants */
+
+export const MUSEUM__ADDRESS =
+  'https://www.google.by/maps/place/75001+%D0%9F%D0%B0%D1%80%D0%B8%D0%B6,+%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F/@48.8619643,2.3271879,15z/data=!3m1!4b1!4m5!3m4!1s0x47e66e25d0482b3d:0x1c0b82c6e1d85100!8m2!3d48.8640493!4d2.3310526?hl=ru';
+export const MUSEUM_PHONE = '+33(0) 1 40 20 50 50';
+export const MUSEUM_EMAIL = 'info@louvre.fr';

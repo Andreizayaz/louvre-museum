@@ -1,0 +1,34 @@
+@import 'src/scss/abstracts/variables';
+
+.contacts-section {
+  &__container.container {
+    padding: 75px 10px;
+  }
+}
+
+.contacts-content {
+  &__heading {
+    margin-bottom: 75px;
+    color: $even-section-heading-color;
+    font-family: Forum, serif;
+    font-weight: $section-heading-font-weight;
+    font-size: $section-heading-font-size;
+    line-height: $section-heading-line-height;
+    letter-spacing: $section-heading-letter-spacing;
+    text-transform: uppercase;
+
+    &::after {
+      display: block;
+      margin-top: 25px;
+      content: ' ';
+      border-bottom: 3px solid $heading-line-color;
+    }
+  }
+
+  &-description-and-map {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+}

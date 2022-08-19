@@ -7,5 +7,6 @@ export {
   Video,
   Gallery,
   Tickets,
-  Parallax
+  Parallax,
+  Contacts
 } from './sections';

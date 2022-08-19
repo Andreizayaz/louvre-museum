@@ -5,3 +5,4 @@ export { Video } from './video';
 export { Gallery } from './gallery';
 export { Tickets } from './tickets';
 export { Parallax } from './parallax';
+export { Contacts } from './contacts';

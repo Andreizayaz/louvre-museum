@@ -11,6 +11,13 @@
 }
 
 .tickets-content {
+  opacity: 0;
+  transition: all 1s;
+
+  &_visible {
+    opacity: 1;
+  }
+
   &__heading {
     font-family: Forum, serif;
     @include text(

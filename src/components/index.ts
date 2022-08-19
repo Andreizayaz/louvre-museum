@@ -6,5 +6,6 @@ export {
   PictureExplore,
   Video,
   Gallery,
-  Tickets
+  Tickets,
+  Parallax
 } from './sections';

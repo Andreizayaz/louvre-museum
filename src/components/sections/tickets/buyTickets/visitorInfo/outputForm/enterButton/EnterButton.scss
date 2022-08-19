@@ -1,0 +1,29 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.enter-button {
+  margin-top: 63px;
+  width: 100%;
+}
+
+button.enter-button__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  padding: 11px 0;
+  min-width: 220px;
+  max-width: 220px;
+  color: $white-color;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: $normal-font-weight;
+  font-size: $section-text-font-size;
+  line-height: $button-line-height;
+  background: $indian-red;
+  opacity: 0.9;
+  transition: all 1s;
+
+  &:hover {
+    background-color: $btn-hover-background-color;
+  }
+}

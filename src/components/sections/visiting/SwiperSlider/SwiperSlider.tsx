@@ -78,7 +78,11 @@ const SwiperSlider: FC<SwiperSliderPropsTypes> = ({
         modules={[Pagination, Navigation, Autoplay]}
         grabCursor={true}
         style={{ height: '750px', width: '100%' }}
-        autoplay={{ delay: 1000, disableOnInteraction: false }}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }}
         speed={1500}
       >
         {dataForSlider.map(({ src, text }, index) => (

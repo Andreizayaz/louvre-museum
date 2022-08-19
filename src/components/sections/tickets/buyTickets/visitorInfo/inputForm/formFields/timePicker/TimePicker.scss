@@ -1,0 +1,56 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.time-wrapper {
+  position: relative;
+
+  &:focus {
+    border-color: $even-section-heading-color;
+  }
+
+  &__time-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    @include flex;
+
+    align-items: center;
+    column-gap: 15px;
+    padding: 12px 15px;
+    border: 1px solid $black-secondary;
+    background-color: $white-color;
+  }
+}
+
+.time-overlay {
+  &__icon,
+  &__arrow {
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__icon {
+    height: 15px;
+    width: 15px;
+    background-image: url('../icons/time.svg');
+  }
+
+  &__arrow {
+    height: 17px;
+    width: 17px;
+    background-image: url('../icons/arrow.svg');
+  }
+
+  &__tex {
+    margin-right: auto;
+    color: $black-secondary;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: $normal-font-weight;
+    font-size: $small-text;
+    line-height: $small-text-line-height;
+    text-align: left;
+  }
+}

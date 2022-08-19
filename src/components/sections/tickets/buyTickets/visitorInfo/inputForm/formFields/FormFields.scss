@@ -1,0 +1,86 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.ticket-form {
+  @include flex;
+
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+
+  &__date-and-time {
+    @include flex;
+
+    width: 100%;
+  }
+}
+
+.date-wrapper,
+.time-wrapper {
+  min-height: 45px;
+  width: 47.5%;
+  cursor: pointer;
+}
+
+.input-group {
+  @include flex;
+
+  column-gap: 15px;
+  width: 100%;
+  border: 1px solid #030303;
+  padding: 11px 15px;
+
+  .input,
+  ::placeholder {
+    font-family: Roboto, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #030303;
+    text-align: left;
+    margin-right: auto;
+    width: 90%;
+  }
+}
+
+.input-name-icon,
+.input-mail-icon,
+.input-phone-icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.input-name-icon {
+  height: 15px;
+  width: 13px;
+  background-image: url('./icons/name.svg');
+}
+
+.input-mail-icon {
+  height: 11px;
+  width: 15px;
+  background-image: url('./icons/email.svg');
+}
+
+.input-phone-icon {
+  height: 21px;
+  width: 14px;
+  background-image: url('./icons/tel.svg');
+}
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  max-height: 45px;
+  overflow: hidden;
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0 !important;
+  min-height: 45px;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: none;
+}

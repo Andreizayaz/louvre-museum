@@ -84,7 +84,55 @@
     "basic_18": "Fondamentale 18",
     "senior_65": "Anziano 65",
     "total": "Totale",
-    "buy_btn": "Acquista ora"
+    "buy_btn": "Acquista ora",
+    "pictures": {
+      "Venus_giving": "Venere dona armatura ad Enea",
+      "appearance_angel": "Aspetto dell'angelo Agar",
+      "family": "Alessandro e la famiglia di Dario",
+      "cupid": "Amore e Psiche",
+      "Hercules": "Ercole al bivio"
+    },
+    "booking_tickets": {
+      "booking": "Prenotazione biglietti",
+      "tour_to_louvre": "Visita al Louvre",
+      "date": "Data",
+      "time": "Volta",
+      "name": "Nome",
+      "mail": "E-mail",
+      "phone": "Telefono",
+      "ticket_type": "Tipo di biglietto",
+      "entry_ticket": "Biglietto d'ingresso",
+      "basic": "Di base",
+      "senior": "Anziano",
+      "total": "Totale",
+      "overview": "Panoramica",
+      "book": "Prenotare",
+      "min_alert": "Il conteggio dei biglietti non può essere negativo",
+      "max_alert": "Il conteggio dei biglietti non può essere superiore a "
+    },
+    "week_days": {
+      "sunday": "domenica",
+      "monday": "lunedì",
+      "tuesday": "martedì",
+      "wednesday": "mercoledì",
+      "thursday": "giovedì",
+      "friday": "venerdì",
+      "saturday": "Sabato"
+    },
+    "months": {
+      "january": "gennaio",
+      "february": "febbraio",
+      "march": "marzo",
+      "april": "aprile",
+      "may": "Maggio",
+      "june": "giugno",
+      "july": "july",
+      "august": "agosto",
+      "september": "settembre",
+      "october": "ottobre",
+      "november": "novembre",
+      "december": "dicembre"
+    }
   },
 
   "contacts": {

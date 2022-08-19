@@ -84,7 +84,55 @@
     "basic_18": "Básico 18",
     "senior_65": "Sênior 65",
     "total": "Total",
-    "buy_btn": "Compre Agora"
+    "buy_btn": "Compre Agora",
+    "pictures": {
+      "Venus_giving": "Vênus dando armadura a Enéias",
+      "appearance_angel": "Aparição do anjo Hagar",
+      "family": "Alexandre e a família de Dario",
+      "cupid": "Cupido e Psique",
+      "Hercules": "Hércules na encruzilhada"
+    },
+    "booking_tickets": {
+      "booking": "Reserva de bilhetes",
+      "tour_to_louvre": "Passeio ao Louvre",
+      "date": "Encontro",
+      "time": "Tempo",
+      "name": "Nome",
+      "mail": "E-mail",
+      "phone": "Telefone",
+      "ticket_type": "Tipo de bilhete",
+      "entry_ticket": "Bilhete de entrada",
+      "basic": "Básico",
+      "senior": "Senior",
+      "total": "Total",
+      "overview": "Visão geral",
+      "book": "Livro",
+      "min_alert": "A contagem de ingressos não pode ser negativa",
+      "max_alert": "A contagem de ingressos não pode ser superior a "
+    },
+    "week_days": {
+      "sunday": "Domingo",
+      "monday": "Segunda-feira",
+      "tuesday": "terça",
+      "wednesday": "quarta-feira",
+      "thursday": "quinta-feira",
+      "friday": "Sexta-feira",
+      "saturday": "sábado"
+    },
+    "months": {
+      "january": "janeiro",
+      "february": "fevereiro",
+      "march": "março",
+      "april": "abril",
+      "may": "poderia",
+      "june": "Junho",
+      "july": "Julho",
+      "august": "agosto",
+      "september": "setembro",
+      "october": "Outubro",
+      "november": "novembro",
+      "december": "dezembro"
+    }
   },
 
   "contacts": {

@@ -14,7 +14,7 @@ export const videoData = [
   {
     id: 0,
     hrefYoutube: 'https://youtu.be/zp1BXPX8jcU',
-    iframeSrc: 'https://www.youtube.com/embed/zp1BXPX8jcU',
+    iframeSrc: 'https://www.youtube.com/embed/zp1BXPX8jcU?autoplay=0',
     srcVideo: video_0,
     posterVideo: poster_video_0
   },

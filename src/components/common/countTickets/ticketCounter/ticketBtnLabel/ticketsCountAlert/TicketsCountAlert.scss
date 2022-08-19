@@ -1,0 +1,13 @@
+.alert-text {
+  position: absolute;
+  top: -10px;
+  right: -50%;
+  z-index: 15;
+  padding: 10px;
+  max-width: 150px;
+  color: #9d8665;
+  line-height: 1.1;
+  text-align: center;
+  word-break: break-word;
+  background: lightgray;
+}

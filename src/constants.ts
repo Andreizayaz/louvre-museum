@@ -28,3 +28,53 @@ export const ENTER_KEY = 'Enter';
 export const MAX_PLAYBACK_RATE = 2;
 export const MIN_PLAYBACK_RATE = 0.25;
 export const INCREASE_DECREASE_RATE_STEP = 0.25;
+
+/* Ticket cost */
+// Ticket types
+export const PERMANENT_EXHIBITION = 'Permanent exhibition';
+export const TEMPORARY_EXHIBITION = 'Temporary exhibition';
+export const COMBINED_ADMISSION = 'Combined Admission';
+
+export const TICKET_TYPE = 'ticketType';
+
+export const BASIC_TICKET_TYPE = 'basic';
+export const SENIOR_TICKET_TYPE = 'senior';
+
+// Actions types
+export const BASIC_PLUS = 'basic-plus';
+export const BASIC_MINUS = 'basic-minus';
+export const SENIOR_PLUS = 'senior-plus';
+export const SENIOR_MINUS = 'senior-minus';
+
+// Ticket constants
+export const PERMANENT_BASIC = 20;
+export const TEMPORARY_BASIC = 25;
+export const COMBINED_BASIC = 40;
+
+export const PERMANENT_SENIOR = 10;
+export const TEMPORARY_SENIOR = 12.5;
+export const COMBINED_SENIOR = 20;
+
+export const MAX_TICKETS_COUNT = 15;
+
+// Ticket cost form fields names
+export const TICKET_TYPE_RADIO_NAME = 'ticketType';
+export const DATE_TYPE = 'date';
+export const TIME_TYPE = 'time';
+
+/* Colors */
+export const ACTIVE_BORDER_COLOR = '#9d8665';
+export const COMMON_BORDER_COLOR = '#030303';
+export const REB_BORDER_COLOR = '#710707';
+
+/* Form input names */
+export const DATE_VISIT = 'dateVisit';
+export const TIME_VISIT = 'timeVisit';
+export const NAME = 'name';
+export const MAIL = 'mail';
+export const PHONE = 'phone';
+
+export const NAME_MATCH = /^([^0-9]*)$/;
+export const EMAIL_MATCH = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
+export const PHONE_MATCH =
+  /^[+]?[(]?[0-9 ]{3}[)]?[-\s.]?[0-9 ]{3}[-\s.]?[0-9 ]{4,6}$/;

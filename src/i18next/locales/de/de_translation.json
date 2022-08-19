@@ -84,7 +84,55 @@
     "basic_18": "Basis 18",
     "senior_65": "Senior 65",
     "total": "Gesamt",
-    "buy_btn": "Kaufe jetzt"
+    "buy_btn": "Kaufe jetzt",
+    "pictures": {
+      "Venus_giving": "Venus gibt Aeneas Rüstung",
+      "appearance_angel": "Erscheinung des Engels Hagar",
+      "family": "Alexander und die Familie von Darius",
+      "cupid": "Amor und Psyche",
+      "Hercules": "Herkules an der Kreuzung"
+    },
+    "booking_tickets": {
+      "booking": "Karten buchen",
+      "tour_to_louvre": "Tour zum Louvre",
+      "date": "Datum",
+      "time": "Zeit",
+      "name": "Name",
+      "mail": "Email",
+      "phone": "Telefon",
+      "ticket_type": "Art des Tickets",
+      "entry_ticket": "Eintrittskarte",
+      "basic": "Basic",
+      "senior": "Senior",
+      "total": "Gesamt",
+      "overview": "Überblick",
+      "book": "Buch",
+      "min_alert": "Die Anzahl der Tickets darf nicht negativ sein",
+      "max_alert": "Die Anzahl der Tickets darf nicht höher sein als"
+    },
+    "week_days": {
+      "sunday": "Sonntag",
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "der Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
+      "saturday": "Samstag"
+    },
+    "months": {
+      "january": "Januar",
+      "february": "Februar",
+      "march": "März",
+      "april": "April",
+      "may": "kann",
+      "june": "Juni",
+      "july": "Juli",
+      "august": "August",
+      "september": "September",
+      "october": "Oktober",
+      "november": "November",
+      "december": "Dezember"
+    }
   },
 
   "contacts": {

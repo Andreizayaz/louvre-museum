@@ -84,7 +84,55 @@
     "basic_18": "Базовый 18",
     "senior_65": "Пенсионный 65",
     "total": "Всего",
-    "buy_btn": "Купить"
+    "buy_btn": "Купить",
+    "pictures": {
+      "Venus_giving": "Венера, дарящая Энею доспехи",
+      "appearance_angel": "Явление ангела Агари.",
+      "family": "Александр и семья Дария",
+      "cupid": "Амур и Психея",
+      "Hercules": "Геракл на распутье"
+    },
+    "booking_tickets": {
+      "booking": "Бронирование билетов",
+      "tour_to_louvre": "Экскурсия в Лувр",
+      "date": "Дата",
+      "time": "Время",
+      "name": "Имя",
+      "mail": "E-mail",
+      "phone": "Телефон",
+      "ticket_type": "типп бидета",
+      "entry_ticket": "Входной билет",
+      "basic": "Базовый",
+      "senior": "Пенсионный",
+      "total": "Всего",
+      "overview": "Обзор",
+      "book": "Заказать",
+      "min_alert": "Количество билетов не может быть отрицательным",
+      "max_alert": "Количество билетов не может быть больше "
+    },
+    "week_days": {
+      "sunday": "Воскресенье",
+      "monday": "понедельник",
+      "tuesday": "вторник",
+      "wednesday": "среда",
+      "thursday": "Четверг",
+      "friday": "пятница",
+      "saturday": "суббота"
+    },
+    "months": {
+      "january": "январь",
+      "february": "февраль",
+      "march": "март",
+      "april": "апрель",
+      "may": "май",
+      "june": "июнь",
+      "july": "июль",
+      "august": "август",
+      "september": "сентябрь",
+      "october": "октябрь",
+      "november": "ноябрь",
+      "december": "декабрь"
+    }
   },
 
   "contacts": {

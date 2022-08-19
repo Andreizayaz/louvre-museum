@@ -84,7 +84,55 @@
     "basic_18": "Basic 18",
     "senior_65": "Senior 65",
     "total": "Total",
-    "buy_btn": "Buy Now"
+    "buy_btn": "Buy Now",
+    "pictures": {
+      "Venus_giving": "Venus giving armor to Aeneas",
+      "appearance_angel": "Appearance of the angel Hagar",
+      "family": "Alexander and the family of Darius",
+      "cupid": "Cupid and Psyche",
+      "Hercules": "Hercules at the crossroads"
+    },
+    "booking_tickets": {
+      "booking": "Booking tickets",
+      "tour_to_louvre": "Tour to Louvre",
+      "date": "Date",
+      "time": "Time",
+      "name": "Name",
+      "mail": "E-mail",
+      "phone": "Phone",
+      "ticket_type": "Ticket Type",
+      "entry_ticket": "Entry ticket",
+      "basic": "Basic",
+      "senior": "Senior",
+      "total": "Total",
+      "overview": "Overview",
+      "book": "Book",
+      "min_alert": "Tickets count can't be negative",
+      "max_alert": "Tickets count can't be more than "
+    },
+    "week_days": {
+      "sunday": "sunday",
+      "monday": "monday",
+      "tuesday": "tuesday",
+      "wednesday": "wednesday",
+      "thursday": "thursday",
+      "friday": "friday",
+      "saturday": "saturday"
+    },
+    "months": {
+      "january": "january",
+      "february": "february",
+      "march": "march",
+      "april": "april",
+      "may": "may",
+      "june": "june",
+      "july": "july",
+      "august": "august",
+      "september": "september",
+      "october": "october",
+      "november": "november",
+      "december": "december"
+    }
   },
 
   "contacts": {

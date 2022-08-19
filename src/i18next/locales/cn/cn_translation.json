@@ -84,7 +84,55 @@
     "basic_18": "基本 18",
     "senior_65": "高級 65",
     "total": "全部的",
-    "buy_btn": "立即購買"
+    "buy_btn": "立即購買",
+    "pictures": {
+      "Venus_giving": "維納斯給埃涅阿斯盔甲",
+      "appearance_angel": "天使夏甲的出現",
+      "family": "亞歷山大和大流士家族",
+      "cupid": "丘比特和普賽克",
+      "Hercules": "Hercules at the crossroads"
+    },
+    "booking_tickets": {
+      "booking": "訂票",
+      "tour_to_louvre": "盧浮宮之旅",
+      "date": "日期",
+      "time": "時間",
+      "name": "姓名",
+      "mail": "郵件",
+      "phone": "電話",
+      "ticket_type": "票種",
+      "entry_ticket": "入場券",
+      "basic": "基本的",
+      "senior": "高級的",
+      "total": "全部的",
+      "overview": "概述",
+      "book": "書",
+      "min_alert": "票數不能超過",
+      "max_alert": "票數不能超過 "
+    },
+    "week_days": {
+      "sunday": "星期日",
+      "monday": "週一",
+      "tuesday": "週二",
+      "wednesday": "週三",
+      "thursday": "週四",
+      "friday": "星期五",
+      "saturday": "週六"
+    },
+    "months": {
+      "january": "一月",
+      "february": "二月",
+      "march": "行進",
+      "april": "四月",
+      "may": "可能",
+      "june": "六月",
+      "july": "七月",
+      "august": "八月",
+      "september": "九月",
+      "october": "十月",
+      "november": "十一月",
+      "december": "十二月"
+    }
   },
 
   "contacts": {

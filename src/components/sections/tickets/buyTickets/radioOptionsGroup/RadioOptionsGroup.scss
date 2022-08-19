@@ -1,0 +1,45 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.radio-options {
+  width: 40.9%;
+
+  &__heading {
+    margin-bottom: 40px;
+    @include text(
+      $even-section-text-color,
+      left,
+      $section-main-text-font-size,
+      $form-subheading-font-weight,
+      $section-main-text-line-height
+    );
+  }
+}
+
+.MuiFormGroup-root.css-dmmspl-MuiFormGroup-root {
+  row-gap: 7px;
+}
+
+span.css-vqmohf-MuiButtonBase-root-MuiRadio-root {
+  margin-right: auto;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+span.css-ahj2mt-MuiTypography-root {
+  font-family: Roboto, Arial, sans-serif;
+  @include text(
+    $even-section-text-color,
+    inherit,
+    $section-text-font-size,
+    $form-labels-font-weight,
+    $button-line-height,
+    none
+  );
+}
+
+span.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
+  color: $even-section-text-color;
+}

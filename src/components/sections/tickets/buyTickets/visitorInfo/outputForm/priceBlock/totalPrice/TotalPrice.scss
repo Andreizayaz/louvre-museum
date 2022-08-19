@@ -1,0 +1,22 @@
+@import 'src/scss/abstracts/mixins';
+@import 'src/scss/abstracts/variables';
+
+.total-price {
+  @include flex;
+
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+  color: $black-secondary;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: $large-font-size;
+  line-height: $section-text-line-height;
+
+  &__text {
+    margin-right: auto;
+    font-weight: $normal-font-weight;
+  }
+
+  &__count {
+    font-weight: $medium-font-weight;
+  }
+}

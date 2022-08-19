@@ -1,0 +1,42 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.tickets {
+  background-color: $even-section-background;
+
+  &__container.container {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
+
+.tickets-content {
+  &__heading {
+    font-family: Forum, serif;
+    @include text(
+      $even-section-heading-color,
+      left,
+      $section-heading-font-size,
+      $section-heading-font-weight,
+      $section-heading-line-height,
+      $section-heading-letter-spacing
+    );
+
+    text-transform: uppercase;
+
+    &::after {
+      display: block;
+      margin-top: 25px;
+      margin-bottom: 75px;
+      content: ' ';
+      border-bottom: 3px solid #710707;
+    }
+  }
+
+  &__buy-ticket {
+    @include flex;
+
+    align-items: unset;
+    row-gap: 60px;
+  }
+}

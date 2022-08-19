@@ -84,7 +84,55 @@
     "basic_18": "أساسي 18",
     "senior_65": "65 سنة",
     "total": "المجموع",
-    "buy_btn": "اشتري الآن"
+    "buy_btn": "اشتري الآن",
+    "pictures": {
+      "Venus_giving": "فينوس يعطي درعًا لأينيس",
+      "appearance_angel": "ظهور الملاك هاجر",
+      "family": "الإسكندر وعائلة داريوس",
+      "cupid": "كيوبيد والنفسية",
+      "Hercules": "هرقل عند مفترق طرق"
+    },
+    "booking_tickets": {
+      "booking": "تذاكر الحجز",
+      "tour_to_louvre": "جولة في متحف اللوفر",
+      "date": "تاريخ",
+      "time": "زمن",
+      "name": "اسم",
+      "mail": "بريد",
+      "phone": "هاتف",
+      "ticket_type": "نوع التذكرة",
+      "entry_ticket": "تذكرة دخول",
+      "basic": "أساسي",
+      "senior": "كبير",
+      "total": "المجموع",
+      "overview": "ملخص",
+      "book": "الكتاب",
+      "min_alert": "لا يمكن أن يكون عدد التذاكر سالبًا",
+      "max_alert": "لا يمكن أن يكون عدد التذاكر أكثر من"
+    },
+    "week_days": {
+      "sunday": "يوم الأحد",
+      "monday": "يوم الاثنين",
+      "tuesday": "يوم الثلاثاء",
+      "wednesday": "الأربعاء",
+      "thursday": "الخميس",
+      "friday": "يوم الجمعة",
+      "saturday": "يوم السبت"
+    },
+    "months": {
+      "january": "كانون الثاني",
+      "february": "شهر فبراير",
+      "march": "مارس",
+      "april": "أبريل",
+      "may": "مايو",
+      "june": "يونيو",
+      "july": "تموز",
+      "august": "شهر اغسطس",
+      "september": "شهر سبتمبر",
+      "october": "اكتوبر",
+      "november": "شهر نوفمبر",
+      "december": "ديسمبر"
+    }
   },
 
   "contacts": {

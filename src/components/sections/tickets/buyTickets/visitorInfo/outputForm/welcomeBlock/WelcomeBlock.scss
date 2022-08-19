@@ -1,0 +1,17 @@
+.welcome-block {
+  padding: 20px;
+  font-family: inherit;
+
+  &__heading {
+    margin-bottom: 20px;
+    font-size: 45px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  &__subheading {
+    color: #740c11;
+    font-size: 35px;
+    text-align: center;
+  }
+}

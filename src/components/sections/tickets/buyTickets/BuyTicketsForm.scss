@@ -1,0 +1,139 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.buy-tickets {
+  width: 45.8%;
+
+  &__form {
+    @include flex;
+
+    align-items: unset;
+    row-gap: 215px;
+  }
+}
+
+.count-tickets {
+  display: flex;
+  flex-direction: column;
+  row-gap: 52px;
+  width: 26%;
+  color: $even-section-text-color;
+  font-family: Roboto, Arial, sans-serif;
+
+  &__total {
+    @include text(
+      inherit,
+      right,
+      $section-main-text-font-size,
+      $form-subheading-font-weight,
+      $section-main-text-line-height
+    );
+  }
+
+  &__price-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 55px;
+  }
+}
+
+.amount {
+  width: 86%;
+  margin-left: auto;
+
+  &__heading {
+    margin-bottom: 25px;
+    @include text(
+      inherit,
+      right,
+      $section-main-text-font-size,
+      $form-subheading-font-weight,
+      $section-main-text-line-height
+    );
+  }
+}
+
+.buy-btn {
+  display: block;
+  width: 100%;
+  min-width: 175px;
+  padding: 15px 0;
+  font-family: inherit;
+  @include text(
+    $odd-section-text-color,
+    center,
+    $button-font-size,
+    $btn-text-font-weight,
+    $button-line-height,
+    $button-letter-spacing
+  );
+
+  background: $odd-section-btn-color;
+  border-radius: 2px;
+  transition: all 1s;
+
+  &:hover {
+    color: $odd-section-text-color;
+    background: $btn-hover-background-color;
+  }
+}
+
+.ticket-counter {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  &:last-child {
+    margin-top: 10px;
+  }
+
+  &__heading {
+    @include text(
+      $even-section-text-color,
+      left,
+      $section-text-font-size,
+      $form-labels-font-weight,
+      $small-line-height
+    );
+  }
+}
+
+.ticket-btn-label {
+  @include flex;
+
+  column-gap: 30px;
+  padding: 3px 6px;
+  border: 3px solid $odd-section-btn-color;
+
+  &__btn {
+    height: 38px;
+    width: 19px;
+  }
+}
+
+p.ticket-btn-label__text {
+  @include text(
+    inherit,
+    center,
+    $section-text-font-size,
+    $form-labels-font-weight,
+    $small-line-height
+  );
+}
+
+.btn {
+  &_minus,
+  &_plus {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &_minus {
+    background-image: url('./icons/01_minus_sign.svg');
+  }
+
+  &_plus {
+    background-image: url('./icons/02_plus_sign.svg');
+  }
+}

@@ -11,7 +11,8 @@ import {
   PictureExplore,
   Video,
   Gallery,
-  Tickets
+  Tickets,
+  Parallax
 } from './components';
 
 import { selectCurrentLanguage } from './store/Language';
@@ -37,6 +38,7 @@ const App = (): ReactElement => {
         <Video />
         <Gallery />
         <Tickets />
+        <Parallax />
       </Main>
     </>
   );

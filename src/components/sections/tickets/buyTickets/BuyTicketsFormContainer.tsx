@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { selectTicket, setTicketInfo } from 'src/store/Tickets';
+import { setIsVisitorVisible } from 'src/store/VisitorVisible';
+import { selectDisableBuyBtn } from 'src/store/DisabledBuyBtn';
+import { setIsDisabledBuyBtn } from 'src/store/DisabledBuyBtn/reducer';
+import { VisitorType } from 'src/store/Tickets';
 
 import {
   BASIC_MINUS,
@@ -10,14 +14,6 @@ import {
   SENIOR_MINUS,
   SENIOR_PLUS
 } from 'src/constants';
-
-import {
-  selectIsVisitorVisible,
-  setIsVisitorVisible
-} from 'src/store/VisitorVisible';
-import { selectDisableBuyBtn } from 'src/store/DisabledBuyBtn';
-import { setIsDisabledBuyBtn } from 'src/store/DisabledBuyBtn/reducer';
-import { VisitorType } from 'src/store/Tickets/types';
 
 import { TicketsContext } from './ticketsContext';
 
@@ -47,7 +43,6 @@ const BuyTicketsFormContainer: FC = (): ReactElement => {
   );
 
   const dispatch = useDispatch();
-  const isVisibleVisitorInfo = useSelector(selectIsVisitorVisible);
   const isDisabledBuyBtn = useSelector(selectDisableBuyBtn);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -126,7 +121,6 @@ const BuyTicketsFormContainer: FC = (): ReactElement => {
         ticketCounterClasses={ticketCounterClasses}
         ticketBtnLabelClasses={ticketBtnLabelClasses}
         isPriceWrapper={true}
-        isVisibleVisitorInfo={isVisibleVisitorInfo}
         isDisabledBuyBtn={isDisabledBuyBtn}
         handleSubmit={handleSubmit}
       />

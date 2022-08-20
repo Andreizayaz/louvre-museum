@@ -11,7 +11,6 @@ import {
 } from 'src/components/common/countTickets/types';
 
 import { RadioOptionsGroup } from './radioOptionsGroup';
-import { VisitorInfo } from './visitorInfo';
 
 type BuyTicketsFormPropsTypes = {
   heading: string;
@@ -21,7 +20,6 @@ type BuyTicketsFormPropsTypes = {
   ticketBtnLabelClasses: ticketBtnLabelClassesTypes;
   isPriceWrapper: boolean;
   isDisabledBuyBtn: boolean;
-  isVisibleVisitorInfo: boolean;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
 };
 
@@ -33,7 +31,6 @@ export const BuyTicketsForm: FC<BuyTicketsFormPropsTypes> = ({
   ticketBtnLabelClasses,
   isPriceWrapper,
   isDisabledBuyBtn,
-  isVisibleVisitorInfo,
   handleSubmit
 }): ReactElement => (
   <div className='buy-tickets'>
@@ -48,7 +45,6 @@ export const BuyTicketsForm: FC<BuyTicketsFormPropsTypes> = ({
         isPriceWrapper={isPriceWrapper}
         isDisabledBuyBtn={isDisabledBuyBtn}
       />
-      {isVisibleVisitorInfo && <VisitorInfo />}
     </form>
   </div>
 );

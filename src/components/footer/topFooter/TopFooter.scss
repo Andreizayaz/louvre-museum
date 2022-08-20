@@ -1,0 +1,58 @@
+@import 'src/scss/abstracts/variables';
+
+.top-footer {
+  padding-bottom: 50px;
+  border-bottom: 3px solid $footer-top-border-color;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.logo {
+  margin-bottom: auto;
+  height: 50px;
+  width: 195px;
+  background-image: url('./img/Logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.footer-navbar {
+  margin-left: 145px;
+  width: 34%;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  column-gap: 20px;
+  row-gap: 25px;
+  max-height: 170px;
+}
+
+.footer-link-item {
+  width: 45%;
+
+  &__link {
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: $link-font-weight;
+    font-size: $link-font-size;
+    line-height: $link-line-height;
+    letter-spacing: $link-letter-spacing;
+    color: $main-color;
+    transition: all 1s;
+
+    &:hover {
+      color: $link-active-color;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}

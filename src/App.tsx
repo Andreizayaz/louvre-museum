@@ -19,7 +19,8 @@ import {
   Gallery,
   Tickets,
   Parallax,
-  Contacts
+  Contacts,
+  Footer
 } from 'src/components';
 import { VisitorInfo } from 'src/components/sections/tickets/';
 import { Modal } from 'src/components/common';
@@ -53,6 +54,7 @@ const App = (): ReactElement => {
         <Parallax />
         <Contacts />
       </Main>
+      <Footer />
       <Modal isVisible={isVisibleVisitorInfo} handleClick={closeVisitInfo}>
         <VisitorInfo />
       </Modal>

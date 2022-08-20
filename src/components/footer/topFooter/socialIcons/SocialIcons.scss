@@ -1,0 +1,43 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.social-icons {
+  @include flex;
+
+  column-gap: 25px;
+  margin-top: auto;
+  margin-left: auto;
+  width: 24%;
+}
+
+.social-icon {
+  @include flex;
+
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  border: 1px solid $footer-top-border-color;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 1s;
+
+  &:hover {
+    background-color: $text-hover-color;
+    border-color: $text-hover-color;
+  }
+
+  &__link {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: all 1s;
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}

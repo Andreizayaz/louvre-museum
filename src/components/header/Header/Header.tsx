@@ -3,11 +3,10 @@ import { memo, ReactElement } from 'react';
 import { Navbar } from 'src/components/common';
 import { DropdownMenu } from '../DropdownMenu';
 
-import { ClassesTypes, LanguageType, LinkTypes } from '../types';
+import { ClassesTypes, LanguageType } from '../types';
 
 type HeaderPropsType = {
   classesForNavbar: ClassesTypes;
-  arrayOfLinks: LinkTypes[];
   selectLanguage: (code: string) => void;
   code: string;
   dir: string;
@@ -17,7 +16,6 @@ type HeaderPropsType = {
 const Header = memo(
   ({
     classesForNavbar,
-    arrayOfLinks,
     selectLanguage,
     code,
     dir,
@@ -29,7 +27,7 @@ const Header = memo(
         data-testid='header-container'
       >
         <a className='header__logo' data-testid='header-logo'></a>
-        <Navbar classes={classesForNavbar} arrayOfLinks={arrayOfLinks} />
+        <Navbar classes={classesForNavbar} />
         <DropdownMenu
           clickHandler={(code: string) => selectLanguage(code)}
           languages={languages}

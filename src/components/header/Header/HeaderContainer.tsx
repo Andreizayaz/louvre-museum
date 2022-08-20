@@ -1,6 +1,6 @@
 import { ReactElement, useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
+
 import { changeLanguage } from 'i18next';
 
 import { DEFAULT_LANG, LOCALE_STORAGE_KEY } from 'src/constants';
@@ -17,45 +17,8 @@ import './Header.scss';
 
 const HeaderContainer = (): ReactElement => {
   const { code, dir } = useSelector(selectCurrentLanguage);
-  const { t } = useTranslation('translation', { keyPrefix: 'links' });
 
   const dispatch = useDispatch();
-
-  const arrayOfLinks = [
-    {
-      href: '#virtual-tour',
-      linkText: t('visiting')
-    },
-    {
-      href: '#picture-explore',
-      linkText: t('explore')
-    },
-    {
-      href: '#video',
-      linkText: t('video')
-    },
-    {
-      href: '#gallery',
-      linkText: t('gallery')
-    },
-    {
-      href: '#tickets',
-      linkText: t('tickets')
-    },
-    {
-      href: '#contacts',
-      linkText: t('contacts')
-    }
-  ];
-
-  /* const arrayOfLinks: string[] = [
-    t('visiting'),
-    t('explore'),
-    t('video'),
-    t('gallery'),
-    t('tickets'),
-    t('contacts')
-  ]; */
 
   const selectLanguage = useCallback(
     (code: string = DEFAULT_LANG) => {
@@ -88,7 +51,6 @@ const HeaderContainer = (): ReactElement => {
   return (
     <>
       <Header
-        arrayOfLinks={arrayOfLinks}
         classesForNavbar={classesForNavbar}
         code={code}
         dir={dir}

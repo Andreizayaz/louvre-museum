@@ -25,6 +25,7 @@ import { ValidateError } from '../validateError';
 import { dataForSelectType } from '../types';
 
 import './SelectOptions.scss';
+import { translateSelectedTicketType } from '../../../helpers';
 
 type selectOptionsPropsTypes = {
   dataForSelect: dataForSelectType;
@@ -93,7 +94,7 @@ export const SelectOptions: FC<selectOptionsPropsTypes> = ({
           <div className='select-placeholder__icon'></div>
           <div className='select-placeholder__text'>
             {visitorData.ticketType.trim().length
-              ? visitorData.ticketType
+              ? translateSelectedTicketType(visitorData.ticketType)
               : placeholder}
           </div>
           <div

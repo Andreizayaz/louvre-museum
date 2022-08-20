@@ -13,6 +13,7 @@ import { weekDays, months } from './data';
 import { date_pic, time_pic, check_circle } from './icons';
 
 import './VisitDescription.scss';
+import { translateSelectedTicketType } from '../../../helpers';
 
 const VisitDescriptionContainer: FC = (): ReactElement => {
   const [t1] = useTranslation('translation', {
@@ -54,7 +55,7 @@ const VisitDescriptionContainer: FC = (): ReactElement => {
     },
     {
       icon: check_circle,
-      description: ticketType
+      description: translateSelectedTicketType(ticketType)
     }
   ];
 

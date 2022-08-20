@@ -18,6 +18,7 @@ type CountTicketsPropsTypes = {
   total: string;
   totalPrice: number;
   btnText: string;
+  handleClick: (e: any) => void;
 };
 
 export const CountTickets: FC<CountTicketsPropsTypes> = ({
@@ -38,7 +39,8 @@ export const CountTickets: FC<CountTicketsPropsTypes> = ({
   isDisabledBuyBtn = true,
   total,
   totalPrice,
-  btnText
+  btnText,
+  handleClick
 }): ReactElement => (
   <div className={countTickets}>
     <div className={amount}>
@@ -46,7 +48,7 @@ export const CountTickets: FC<CountTicketsPropsTypes> = ({
       {counterHeadings.map(({ heading, btnNames, ticketsCount }) => (
         <CountTicketsContext.Provider
           key={heading}
-          value={{ heading, btnNames, ticketsCount }}
+          value={{ heading, btnNames, ticketsCount, handleClick }}
         >
           <TicketCounter
             key={heading}

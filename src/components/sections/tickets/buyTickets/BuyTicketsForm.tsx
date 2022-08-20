@@ -5,16 +5,12 @@ import { CountTickets } from 'src/components/common';
 import { TicketCounterClassesTypes } from 'src/components/common/countTickets/ticketCounter/types';
 import { ticketBtnLabelClassesTypes } from 'src/components/common/countTickets/ticketCounter/ticketBtnLabel/types';
 
-import {
-  countTicketsClassesTypes,
-  ticketsHeadingsTypes
-} from 'src/components/common/countTickets/types';
+import { countTicketsClassesTypes } from 'src/components/common/countTickets/types';
 
 import { RadioOptionsGroup } from './radioOptionsGroup';
 
 type BuyTicketsFormPropsTypes = {
   heading: string;
-  ticketHeadings: ticketsHeadingsTypes[];
   countTicketsClasses: countTicketsClassesTypes;
   ticketCounterClasses: TicketCounterClassesTypes;
   ticketBtnLabelClasses: ticketBtnLabelClassesTypes;
@@ -25,7 +21,6 @@ type BuyTicketsFormPropsTypes = {
 
 export const BuyTicketsForm: FC<BuyTicketsFormPropsTypes> = ({
   heading,
-  ticketHeadings,
   countTicketsClasses,
   ticketCounterClasses,
   ticketBtnLabelClasses,
@@ -38,7 +33,6 @@ export const BuyTicketsForm: FC<BuyTicketsFormPropsTypes> = ({
       <RadioOptionsGroup />
       <CountTickets
         heading={heading}
-        ticketHeadings={ticketHeadings}
         countTicketsClasses={countTicketsClasses}
         ticketCounterClasses={ticketCounterClasses}
         ticketBtnLabelClasses={ticketBtnLabelClasses}

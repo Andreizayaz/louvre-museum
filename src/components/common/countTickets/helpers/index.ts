@@ -1,6 +1,6 @@
 export {
   getBtnNames,
-  getTicketsCount,
+  getTicketsCountByCategory,
   isMinAlert,
   isMaxAlert
 } from './functions';

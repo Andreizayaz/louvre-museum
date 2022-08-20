@@ -8,27 +8,17 @@ import { selectDisableBuyBtn } from 'src/store/DisabledBuyBtn';
 import { setIsDisabledBuyBtn } from 'src/store/DisabledBuyBtn/reducer';
 import { VisitorType } from 'src/store/Tickets';
 
-import {
-  BASIC_MINUS,
-  BASIC_PLUS,
-  SENIOR_MINUS,
-  SENIOR_PLUS
-} from 'src/constants';
-
 import { TicketsContext } from './ticketsContext';
 
 import { BuyTicketsForm } from './BuyTicketsForm';
 
-import { ticketHeadings } from './data';
-
 import {
-  btnNames,
   countTicketsClasses,
   ticketBtnLabelClasses,
   ticketCounterClasses
 } from './data';
 
-import { getTotalPrice, getTicketsCount } from './helpers';
+import { getTotalPrice } from './helpers';
 
 import './BuyTicketsForm.scss';
 
@@ -53,33 +43,6 @@ const BuyTicketsFormContainer: FC = (): ReactElement => {
       visitorData.basicTicketCount,
       visitorData.seniorTicketCount
     );
-    dispatch(setTicketInfo(visitorData));
-  };
-
-  const handleClick = (e: any) => {
-    e.preventDefault();
-    const { name } = e.target;
-
-    if (name === BASIC_MINUS || name === BASIC_PLUS) {
-      visitorData.basicTicketCount = getTicketsCount(
-        name as string,
-        visitorData.basicTicketCount
-      );
-    }
-
-    if (name === SENIOR_MINUS || name === SENIOR_PLUS) {
-      visitorData.seniorTicketCount = getTicketsCount(
-        name as string,
-        visitorData.seniorTicketCount
-      );
-    }
-
-    visitorData.totalPrice = getTotalPrice(
-      visitorData.ticketType,
-      visitorData.basicTicketCount,
-      visitorData.seniorTicketCount
-    );
-
     dispatch(setTicketInfo(visitorData));
   };
 
@@ -111,11 +74,8 @@ const BuyTicketsFormContainer: FC = (): ReactElement => {
   }, [basicTicketCount, seniorTicketCount, ticketType]);
 
   return (
-    <TicketsContext.Provider value={{ btnNames, handleChange, handleClick }}>
+    <TicketsContext.Provider value={{ handleChange }}>
       <BuyTicketsForm
-        ticketHeadings={ticketHeadings.map(({ translationKey, type }) => {
-          return { heading: `${t(translationKey)}+`, type };
-        })}
         heading={t('amount')}
         countTicketsClasses={countTicketsClasses}
         ticketCounterClasses={ticketCounterClasses}

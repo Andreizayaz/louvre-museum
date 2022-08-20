@@ -1,15 +1,9 @@
 import { FC, ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-
-import { selectTicket } from 'src/store/Tickets';
-
-import { getTicketsCountHeading } from '../../../helpers';
 
 import { EntryTicket } from './EntryTicket';
 
 import {
-  ticketHeadings,
   countTicketsClasses,
   ticketCounterClasses,
   ticketBtnLabelClasses
@@ -18,22 +12,13 @@ import {
 import './EntryTicket.scss';
 
 const EntryTicketContainer: FC = (): ReactElement => {
-  const { ticketType } = useSelector(selectTicket);
-
-  const [t1] = useTranslation('translation', {
-    keyPrefix: 'buy_tickets'
-  });
-
-  const [t2] = useTranslation('translation', {
+  const { t } = useTranslation('translation', {
     keyPrefix: 'buy_tickets.booking_tickets'
   });
 
   return (
     <EntryTicket
-      heading={t2('entry_ticket')}
-      ticketHeadings={ticketHeadings.map(({ translationKey, type }) =>
-        getTicketsCountHeading(`${t1(translationKey)}`, type, ticketType)
-      )}
+      heading={t('entry_ticket')}
       countTicketsClasses={countTicketsClasses}
       ticketCounterClasses={ticketCounterClasses}
       ticketBtnLabelClasses={ticketBtnLabelClasses}

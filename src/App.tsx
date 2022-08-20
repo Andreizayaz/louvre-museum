@@ -1,7 +1,13 @@
 import { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { selectCurrentLanguage } from 'src/store/Language';
+import {
+  selectIsVisitorVisible,
+  setIsVisitorVisible
+} from 'src/store/VisitorVisible';
 
 import {
   Header,
@@ -14,15 +20,20 @@ import {
   Tickets,
   Parallax,
   Contacts
-} from './components';
-
-import { selectCurrentLanguage } from './store/Language';
+} from 'src/components';
+import { VisitorInfo } from 'src/components/sections/tickets/';
+import { Modal } from 'src/components/common';
 
 import './App.scss';
 
 const App = (): ReactElement => {
   const { dir, code } = useSelector(selectCurrentLanguage);
   const { t } = useTranslation('translation', { keyPrefix: 'titles' });
+
+  const isVisibleVisitorInfo = useSelector(selectIsVisitorVisible);
+
+  const dispatch = useDispatch();
+  const closeVisitInfo = () => dispatch(setIsVisitorVisible(false));
 
   return (
     <>
@@ -42,6 +53,9 @@ const App = (): ReactElement => {
         <Parallax />
         <Contacts />
       </Main>
+      <Modal isVisible={isVisibleVisitorInfo} handleClick={closeVisitInfo}>
+        <VisitorInfo />
+      </Modal>
     </>
   );
 };

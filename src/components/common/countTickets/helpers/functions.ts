@@ -3,10 +3,7 @@ import {
   MAX_TICKETS_COUNT,
   SENIOR_TICKET_TYPE
 } from 'src/constants';
-import {
-  btnNamesType,
-  namesContent
-} from 'src/components/sections/tickets/buyTickets/ticketsContext';
+import { btnNamesType, namesContent } from './types';
 
 export const getBtnNames = (
   btnNames: btnNamesType,
@@ -22,7 +19,7 @@ export const getBtnNames = (
   }
 };
 
-export const getTicketsCount = (
+export const getTicketsCountByCategory = (
   basicCount: number,
   seniorCount: number,
   currentType: string

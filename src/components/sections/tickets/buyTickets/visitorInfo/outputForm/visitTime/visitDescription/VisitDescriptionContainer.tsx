@@ -13,18 +13,35 @@ import { weekDays, months } from './data';
 import { date_pic, time_pic, check_circle } from './icons';
 
 import './VisitDescription.scss';
+import { translateSelectedTicketType } from '../../../helpers';
 
 const VisitDescriptionContainer: FC = (): ReactElement => {
-  const { t } = useTranslation('translation', {
+  const [t1] = useTranslation('translation', {
     keyPrefix: 'buy_tickets.booking_tickets'
   });
+
+  const [t2] = useTranslation('translation', {
+    keyPrefix: 'buy_tickets.week_days'
+  });
+
+  const [t3] = useTranslation('translation', {
+    keyPrefix: 'buy_tickets.months'
+  });
+
+  const weekDaysTranslate = weekDays.map(({ translationKey }) =>
+    t2(`${translationKey}`)
+  );
+
+  const monthsTranslate = months.map(({ translationKey }) =>
+    t3(`${translationKey}`)
+  );
 
   const { dateVisit, timeVisit, ticketType } = useSelector(selectTicket);
 
   const { weekDay, month, date } = getVisitDateRepresentation(
     dateVisit,
-    weekDays,
-    months
+    weekDaysTranslate,
+    monthsTranslate
   );
 
   const timeData = [
@@ -38,14 +55,14 @@ const VisitDescriptionContainer: FC = (): ReactElement => {
     },
     {
       icon: check_circle,
-      description: ticketType
+      description: translateSelectedTicketType(ticketType)
     }
   ];
 
   return (
     <VisitDescription
-      heading={t('overview')}
-      subheading={t('tour_to_louvre')}
+      heading={t1('overview')}
+      subheading={t1('tour_to_louvre')}
       timeData={timeData}
     />
   );

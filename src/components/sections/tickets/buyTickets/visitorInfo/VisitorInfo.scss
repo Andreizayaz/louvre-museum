@@ -2,32 +2,6 @@
 @import 'src/scss/abstracts/mixins';
 
 .visitor-info {
-  position: relative;
-  @include flex;
-
-  margin: 0 auto;
-  padding: 91px 235px;
-  max-width: 1440px;
-  background-color: $even-section-background;
-
-  @media (max-height: 900px) {
-    padding: 30px 235px;
-  }
-
-  &-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 14;
-    @include flex;
-
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(211, 211, 211, 0.7);
-  }
-
   &__content {
     @include flex;
 

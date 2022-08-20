@@ -5,35 +5,27 @@ import { CountTickets } from 'src/components/common';
 import { TicketCounterClassesTypes } from 'src/components/common/countTickets/ticketCounter/types';
 import { ticketBtnLabelClassesTypes } from 'src/components/common/countTickets/ticketCounter/ticketBtnLabel/types';
 
-import {
-  countTicketsClassesTypes,
-  ticketsHeadingsTypes
-} from 'src/components/common/countTickets/types';
+import { countTicketsClassesTypes } from 'src/components/common/countTickets/types';
 
 import { RadioOptionsGroup } from './radioOptionsGroup';
-import { VisitorInfo } from './visitorInfo';
 
 type BuyTicketsFormPropsTypes = {
   heading: string;
-  ticketHeadings: ticketsHeadingsTypes[];
   countTicketsClasses: countTicketsClassesTypes;
   ticketCounterClasses: TicketCounterClassesTypes;
   ticketBtnLabelClasses: ticketBtnLabelClassesTypes;
   isPriceWrapper: boolean;
   isDisabledBuyBtn: boolean;
-  isVisibleVisitorInfo: boolean;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
 };
 
 export const BuyTicketsForm: FC<BuyTicketsFormPropsTypes> = ({
   heading,
-  ticketHeadings,
   countTicketsClasses,
   ticketCounterClasses,
   ticketBtnLabelClasses,
   isPriceWrapper,
   isDisabledBuyBtn,
-  isVisibleVisitorInfo,
   handleSubmit
 }): ReactElement => (
   <div className='buy-tickets'>
@@ -41,14 +33,12 @@ export const BuyTicketsForm: FC<BuyTicketsFormPropsTypes> = ({
       <RadioOptionsGroup />
       <CountTickets
         heading={heading}
-        ticketHeadings={ticketHeadings}
         countTicketsClasses={countTicketsClasses}
         ticketCounterClasses={ticketCounterClasses}
         ticketBtnLabelClasses={ticketBtnLabelClasses}
         isPriceWrapper={isPriceWrapper}
         isDisabledBuyBtn={isDisabledBuyBtn}
       />
-      {isVisibleVisitorInfo && <VisitorInfo />}
     </form>
   </div>
 );

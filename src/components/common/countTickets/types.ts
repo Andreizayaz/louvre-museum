@@ -1,4 +1,4 @@
-import { namesContent } from 'src/components/sections/tickets/buyTickets/ticketsContext';
+import { namesContent } from './countTicketsContext';
 
 export type counterHeadingsType = {
   heading: string;

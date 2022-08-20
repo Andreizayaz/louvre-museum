@@ -1,3 +1,6 @@
+import { t } from 'i18next';
+import 'src/i18next';
+
 import {
   TEMPORARY_EXHIBITION,
   PERMANENT_EXHIBITION,
@@ -95,4 +98,17 @@ export const getTicketsCountHeading = (
     heading: '',
     type: ''
   };
+};
+
+export const translateSelectedTicketType = (ticketType: string): string => {
+  switch (ticketType) {
+    case TEMPORARY_EXHIBITION:
+      return t('buy_tickets.temporary_exhibition');
+    case PERMANENT_EXHIBITION:
+      return t('buy_tickets.permanent_exhibition');
+    case COMBINED_ADMISSION:
+      return t('buy_tickets.combined_admission');
+    default:
+      return ticketType;
+  }
 };

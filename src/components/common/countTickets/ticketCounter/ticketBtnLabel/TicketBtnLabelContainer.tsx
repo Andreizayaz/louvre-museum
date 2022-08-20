@@ -1,7 +1,6 @@
 import { FC, ReactElement, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useTicketsContext } from 'src/components/sections/tickets/buyTickets/ticketsContext';
 import { MAX_TICKETS_COUNT } from 'src/constants';
 
 import { useCountTicketsContext } from '../../countTicketsContext';
@@ -33,7 +32,7 @@ const TicketBtnLabelContainer: FC<TicketBtnLabelContainerPropsTypes> = ({
     btnNames: { minus, plus }
   } = useCountTicketsContext();
 
-  const { handleClick } = useTicketsContext();
+  const { handleClick } = useCountTicketsContext();
 
   useEffect(() => {
     setIsMinAlert(isMinAlert(ticketsCount));

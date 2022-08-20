@@ -1,22 +1,30 @@
 import { FC, ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { selectTicket } from 'src/store/Tickets';
-
-import { useTicketsContext } from 'src/components/sections/tickets/buyTickets/ticketsContext';
-
+import { selectTicket, setTicketInfo, VisitorType } from 'src/store/Tickets';
 import { CountTickets } from './CountTickets';
 
-import { countTicketsClassesTypes, ticketsHeadingsTypes } from './types';
+import { countTicketsClassesTypes } from './types';
 import { TicketCounterClassesTypes } from './ticketCounter/types';
 import { ticketBtnLabelClassesTypes } from './ticketCounter/ticketBtnLabel/types';
 
-import { getBtnNames, getTicketsCount } from './helpers';
+import { getBtnNames, getTicketsCountByCategory } from './helpers';
+
+import { btnNames, ticketHeadings } from './data';
+import {
+  BASIC_MINUS,
+  BASIC_PLUS,
+  SENIOR_MINUS,
+  SENIOR_PLUS
+} from 'src/constants';
+import {
+  getTicketsCount,
+  getTotalPrice
+} from 'src/components/sections/tickets/buyTickets/helpers';
 
 type CountTicketsContainerPropsTypes = {
   heading: string;
-  ticketHeadings: ticketsHeadingsTypes[];
   countTicketsClasses: countTicketsClassesTypes;
   ticketCounterClasses: TicketCounterClassesTypes;
   ticketBtnLabelClasses: ticketBtnLabelClassesTypes;
@@ -26,7 +34,6 @@ type CountTicketsContainerPropsTypes = {
 
 const CountTicketsContainer: FC<CountTicketsContainerPropsTypes> = ({
   heading,
-  ticketHeadings,
   countTicketsClasses,
   ticketCounterClasses,
   ticketBtnLabelClasses,
@@ -34,17 +41,53 @@ const CountTicketsContainer: FC<CountTicketsContainerPropsTypes> = ({
   isDisabledBuyBtn
 }): ReactElement => {
   const { t } = useTranslation('translation', { keyPrefix: 'buy_tickets' });
-  const { btnNames } = useTicketsContext();
   const { basicTicketCount, seniorTicketCount, totalPrice } =
     useSelector(selectTicket);
 
+  const visitorData: VisitorType = JSON.parse(
+    JSON.stringify(useSelector(selectTicket))
+  );
+
+  const counterHeadings = ticketHeadings.map(({ translationKey, type }) => {
+    return { heading: `${t(translationKey)}+`, type };
+  });
+
+  const dispatch = useDispatch();
+
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    const { name } = e.target;
+
+    if (name === BASIC_MINUS || name === BASIC_PLUS) {
+      visitorData.basicTicketCount = getTicketsCount(
+        name as string,
+        visitorData.basicTicketCount
+      );
+    }
+
+    if (name === SENIOR_MINUS || name === SENIOR_PLUS) {
+      visitorData.seniorTicketCount = getTicketsCount(
+        name as string,
+        visitorData.seniorTicketCount
+      );
+    }
+
+    visitorData.totalPrice = getTotalPrice(
+      visitorData.ticketType,
+      visitorData.basicTicketCount,
+      visitorData.seniorTicketCount
+    );
+
+    dispatch(setTicketInfo(visitorData));
+  };
+
   return (
     <CountTickets
-      counterHeadings={ticketHeadings.map(({ heading, type }) => {
+      counterHeadings={counterHeadings.map(({ heading, type }) => {
         return {
           heading: heading,
           btnNames: getBtnNames(btnNames, type),
-          ticketsCount: getTicketsCount(
+          ticketsCount: getTicketsCountByCategory(
             basicTicketCount,
             seniorTicketCount,
             type
@@ -60,6 +103,7 @@ const CountTicketsContainer: FC<CountTicketsContainerPropsTypes> = ({
       btnText={t('buy_btn')}
       isPriceWrapper={isPriceWrapper}
       isDisabledBuyBtn={isDisabledBuyBtn}
+      handleClick={handleClick}
     />
   );
 };

@@ -1,1 +1,5 @@
-export { getTicketsCountHeading, getTotalPriceByCategories } from './functions';
+export {
+  getTicketsCountHeading,
+  getTotalPriceByCategories,
+  translateSelectedTicketType
+} from './functions';

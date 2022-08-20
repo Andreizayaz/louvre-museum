@@ -1,0 +1,9 @@
+@import 'src/scss/abstracts/variables';
+
+.footer {
+  background: $black-secondary;
+
+  &__content {
+    padding-top: 84px;
+  }
+}

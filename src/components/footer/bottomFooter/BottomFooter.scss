@@ -1,0 +1,33 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+.bottom-footer__content {
+  @include flex;
+
+  padding: 50px 0;
+  color: $main-color;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: $link-font-weight;
+  font-size: $link-font-size;
+  line-height: $link-font-size;
+  letter-spacing: $link-letter-spacing;
+}
+
+.author-link {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: $link-font-weight;
+  font-size: $link-font-size;
+  line-height: $link-font-size;
+  letter-spacing: $link-letter-spacing;
+  color: $main-color;
+  transition: all 1s;
+
+  &:hover {
+    color: $link-active-color;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+}

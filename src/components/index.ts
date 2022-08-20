@@ -10,3 +10,4 @@ export {
   Parallax,
   Contacts
 } from './sections';
+export { Footer } from './footer';

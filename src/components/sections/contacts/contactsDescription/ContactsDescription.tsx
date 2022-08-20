@@ -2,14 +2,16 @@ import { FC, ReactElement } from 'react';
 
 import { ContactAddress } from './contactAddress';
 
-import { contactsData } from './contactsData';
+import { contactsTypes } from './types';
 
 type ContactsDescriptionPropsTypes = {
   descriptionHeading: string;
+  contactsData: contactsTypes[];
 };
 
 export const ContactsDescription: FC<ContactsDescriptionPropsTypes> = ({
-  descriptionHeading
+  descriptionHeading,
+  contactsData
 }): ReactElement => (
   <div className='contacts-description'>
     <h3 className='contacts-description__heading'>{descriptionHeading}</h3>

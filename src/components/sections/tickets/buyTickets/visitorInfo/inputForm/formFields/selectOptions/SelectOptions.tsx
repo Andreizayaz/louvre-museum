@@ -4,6 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import Select, { SingleValue } from 'react-select';
 
 import { selectTicket, setTicketInfo, VisitorType } from 'src/store/Tickets';
+import {
+  selectErrorObject,
+  setValidateError,
+  ValidateErrorsTypes
+} from 'src/store/ValidateError';
 
 import {
   ACTIVE_BORDER_COLOR,
@@ -20,11 +25,6 @@ import { ValidateError } from '../validateError';
 import { dataForSelectType } from '../types';
 
 import './SelectOptions.scss';
-import {
-  selectErrorObject,
-  setValidateError,
-  ValidateErrorsTypes
-} from 'src/store/ValidateError';
 
 type selectOptionsPropsTypes = {
   dataForSelect: dataForSelectType;
@@ -48,6 +48,7 @@ export const SelectOptions: FC<selectOptionsPropsTypes> = ({
   );
 
   const changeHandler = (data: SingleValue<optionsType>) => {
+    console.log(data);
     visitorData[TICKET_TYPE] = data?.value as string;
     visitorData.totalPrice = getTotalPrice(
       visitorData.ticketType,

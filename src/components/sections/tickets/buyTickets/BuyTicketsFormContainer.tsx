@@ -11,6 +11,12 @@ import {
   SENIOR_PLUS
 } from 'src/constants';
 
+import {
+  selectIsVisitorVisible,
+  setIsVisitorVisible
+} from 'src/store/VisitorVisible';
+import { selectDisableBuyBtn } from 'src/store/DisabledBuyBtn';
+import { setIsDisabledBuyBtn } from 'src/store/DisabledBuyBtn/reducer';
 import { VisitorType } from 'src/store/Tickets/types';
 
 import { TicketsContext } from './ticketsContext';
@@ -29,12 +35,6 @@ import {
 import { getTotalPrice, getTicketsCount } from './helpers';
 
 import './BuyTicketsForm.scss';
-import {
-  selectIsVisitorVisible,
-  setIsVisitorVisible
-} from 'src/store/VisitorVisible';
-import { selectDisableBuyBtn } from 'src/store/DisabledBuyBtn';
-import { setIsDisabledBuyBtn } from 'src/store/DisabledBuyBtn/reducer';
 
 const BuyTicketsFormContainer: FC = (): ReactElement => {
   const { t } = useTranslation('translation', { keyPrefix: 'buy_tickets' });

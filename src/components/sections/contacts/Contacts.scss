@@ -7,6 +7,13 @@
 }
 
 .contacts-content {
+  transform: scale(0);
+  transition: all 2s;
+
+  &_visible {
+    transform: scale(1);
+  }
+
   &__heading {
     margin-bottom: 75px;
     color: $even-section-heading-color;

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,18 +23,29 @@ import {
   Footer
 } from 'src/components';
 import { VisitorInfo } from 'src/components/sections/tickets/';
-import { Modal } from 'src/components/common';
+import { Modal, BackToTopButton } from 'src/components/common';
 
 import './App.scss';
+import { WINDOW_SCROLL_Y } from './constants';
 
 const App = (): ReactElement => {
   const { dir, code } = useSelector(selectCurrentLanguage);
   const { t } = useTranslation('translation', { keyPrefix: 'titles' });
 
+  const [isBackToTop, setIsBackToTop] = useState(false);
+
   const isVisibleVisitorInfo = useSelector(selectIsVisitorVisible);
 
   const dispatch = useDispatch();
   const closeVisitInfo = () => dispatch(setIsVisitorVisible(false));
+
+  const scrollHandler = () => {
+    window.scrollY >= WINDOW_SCROLL_Y
+      ? setIsBackToTop(true)
+      : setIsBackToTop(false);
+  };
+
+  window.addEventListener('scroll', scrollHandler);
 
   return (
     <>
@@ -55,6 +66,7 @@ const App = (): ReactElement => {
         <Contacts />
       </Main>
       <Footer />
+      {isBackToTop && <BackToTopButton />}
       <Modal isVisible={isVisibleVisitorInfo} handleClick={closeVisitInfo}>
         <VisitorInfo />
       </Modal>

@@ -1,0 +1,23 @@
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  opacity: 0.2;
+  transition: all 1s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url('./img/01_back-to-top-icon.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

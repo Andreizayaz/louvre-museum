@@ -4,6 +4,7 @@ exports[`HeaderContainer render HeaderContainer component to match snapshot 1`] 
 <header
   className="header"
   data-testid="header"
+  id="header"
 >
   <div
     className="container header__container"

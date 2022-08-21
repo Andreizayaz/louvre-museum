@@ -21,7 +21,7 @@ const Header = memo(
     dir,
     languages
   }: HeaderPropsType): ReactElement => (
-    <header className='header' data-testid='header'>
+    <header id='header' className='header' data-testid='header'>
       <div
         className='container header__container'
         data-testid='header-container'

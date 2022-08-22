@@ -1,4 +1,5 @@
-@import '../../../scss/abstracts/mixins';
+@import 'src/scss/abstracts/mixins';
+@import 'src/scss/abstracts/variables';
 
 .options {
   @include flex;
@@ -29,5 +30,18 @@ button.dropdown-btn {
   &:hover {
     background-color: transparent;
     transform: scale(1.1);
+  }
+}
+
+div.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  color: $main-color;
+  background-color: $black-color;
+}
+
+li.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+  transition: all 1s;
+
+  &:hover {
+    background-color: rgba(211, 211, 211, 0.5);
   }
 }

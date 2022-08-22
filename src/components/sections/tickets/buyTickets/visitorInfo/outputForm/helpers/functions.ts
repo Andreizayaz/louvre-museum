@@ -10,11 +10,20 @@ export const getVisitDateRepresentation = (
   weekDays: string[],
   months: string[]
 ): VisitDateRepresentationType => {
+  if (!date.trim().length) {
+    return {
+      weekDay: '',
+      month: '',
+      date: ''
+    };
+  }
   const currentDateVisit = new Date(date);
+
+  console.log(currentDateVisit);
 
   return {
     weekDay: transformToCapitalString(weekDays[currentDateVisit.getDay()]),
     month: transformToCapitalString(months[currentDateVisit.getMonth()]),
-    date: currentDateVisit.getDate()
+    date: currentDateVisit.getDate().toString()
   };
 };

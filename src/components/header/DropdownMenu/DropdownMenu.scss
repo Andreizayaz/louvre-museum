@@ -33,12 +33,14 @@ button.dropdown-btn {
   }
 }
 
-div.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+div.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper,
+div.css-177ic5c {
   color: $main-color;
   background-color: $black-color;
 }
 
-li.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+li.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root,
+li.css-1km1ehz {
   transition: all 1s;
 
   &:hover {

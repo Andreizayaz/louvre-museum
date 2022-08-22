@@ -20,7 +20,8 @@
   row-gap: 7px;
 }
 
-span.css-vqmohf-MuiButtonBase-root-MuiRadio-root {
+span.css-vqmohf-MuiButtonBase-root-MuiRadio-root,
+span.css-1a5icme {
   margin-right: auto;
 
   &:hover {
@@ -28,7 +29,8 @@ span.css-vqmohf-MuiButtonBase-root-MuiRadio-root {
   }
 }
 
-span.css-ahj2mt-MuiTypography-root {
+span.css-ahj2mt-MuiTypography-root,
+span.css-9l3uo3 {
   font-family: Roboto, Arial, sans-serif;
   @include text(
     $even-section-text-color,
@@ -40,6 +42,7 @@ span.css-ahj2mt-MuiTypography-root {
   );
 }
 
-span.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
+span.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked,
+span.css-1a5icme.Mui-checked {
   color: $even-section-text-color;
 }

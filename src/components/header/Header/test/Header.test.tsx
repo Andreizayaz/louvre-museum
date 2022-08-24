@@ -34,11 +34,17 @@ describe('Header', () => {
     );
 
     const logo = screen.getByTestId('header-logo');
-    const navLinks = container.getElementsByClassName('list-item__link link');
-    const selectLangBtn = screen.getByRole('button');
+    const navLinksContainer = screen.getByTestId('nav-links-container');
+    const navLinks = container.getElementsByClassName(
+      'links-list__list-item list-item'
+    );
+    const toggleMenuBtn = screen.getByTestId('toggle-menu-button');
+    const selectLangBtn = screen.getByTestId('dropdown-btn');
 
     expect(logo).toBeInTheDocument();
+    expect(navLinksContainer).toBeInTheDocument();
     expect(navLinks.length).toBe(6);
+    expect(toggleMenuBtn).toBeInTheDocument();
     expect(selectLangBtn).toBeInTheDocument();
   });
 
@@ -68,7 +74,7 @@ describe('Header', () => {
     );
 
     const navLinks = container.getElementsByClassName('list-item__link link');
-    const selectLangBtn = screen.getByRole('button');
+    const selectLangBtn = screen.getByTestId('dropdown-btn');
 
     type ObjectKey = keyof typeof langObject;
 
@@ -111,7 +117,7 @@ describe('Header', () => {
     );
     const links = container.getElementsByClassName('list-item__link link');
 
-    const selectLangBtn = screen.getByRole('button');
+    const selectLangBtn = screen.getByTestId('dropdown-btn');
 
     userEvent.click(selectLangBtn);
 
@@ -144,7 +150,7 @@ describe('Header', () => {
     expect(logo).toHaveClass('header__logo');
 
     expect(navbar).toBeInTheDocument();
-    expect(navbar).toHaveClass('header__navbar navbar');
+    expect(navbar).toHaveClass('navbar');
 
     expect(linksList).toBeInTheDocument();
     expect(linksList).toHaveClass('navbar__links-list links-list');

@@ -1,0 +1,126 @@
+@import 'src/scss/abstracts/mixins';
+@import 'src/scss/abstracts/variables';
+
+.adaptive-navbar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 35px;
+  margin-left: auto;
+  margin-right: 30px;
+  width: 65%;
+
+  @media (max-width: 1024px) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 3;
+    margin: 0;
+    padding-top: 35px;
+    padding-left: 55px;
+    min-height: 585px;
+    width: 29%;
+    min-width: 300px;
+    background-color: $header-background;
+    transform: translateX(-100%);
+    transition: all 1s;
+
+    &_visible {
+      transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  @media (max-width: 420px) {
+    row-gap: 5px;
+  }
+}
+
+.navbar {
+  @media (max-width: 768px) {
+    width: 35%;
+  }
+
+  &__links-list {
+    @include flex;
+  }
+}
+
+.links-list {
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    row-gap: 25px;
+    width: 60%;
+    min-width: 120px;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 150px;
+  }
+
+  &__list-item {
+    min-width: fit-content;
+  }
+}
+
+.list-item {
+  @media (max-width: 1024px) {
+    @include flex;
+
+    column-gap: 25px;
+    width: 100%;
+
+    &::after {
+      display: block;
+      content: ' ';
+      height: 12px;
+      width: 12px;
+      background-image: url('./icons/01_arrow_menu_icon.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 10px 0;
+  }
+}
+
+.link {
+  @include text(
+    $main-color,
+    center,
+    $link-font-size,
+    $link-font-weight,
+    $link-line-height,
+    $link-letter-spacing
+  );
+
+  transition: color 1s;
+  cursor: pointer;
+
+  @media (max-width: 1024px) {
+    font-weight: $link-1024-font-weight;
+    font-size: $link-1024-font-size;
+    line-height: $link-1024-line-height;
+  }
+
+  &:active {
+    color: $link-active-color;
+  }
+
+  &:hover {
+    color: $text-hover-color;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+}

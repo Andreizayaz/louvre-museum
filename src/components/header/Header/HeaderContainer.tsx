@@ -1,4 +1,10 @@
-import { ReactElement, useCallback, useEffect } from 'react';
+import {
+  MouseEvent,
+  ReactElement,
+  useCallback,
+  useEffect,
+  useState
+} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { changeLanguage } from 'i18next';
@@ -11,11 +17,12 @@ import Header from './Header';
 
 import { languages } from '../data';
 
-import { ClassesTypes, LanguageType } from '../types';
+import { LanguageType } from '../types';
 
 import './Header.scss';
 
 const HeaderContainer = (): ReactElement => {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
   const { code, dir } = useSelector(selectCurrentLanguage);
 
   const dispatch = useDispatch();
@@ -35,27 +42,31 @@ const HeaderContainer = (): ReactElement => {
     [code]
   );
 
+  const handleToggleMenu = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    setIsOpenMenu(!isOpenMenu);
+  };
+
+  const closeAdaptiveNavbar = () => {
+    isOpenMenu && setIsOpenMenu(false);
+  };
+
   useEffect(() => {
     if (typeof code !== 'string' || !code.length) {
       selectLanguage();
     }
   }, []);
 
-  const classesForNavbar: ClassesTypes = {
-    navBarClasses: 'header__navbar navbar',
-    listOfLinksClasses: 'navbar__links-list links-list',
-    listItemClasses: 'links-list__list-item list-item',
-    linkClasses: 'list-item__link link'
-  };
-
   return (
     <>
       <Header
-        classesForNavbar={classesForNavbar}
         code={code}
         dir={dir}
-        selectLanguage={selectLanguage}
         languages={languages}
+        isOpenMenu={isOpenMenu}
+        selectLanguage={selectLanguage}
+        handleToggleMenu={handleToggleMenu}
+        closeAdaptiveNavbar={closeAdaptiveNavbar}
       />
     </>
   );

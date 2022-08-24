@@ -1,25 +1,30 @@
-import { memo, ReactElement } from 'react';
+import { memo, MouseEvent, ReactElement } from 'react';
 
-import { Navbar } from 'src/components/common';
 import { DropdownMenu } from '../DropdownMenu';
+import { ToggleMenu } from '../toggleMenu';
+import { AdaptiveNavbar } from './adaptiveNavbar';
 
-import { ClassesTypes, LanguageType } from '../types';
+import { LanguageType } from '../types';
 
 type HeaderPropsType = {
-  classesForNavbar: ClassesTypes;
-  selectLanguage: (code: string) => void;
   code: string;
   dir: string;
   languages: LanguageType[];
+  isOpenMenu: boolean;
+  selectLanguage: (code: string) => void;
+  handleToggleMenu: (e: MouseEvent<HTMLButtonElement>) => void;
+  closeAdaptiveNavbar: () => void;
 };
 
 const Header = memo(
   ({
-    classesForNavbar,
     selectLanguage,
+    handleToggleMenu,
+    closeAdaptiveNavbar,
     code,
     dir,
-    languages
+    languages,
+    isOpenMenu
   }: HeaderPropsType): ReactElement => (
     <header id='header' className='header' data-testid='header'>
       <div
@@ -27,7 +32,14 @@ const Header = memo(
         data-testid='header-container'
       >
         <a className='header__logo' data-testid='header-logo'></a>
-        <Navbar classes={classesForNavbar} />
+        <AdaptiveNavbar
+          isOpenMenu={isOpenMenu}
+          closeAdaptiveNavbar={closeAdaptiveNavbar}
+        />
+        <ToggleMenu
+          isOpenMenu={isOpenMenu}
+          handleToggleMenu={handleToggleMenu}
+        />
         <DropdownMenu
           clickHandler={(code: string) => selectLanguage(code)}
           languages={languages}

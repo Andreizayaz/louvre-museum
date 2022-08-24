@@ -14,76 +14,202 @@ exports[`HeaderContainer render HeaderContainer component to match snapshot 1`] 
       className="header__logo"
       data-testid="header-logo"
     />
-    <nav
-      className="header__navbar navbar"
-      data-testid="navbar"
+    <div
+      className="adaptive-navbar"
+      data-testid="nav-links-container"
     >
-      <ul
-        className="navbar__links-list links-list"
-        data-testid="links-list"
+      <nav
+        className="navbar"
+        data-testid="navbar"
       >
-        <li
-          className="links-list__list-item list-item"
+        <ul
+          className="navbar__links-list links-list"
+          data-testid="links-list"
         >
-          <a
-            className="list-item__link link"
-            href="#virtual-tour"
+          <li
+            className="links-list__list-item list-item"
           >
-            Посещение
-          </a>
-        </li>
-        <li
-          className="links-list__list-item list-item"
+            <a
+              className="list-item__link link"
+              href="#virtual-tour"
+              onClick={[Function]}
+            >
+              Посещение
+            </a>
+          </li>
+          <li
+            className="links-list__list-item list-item"
+          >
+            <a
+              className="list-item__link link"
+              href="#picture-explore"
+              onClick={[Function]}
+            >
+              Обозрение
+            </a>
+          </li>
+          <li
+            className="links-list__list-item list-item"
+          >
+            <a
+              className="list-item__link link"
+              href="#video"
+              onClick={[Function]}
+            >
+              Видео
+            </a>
+          </li>
+          <li
+            className="links-list__list-item list-item"
+          >
+            <a
+              className="list-item__link link"
+              href="#gallery"
+              onClick={[Function]}
+            >
+              Галлерея
+            </a>
+          </li>
+          <li
+            className="links-list__list-item list-item"
+          >
+            <a
+              className="list-item__link link"
+              href="#tickets"
+              onClick={[Function]}
+            >
+              Билеты
+            </a>
+          </li>
+          <li
+            className="links-list__list-item list-item"
+          >
+            <a
+              className="list-item__link link"
+              href="#contacts"
+              onClick={[Function]}
+            >
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        className="pictures-gallery"
+      >
+        <div
+          className="pictures-gallery__item"
+          style={
+            Object {
+              "backgroundImage": "url(01_louvre_main_view.png)",
+            }
+          }
+        />
+        <div
+          className="pictures-gallery__item"
+          style={
+            Object {
+              "backgroundImage": "url(02_louvre_gallery.png)",
+            }
+          }
+        />
+        <div
+          className="pictures-gallery__item"
+          style={
+            Object {
+              "backgroundImage": "url(03_louvre_prospect.png)",
+            }
+          }
+        />
+      </div>
+      <div
+        className="bottom-navbar"
+      >
+        <div
+          className="social-icons"
         >
-          <a
-            className="list-item__link link"
-            href="#picture-explore"
+          <div
+            className="social-icon"
           >
-            Обозрение
-          </a>
-        </li>
-        <li
-          className="links-list__list-item list-item"
-        >
-          <a
-            className="list-item__link link"
-            href="#video"
+            <a
+              className="social-icon__link"
+              href="https://www.youtube.com/user/louvre"
+              style={
+                Object {
+                  "backgroundImage": "url(01_youtube_icon.svg)",
+                }
+              }
+              title="youtube"
+            />
+          </div>
+          <div
+            className="social-icon"
           >
-            Видео
-          </a>
-        </li>
-        <li
-          className="links-list__list-item list-item"
-        >
-          <a
-            className="list-item__link link"
-            href="#gallery"
+            <a
+              className="social-icon__link"
+              href="https://www.instagram.com/museelouvre/"
+              style={
+                Object {
+                  "backgroundImage": "url(02_instagram_icon.svg)",
+                }
+              }
+              title="instagram"
+            />
+          </div>
+          <div
+            className="social-icon"
           >
-            Галлерея
-          </a>
-        </li>
-        <li
-          className="links-list__list-item list-item"
-        >
-          <a
-            className="list-item__link link"
-            href="#tickets"
+            <a
+              className="social-icon__link"
+              href="https://www.facebook.com/museedulouvre"
+              style={
+                Object {
+                  "backgroundImage": "url(03_facebook_icon.svg)",
+                }
+              }
+              title="facebook"
+            />
+          </div>
+          <div
+            className="social-icon"
           >
-            Билеты
-          </a>
-        </li>
-        <li
-          className="links-list__list-item list-item"
-        >
-          <a
-            className="list-item__link link"
-            href="#contacts"
+            <a
+              className="social-icon__link"
+              href="http://twitter.com/museelouvre"
+              style={
+                Object {
+                  "backgroundImage": "url(04_twitter_icon.svg)",
+                }
+              }
+              title="twitter"
+            />
+          </div>
+          <div
+            className="social-icon"
           >
-            Контакты
-          </a>
-        </li>
-      </ul>
-    </nav>
+            <a
+              className="social-icon__link"
+              href="https://www.pinterest.fr/museedulouvre/"
+              style={
+                Object {
+                  "backgroundImage": "url(05_pinterest_icon.svg)",
+                }
+              }
+              title="pinterest"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="toggle-menu toggle-menu_burger"
+    >
+      <button
+        className="toggle-menu__btn"
+        data-testid="toggle-menu-button"
+        onClick={[Function]}
+      />
+    </div>
     <button
       aria-haspopup={true}
       className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root dropdown-btn css-sghohy-MuiButtonBase-root-MuiButton-root"

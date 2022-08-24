@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react';
 
 import { Navbar } from 'src/components/common';
-import { SocialIcons } from './socialIcons';
+import { SocialIcons } from 'src/components/common/socialIcons';
 
 import './TopFooter.scss';
 

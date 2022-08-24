@@ -49,7 +49,6 @@ export const SelectOptions: FC<selectOptionsPropsTypes> = ({
   );
 
   const changeHandler = (data: SingleValue<optionsType>) => {
-    console.log(data);
     visitorData[TICKET_TYPE] = data?.value as string;
     visitorData.totalPrice = getTotalPrice(
       visitorData.ticketType,

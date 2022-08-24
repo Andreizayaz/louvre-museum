@@ -19,8 +19,6 @@ export const getVisitDateRepresentation = (
   }
   const currentDateVisit = new Date(date);
 
-  console.log(currentDateVisit);
-
   return {
     weekDay: transformToCapitalString(weekDays[currentDateVisit.getDay()]),
     month: transformToCapitalString(months[currentDateVisit.getMonth()]),

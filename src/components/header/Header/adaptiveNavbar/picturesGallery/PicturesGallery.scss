@@ -34,6 +34,10 @@
       max-height: 95px;
     }
 
+    @media (max-width: 415px) {
+      min-width: 20px;
+    }
+
     &:first-child {
       min-height: 195px;
       width: 100%;
@@ -43,6 +47,10 @@
         min-width: 95px;
         min-height: 95px;
         max-height: 95px;
+      }
+
+      @media (max-width: 415px) {
+        min-width: 20px;
       }
     }
   }

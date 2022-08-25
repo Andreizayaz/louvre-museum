@@ -14,6 +14,14 @@
 
   &__container {
     overflow: hidden;
+
+    @media (max-width: $tablet-size) {
+      padding-bottom: 40px !important;
+    }
+
+    @media (max-width: $mobile-size) {
+      padding-bottom: 0 !important;
+    }
   }
 
   &__heading {
@@ -35,7 +43,7 @@
       line-height: 60px;
     }
 
-    @media (max-width: $tablet-size) {
+    @media (max-width: $mobile-size) {
       font-size: 28px;
       line-height: 40px;
     }

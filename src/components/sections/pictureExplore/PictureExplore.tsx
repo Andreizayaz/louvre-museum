@@ -34,7 +34,6 @@ export const PictureExplore: FC<PictureExplorePropsTypes> = ({
       ref={pictureExploreRef}
       className='picture-explore'
       id='picture-explore'
-      style={{ display: 'none' }}
     >
       <div
         className={`picture-explore__container container ${

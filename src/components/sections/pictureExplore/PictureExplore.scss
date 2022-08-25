@@ -21,14 +21,66 @@
     padding-top: 75px;
     padding-bottom: 75px;
     transition: all 1s;
+
+    @media (max-width: $laptop-size) {
+      flex-flow: column;
+      justify-content: center;
+      column-gap: 0;
+      row-gap: 62px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    @media (max-width: $tablet-size) {
+      row-gap: 40px;
+      padding-top: 40px;
+      padding-bottom: 36px;
+    }
+
+    @media (max-width: $mobile-size) {
+      padding-bottom: 40px;
+    }
   }
 
   &__picture-content {
     width: 46%;
+
+    @media (max-width: $laptop-size) {
+      width: 100%;
+    }
   }
 
   &__compare-slider {
     min-height: 715px;
     width: 50%;
+
+    @media (max-width: $laptop-size) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      min-height: 700px;
+      width: 73%;
+    }
+
+    @media (max-width: $tablet-size) {
+      min-height: 705px;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      min-height: 400px;
+      width: 100%;
+    }
+
+    @media (max-width: $mobile-size) {
+      min-height: 368px;
+      width: 100%;
+    }
+
+    @media (max-width: 380px) {
+      min-height: 280px;
+      width: 100%;
+    }
   }
 }

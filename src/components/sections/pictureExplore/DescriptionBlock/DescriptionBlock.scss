@@ -12,11 +12,30 @@
     letter-spacing: $section-heading-letter-spacing;
     text-transform: uppercase;
 
+    @media (max-width: $laptop-size) {
+      font-size: 50px;
+      line-height: 75px;
+    }
+
+    @media (max-width: $tablet-size) {
+      font-size: 40px;
+      line-height: 60px;
+    }
+
+    @media (max-width: $mobile-size) {
+      font-size: 28px;
+      line-height: 40px;
+    }
+
     &::after {
       display: block;
       margin-top: 25px;
       content: ' ';
       border-bottom: 3px solid $heading-line-color;
+
+      @media (max-width: $laptop-size) {
+        margin-top: 20px;
+      }
     }
   }
 
@@ -32,6 +51,29 @@
     font-size: $section-text-font-size;
     line-height: $section-text-line-height;
     text-align: left;
+
+    @media (max-width: $laptop-size) {
+      row-gap: 0;
+      margin-top: 60px;
+      font-size: 20px;
+      line-height: 38px;
+    }
+
+    @media (max-width: $tablet-size) {
+      display: none;
+    }
+  }
+}
+
+.picture-description {
+  &__text {
+    width: 100%;
+
+    &:last-child {
+      @media (max-width: $laptop-size) {
+        display: none;
+      }
+    }
   }
 }
 

@@ -6,6 +6,10 @@
   top: 0;
   right: 0;
 
+  @media (max-width: $tablet-size) {
+    position: relative;
+  }
+
   &__controls {
     position: absolute;
     bottom: 0;
@@ -17,6 +21,32 @@
     padding: 40px 74px;
     width: 60%;
     background-color: $header-background;
+
+    @media (max-width: 1300px) {
+      width: 70%;
+    }
+
+    @media (max-width: $laptop-size) {
+      column-gap: 45px;
+      padding-left: 150px;
+      width: 110%;
+    }
+
+    @media (max-width: $tablet-size) {
+      position: relative;
+      column-gap: 5px;
+      margin: 0 auto;
+      padding: 30px;
+      width: 75%;
+    }
+
+    @media (max-width: 600px) {
+      width: 90%;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
 }
 
@@ -34,12 +64,29 @@
     font-size: $small-font-size;
     font-weight: $normal-font-weight;
     line-height: $pagination-line-height;
+
+    @media (max-width: $laptop-size) {
+      font-size: 20px;
+    }
+
+    @media (max-width: $mobile-size) {
+      font-size: 16px;
+      line-height: 40px;
+    }
   }
 
   &__pagination {
     @include flex;
 
     width: 39% !important;
+
+    @media (max-width: $tablet-size) {
+      width: 25% !important;
+    }
+
+    @media (max-width: 600px) {
+      width: 30% !important;
+    }
   }
 
   &__direction {
@@ -56,6 +103,16 @@
     background-color: $square-bullet-background-color;
     cursor: pointer;
     transition: all 1s;
+
+    @media (max-width: $tablet-size) {
+      height: 12px;
+      width: 12px;
+    }
+
+    @media (max-width: $mobile-size) {
+      height: 7px;
+      width: 7px;
+    }
 
     &_active {
       background-color: $welcome-carousel-active-bullet-color;
@@ -75,6 +132,12 @@
     background-size: cover;
     cursor: pointer;
     transition: all 1s;
+
+    @media (max-width: $mobile-size) {
+      width: 20px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
   }
 
   &__prev {

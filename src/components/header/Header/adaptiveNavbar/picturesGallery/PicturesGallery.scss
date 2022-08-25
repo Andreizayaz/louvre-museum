@@ -1,3 +1,5 @@
+@import 'src/scss/abstracts/variables';
+
 .pictures-gallery {
   display: none;
   justify-content: space-between;
@@ -6,7 +8,7 @@
   flex-wrap: wrap;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: $tablet-size) {
     display: flex;
   }
 
@@ -15,7 +17,7 @@
     column-gap: 10px;
   }
 
-  @media (max-width: 420px) {
+  @media (max-width: $mobile-size) {
     column-gap: 5px;
     margin-top: 35px;
     margin-bottom: 20px;
@@ -27,7 +29,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    @media (max-width: 420px) {
+    @media (max-width: $mobile-size) {
       width: 31%;
       min-width: 95px;
       min-height: 95px;
@@ -42,7 +44,7 @@
       min-height: 195px;
       width: 100%;
 
-      @media (max-width: 420px) {
+      @media (max-width: $mobile-size) {
         width: 31%;
         min-width: 95px;
         min-height: 95px;

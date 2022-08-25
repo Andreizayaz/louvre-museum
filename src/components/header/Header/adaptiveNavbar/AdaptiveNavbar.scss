@@ -9,7 +9,7 @@
   margin-right: 30px;
   width: 65%;
 
-  @media (max-width: 1024px) {
+  @media (max-width: $laptop-size) {
     position: absolute;
     top: 100%;
     left: 0;
@@ -29,19 +29,19 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $tablet-size) {
     width: 100%;
     padding-left: 55px;
     padding-right: 55px;
   }
 
-  @media (max-width: 420px) {
+  @media (max-width: $mobile-size) {
     row-gap: 5px;
   }
 }
 
 .navbar {
-  @media (max-width: 768px) {
+  @media (max-width: $tablet-size) {
     width: 35%;
   }
 
@@ -51,14 +51,14 @@
 }
 
 .links-list {
-  @media (max-width: 1024px) {
+  @media (max-width: $laptop-size) {
     flex-direction: column;
     row-gap: 25px;
     width: 60%;
     min-width: 120px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $tablet-size) {
     min-width: 150px;
   }
 
@@ -68,7 +68,7 @@
 }
 
 .list-item {
-  @media (max-width: 1024px) {
+  @media (max-width: $laptop-size) {
     @include flex;
 
     column-gap: 25px;
@@ -105,7 +105,7 @@
   transition: color 1s;
   cursor: pointer;
 
-  @media (max-width: 1024px) {
+  @media (max-width: $laptop-size) {
     font-weight: $link-1024-font-weight;
     font-size: $link-1024-font-size;
     line-height: $link-1024-line-height;

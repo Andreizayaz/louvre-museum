@@ -21,7 +21,11 @@ export const VirtualTour: FC<VirtualTourPropsTypes> = ({
   const { ref, inView } = useInView({ threshold: 0.1 });
 
   return (
-    <section className='virtual-tour' id='virtual-tour'>
+    <section
+      className='virtual-tour'
+      id='virtual-tour'
+      style={{ display: 'none' }}
+    >
       <div className='virtual-tour__container container' ref={ref}>
         <h2 className='virtual-tour__heading'>{sectionHeading}</h2>
         <ul

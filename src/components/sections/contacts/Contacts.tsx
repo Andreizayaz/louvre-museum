@@ -14,7 +14,12 @@ export const Contacts: FC<ContactsPropsTypes> = ({ heading }): ReactElement => {
   });
 
   return (
-    <section ref={contactsRef} id='contacts' className='contacts-section'>
+    <section
+      ref={contactsRef}
+      id='contacts'
+      className='contacts-section'
+      style={{ display: 'none' }}
+    >
       <div className='contacts-section__container container'>
         <div
           className={

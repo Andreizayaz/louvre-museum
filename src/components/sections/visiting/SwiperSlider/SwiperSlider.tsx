@@ -1,4 +1,12 @@
-import { Dispatch, FC, ReactElement, SetStateAction, useRef } from 'react';
+import {
+  Dispatch,
+  FC,
+  ReactElement,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
 
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper as SwiperInstance } from 'swiper';
@@ -6,14 +14,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SwiperControls } from 'src/components/common';
 
-import { SLIDER_GRADIENT } from 'src/constants';
+import { COMMON_SWIPER_HEIGHT } from 'src/constants';
+
+import { DataForSliderType, PaginationOptionsType } from '../types';
+import { getAdapTiveSlideBgSize, getAdapTiveSwiperHeight } from './helpers';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import './SwiperSlider.scss';
-import { DataForSliderType, PaginationOptionsType } from '../types';
 
 type SwiperSliderPropsTypes = {
   dataForSlider: DataForSliderType[];
@@ -30,6 +40,8 @@ const SwiperSlider: FC<SwiperSliderPropsTypes> = ({
   paginationOptions,
   isFraction
 }): ReactElement => {
+  const [bgSize, setBgSize] = useState('initial');
+  const [swiperHeight, setSwiperHeight] = useState(COMMON_SWIPER_HEIGHT);
   const fractionRef = useRef(null);
 
   const sliderControlsClasses = {
@@ -40,6 +52,24 @@ const SwiperSlider: FC<SwiperSliderPropsTypes> = ({
     prevDirectionClasses: 'direction__prev',
     nextDirectionClasses: 'direction__next'
   };
+
+  useEffect(() => {
+    setBgSize(getAdapTiveSlideBgSize(window.innerWidth));
+    setSwiperHeight(getAdapTiveSwiperHeight(window.innerWidth));
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setBgSize(getAdapTiveSlideBgSize(window.innerWidth));
+      setSwiperHeight(getAdapTiveSwiperHeight(window.innerWidth));
+    });
+
+    () =>
+      window.removeEventListener('resize', () => {
+        setBgSize(getAdapTiveSlideBgSize(window.innerWidth));
+        setSwiperHeight(getAdapTiveSwiperHeight(window.innerWidth));
+      });
+  }, [bgSize, swiperHeight]);
 
   return (
     <>
@@ -77,13 +107,14 @@ const SwiperSlider: FC<SwiperSliderPropsTypes> = ({
         navigation={{ prevEl: '.direction__prev', nextEl: '.direction__next' }}
         modules={[Pagination, Navigation, Autoplay]}
         grabCursor={true}
-        style={{ height: '750px', width: '100%' }}
+        style={{ height: swiperHeight, width: '100%' }}
         autoplay={{
           delay: 1000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
         speed={1500}
+        spaceBetween={0}
       >
         {dataForSlider.map(({ src, text }, index) => (
           <SwiperSlide key={index}>
@@ -92,8 +123,9 @@ const SwiperSlider: FC<SwiperSliderPropsTypes> = ({
               style={{
                 height: '100%',
                 width: '100%',
-                backgroundImage: `${SLIDER_GRADIENT}, url(${src})`,
-                backgroundRepeat: 'no-repeat'
+                backgroundImage: `url(${src})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: bgSize
               }}
               title={text}
             ></div>

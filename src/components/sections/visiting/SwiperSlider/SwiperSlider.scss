@@ -47,6 +47,10 @@
     @media (max-width: 500px) {
       width: 100%;
     }
+
+    @media (max-width: $mobile-size) {
+      padding: 24px 30px;
+    }
   }
 }
 

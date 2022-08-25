@@ -13,7 +13,12 @@ export const Video: FC<VideoPropsTypes> = ({ heading, text }): ReactElement => {
   const { ref, inView } = useInView({ threshold: 0.25 });
 
   return (
-    <section ref={ref} className='video-section' id='video'>
+    <section
+      ref={ref}
+      className='video-section'
+      id='video'
+      style={{ display: 'none' }}
+    >
       <div
         style={{
           opacity: `${inView ? '1' : '0'}`,

@@ -11,11 +11,28 @@
     @include flex(row, wrap, space-between, normal);
 
     height: 810px;
+
+    @media (max-width: $laptop-size) {
+      height: 585px;
+    }
+
+    @media (max-width: $tablet-size) {
+      flex-flow: column;
+      height: fit-content;
+    }
   }
 
   &__description {
     z-index: 2;
     width: 39.4%;
+
+    @media (max-width: $laptop-size) {
+      width: 41%;
+    }
+
+    @media (max-width: $tablet-size) {
+      width: 100%;
+    }
   }
 
   &__slider {
@@ -24,6 +41,27 @@
     height: 810px;
     width: 69.5%;
 
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: block;
+      content: ' ';
+      height: 100%;
+      width: 31%;
+      background-image: linear-gradient(
+        90deg,
+        #000 0%,
+        rgba(0, 0, 0, 0.5) 47.19%,
+        rgba(0, 0, 0, 0) 97.73%
+      );
+
+      @media (max-width: $tablet-size) {
+        display: none;
+      }
+    }
+
     &_left {
       left: 0;
     }
@@ -31,11 +69,34 @@
     &_right {
       right: 0;
     }
+
+    @media (max-width: $laptop-size) {
+      height: 585px;
+      width: 70.5%;
+    }
+
+    @media (max-width: $tablet-size) {
+      position: relative;
+      height: 646px;
+      width: 100%;
+    }
+
+    @media (max-width: $mobile-size) {
+      height: fit-content;
+    }
   }
 }
 
 .description {
   padding-top: 150px;
+
+  @media (max-width: $laptop-size) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: $tablet-size) {
+    padding-top: 0;
+  }
 
   h2.description__heading {
     padding-right: 5px;
@@ -51,6 +112,21 @@
     font-family: Forum, serif;
     text-transform: uppercase;
     white-space: pre;
+
+    @media (max-width: $laptop-size) {
+      font-size: 50px;
+    }
+
+    @media (max-width: $tablet-size) {
+      font-size: 40px;
+      line-height: 60px;
+      text-align: center;
+    }
+
+    @media (max-width: $mobile-size) {
+      font-size: 28px;
+      line-height: 40px;
+    }
   }
 
   p.description__text {
@@ -64,6 +140,24 @@
       $section-main-text-line-height,
       $text-letter-spacing
     );
+
+    @media (max-width: $laptop-size) {
+      margin-bottom: 68px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    @media (max-width: $tablet-size) {
+      margin-bottom: 41px;
+      font-size: 20px;
+      line-height: 23px;
+      text-align: center;
+    }
+
+    @media (max-width: $mobile-size) {
+      font-size: 16px;
+      line-height: 19px;
+    }
   }
 
   .description__button {
@@ -81,6 +175,20 @@
     background-color: $discover-btn-background;
     border-radius: 10px;
     transition: all 1s;
+
+    @media (max-width: $laptop-size) {
+      padding: 18px 45px;
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    @media (max-width: 800px) {
+      padding: 18px 20px;
+    }
+
+    @media (max-width: $tablet-size) {
+      display: none;
+    }
 
     &:hover {
       background-color: $btn-hover-background-color;

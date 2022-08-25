@@ -93,3 +93,14 @@ export const GITHUB_LINK = 'https://github.com/Andreizayaz';
 
 /* Back To Top Button */
 export const WINDOW_SCROLL_Y = 1000;
+
+/* Screen size */
+export const LAPTOP_SIZE = 1024;
+export const TABLET_SIZE = 768;
+export const MOBILE_SIZE = 420;
+
+/* Swiper height */
+export const COMMON_SWIPER_HEIGHT = 750;
+export const LAPTOP_SWIPER_HEIGHT = 525;
+export const TABLET_SWIPER_HEIGHT = 546;
+export const MOBILE_SWIPER_HEIGHT = 285;

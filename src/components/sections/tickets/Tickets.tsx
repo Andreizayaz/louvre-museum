@@ -23,7 +23,12 @@ export const Tickets: FC<TicketsPropsTypes> = ({
     threshold: 0.1
   });
   return (
-    <section ref={ticketsRef} id='tickets' className='tickets'>
+    <section
+      ref={ticketsRef}
+      id='tickets'
+      className='tickets'
+      style={{ display: 'none' }}
+    >
       <div className='tickets__container container'>
         <div
           className={

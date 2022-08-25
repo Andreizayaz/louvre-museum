@@ -108,11 +108,11 @@ const SwiperSlider: FC<SwiperSliderPropsTypes> = ({
         modules={[Pagination, Navigation, Autoplay]}
         grabCursor={true}
         style={{ height: swiperHeight, width: '100%' }}
-        /* autoplay={{
+        autoplay={{
           delay: 1000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
-        }} */
+        }}
         speed={1500}
         spaceBetween={0}
       >

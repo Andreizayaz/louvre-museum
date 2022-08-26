@@ -53,6 +53,14 @@
     @include flex;
 
     color: #fff;
+
+    @media (max-width: $tablet-size) {
+      font-size: 14px;
+    }
+
+    @media (max-width: $mobile-size) {
+      font-size: 10px;
+    }
   }
 }
 

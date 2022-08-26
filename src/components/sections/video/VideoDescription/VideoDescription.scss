@@ -10,7 +10,23 @@
     line-height: $section-heading-line-height;
     letter-spacing: $section-heading-letter-spacing;
     text-transform: uppercase;
-    word-break: break-all;
+    word-break: break-word;
+
+    @media (max-width: $laptop-size) {
+      width: 100%;
+      font-size: 50px;
+      line-height: 75px;
+    }
+
+    @media (max-width: $tablet-size) {
+      font-size: 40px;
+      line-height: 60px;
+    }
+
+    @media (max-width: $mobile-size) {
+      font-size: 28px;
+      line-height: 40px;
+    }
   }
 
   &__text {
@@ -20,5 +36,9 @@
     font-weight: $plain-text-font-weight;
     font-size: $section-text-font-size;
     line-height: $section-text-line-height;
+
+    @media (max-width: $laptop-size) {
+      display: none;
+    }
   }
 }

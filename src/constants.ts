@@ -104,3 +104,28 @@ export const COMMON_SWIPER_HEIGHT = 750;
 export const LAPTOP_SWIPER_HEIGHT = 525;
 export const TABLET_SWIPER_HEIGHT = 546;
 export const MOBILE_SWIPER_HEIGHT = 285;
+
+/* Touch Thresholds */
+export const TOUCH_THRESHOLD_X = 50;
+export const UP_DIRECTION = 'Up';
+export const DOWN_DIRECTION = 'Down';
+
+/* VideoSlider height */
+export const COMMON_VIDEO_PLAYER_HEIGHT = 650;
+export const LAPTOP_VIDEO_PLAYER_HEIGHT = 444;
+export const TABLET_VIDEO_PLAYER_HEIGHT = 329;
+export const MOBILE_VIDEO_PLAYER_HEIGHT = 172;
+
+/* Video iframe height */
+export const COMMON_VIDEO_IFRAME_HEIGHT = 254;
+export const LAPTOP_VIDEO_IFRAME_HEIGHT = 170;
+export const TABLET_VIDEO_IFRAME_HEIGHT = 199;
+export const MOBILE_VIDEO_IFRAME_HEIGHT = 101;
+
+/* Count video per view */
+export const COMMON_VIDEO_SLIDES_COUNT = 3;
+export const TABLET_VIDEO_SLIDES_COUNT = 2;
+
+/* Space betwen video slides */
+export const COMMON_VIDEO_SLIDES_SPACE = 42;
+export const TABLET_VIDEO_SLIDES_SPACE = 20;

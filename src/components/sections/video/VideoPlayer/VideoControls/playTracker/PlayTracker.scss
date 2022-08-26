@@ -1,7 +1,20 @@
 @import 'src/scss/abstracts/mixins';
+@import 'src/scss/abstracts/variables';
 
 .play-tracker {
   width: 93%;
+
+  @media (max-width: $tablet-size) {
+    width: 80%;
+  }
+
+  @media (max-width: 500px) {
+    width: 75%;
+  }
+
+  @media (max-width: $mobile-size) {
+    width: 69%;
+  }
 
   &__progress {
     background: linear-gradient(
@@ -16,6 +29,10 @@
     outline: none;
     appearance: none;
 
+    @media (max-width: $laptop-size) {
+      height: 5px;
+    }
+
     &::-webkit-slider-thumb {
       width: 15px;
       height: 15px;
@@ -23,6 +40,11 @@
       appearance: none;
       cursor: pointer;
       background: #fff;
+
+      @media (max-width: $laptop-size) {
+        width: 13px;
+        height: 13px;
+      }
     }
   }
 
@@ -37,6 +59,11 @@
 .play {
   &__tracker {
     width: 100%;
+
+    @media (max-width: $tablet-size) {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 

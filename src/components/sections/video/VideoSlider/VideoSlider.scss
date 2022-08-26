@@ -5,6 +5,14 @@
   &__top-slider {
     position: relative;
     margin-bottom: 40px;
+
+    @media (max-width: $tablet-size) {
+      margin-bottom: 21px;
+    }
+
+    @media (max-width: $mobile-size) {
+      margin-bottom: 40px;
+    }
   }
 
   &__bottom-slider {
@@ -23,6 +31,15 @@
     margin-top: 40px;
     width: 14%;
     min-width: 200px;
+
+    @media (max-width: $tablet-size) {
+      margin-top: 20px;
+    }
+
+    @media (max-width: $mobile-size) {
+      margin-top: 40px;
+      min-width: 174px;
+    }
   }
 
   &__bottom-pagination {
@@ -31,6 +48,10 @@
     margin: 0 auto;
     width: 70% !important;
     min-width: 140px !important;
+
+    @media (max-width: $mobile-size) {
+      min-width: 70% !important;
+    }
   }
 
   &__direction {
@@ -49,6 +70,16 @@
     border-radius: 50%;
     cursor: pointer;
     transition: all 1s;
+
+    @media (max-width: $tablet-size) {
+      height: 10px;
+      width: 10px;
+    }
+
+    @media (max-width: $mobile-size) {
+      height: 8px;
+      width: 8px;
+    }
 
     &:hover {
       background-color: $circle-bullet-hover-background-color;
@@ -69,6 +100,11 @@
     width: 10px;
     cursor: pointer;
     transition: all 1s;
+
+    @media (max-width: $mobile-size) {
+      height: 8px;
+      width: 7px;
+    }
   }
 
   &__prev {

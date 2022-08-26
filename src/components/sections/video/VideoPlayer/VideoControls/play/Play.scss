@@ -1,11 +1,29 @@
+@import 'src/scss/abstracts/variables';
+
 .play-section {
   display: flex;
   width: 72.5%;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: $laptop-size) {
+    width: 68%;
+  }
+
+  @media (max-width: $tablet-size) {
+    width: 91%;
+  }
+
+  @media (max-width: $mobile-size) {
+    width: 86%;
+  }
 }
 
 .play {
+  @media (max-width: $tablet-size) {
+    margin-right: auto;
+  }
+
   &__absolute-btn {
     position: absolute;
     top: 45%;
@@ -13,6 +31,23 @@
     height: 220px;
     width: 220px;
     transform: translate(-50%, -50%);
+
+    @media (max-width: $laptop-size) {
+      height: 152px;
+      width: 152px;
+    }
+
+    @media (max-width: $tablet-size) {
+      top: -292%;
+      height: 80px;
+      width: 80px;
+    }
+
+    @media (max-width: $mobile-size) {
+      top: -170%;
+      height: 50px;
+      width: 50px;
+    }
   }
 
   &__btn {
@@ -20,6 +55,16 @@
     height: 31px;
     background-image: url('./icons/play_control.svg');
     background-size: cover;
+
+    @media (max-width: $tablet-size) {
+      height: 29px;
+      width: 23px;
+    }
+
+    @media (max-width: $mobile-size) {
+      height: 18px;
+      width: 14px;
+    }
   }
 
   &__btn_pause {

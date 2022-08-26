@@ -1,11 +1,44 @@
+@import 'src/scss/abstracts/variables';
+
 .volume {
   width: 17.5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: $laptop-size) {
+    width: 22%;
+  }
+
+  @media (max-width: $tablet-size) {
+    position: absolute;
+    left: 87px;
+    width: fit-content;
+  }
+
+  @media (max-width: 620px) {
+    left: 80px;
+  }
+
+  @media (max-width: 550px) {
+    left: 70px;
+  }
+
+  @media (max-width: $mobile-size) {
+    left: 63px;
+  }
+
   &__tracker {
     width: 64.5%;
+
+    @media (max-width: $tablet-size) {
+      display: none;
+      align-items: center;
+    }
+
+    &_visible {
+      display: flex;
+    }
   }
 }
 
@@ -13,6 +46,21 @@
   height: 31px;
   width: 38px;
   background-size: cover;
+
+  @media (max-width: $laptop-size) {
+    height: 20px;
+    width: 26px;
+  }
+
+  @media (max-width: $tablet-size) {
+    height: 21px;
+    width: 27px;
+  }
+
+  @media (max-width: $mobile-size) {
+    height: 14px;
+    width: 18px;
+  }
 
   &_play {
     background-image: url('./icons/volume.svg');

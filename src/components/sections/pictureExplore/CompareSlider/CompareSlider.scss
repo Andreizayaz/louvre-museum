@@ -1,3 +1,5 @@
+@import 'src/scss/abstracts/variables';
+
 .__rcs-handle-root {
   cursor: grab !important;
 }
@@ -11,6 +13,11 @@
   width: 39px !important;
   backdrop-filter: none !important;
   border-width: 3px !important;
+
+  @media (max-width: $mobile-size) {
+    height: 20px !important;
+    width: 20px !important;
+  }
 
   & div {
     display: none !important;

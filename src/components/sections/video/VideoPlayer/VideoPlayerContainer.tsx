@@ -208,6 +208,10 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
   }, []);
 
   useEffect(() => {
+    setReactPlayerHeight(height);
+  }, [height]);
+
+  useEffect(() => {
     setVideoState({
       ...videoState,
       light: !playing && !isPlayerClicked ? posterVideo : ''
@@ -242,6 +246,8 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
   const reactPlayerOptions = { playing, light, volume /* , playbackRate */ };
   const trackPlayerOptions = { loadedSeconds, playedSeconds, played };
   const controlsOptions = { isFullScreen, isPlayerClicked };
+
+  console.log(reactPlayerHeight);
 
   return (
     <VideoPlayerContext.Provider

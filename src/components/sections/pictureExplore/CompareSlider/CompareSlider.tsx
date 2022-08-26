@@ -24,10 +24,10 @@ export const CompareSlider: FC<CompareSliderPropsTypes> = ({
       const { absX, absY, dir } = eventData;
       if (absX < TOUCH_THRESHOLD_X) {
         if (dir === UP_DIRECTION) {
-          window.scrollTo(0, window.pageYOffset - absY);
+          window.scrollTo(0, window.pageYOffset + absY);
           return;
         }
-        window.scrollTo(0, window.pageYOffset + absY);
+        window.scrollTo(0, window.pageYOffset - absY);
         return;
       }
     }

@@ -6,7 +6,13 @@ import { Swiper as SwiperInstance } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { selectCurrentLanguage } from 'src/store/Language';
-import { RIGHT_TO_LEFT } from 'src/constants';
+import {
+  COMMON_VIDEO_IFRAME_HEIGHT,
+  COMMON_VIDEO_PLAYER_HEIGHT,
+  COMMON_VIDEO_SLIDES_COUNT,
+  COMMON_VIDEO_SLIDES_SPACE,
+  RIGHT_TO_LEFT
+} from 'src/constants';
 
 import { videoData } from '../data';
 
@@ -18,13 +24,49 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 
 import './VideoSlider.scss';
+import {
+  getAdapTiveVideoIframeHeight,
+  getAdapTiveVideoPlayerHeight,
+  getCountVideoSlidesPerView,
+  getVideoSlidesSpace
+} from './helpers';
 
 export const VideoSlider: FC = (): ReactElement => {
   const { dir } = useSelector(selectCurrentLanguage);
   const [videoIndexActive, setVideoIndexActive] = useState(0);
+  const [videoPlayerHeight, setVideoPlayerHeight] = useState(
+    COMMON_VIDEO_PLAYER_HEIGHT
+  );
+  const [videoIframeHeight, setVideoIframeHeight] = useState(
+    COMMON_VIDEO_IFRAME_HEIGHT
+  );
+  const [videoSlidesPerView, setVideoSlidesPerView] = useState(
+    COMMON_VIDEO_SLIDES_COUNT
+  );
+  const [videoSlidesSpace, setVideoSlidesSpace] = useState(
+    COMMON_VIDEO_SLIDES_SPACE
+  );
   const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
 
   const videoRef = useRef<HTMLDivElement>(null);
+
+  const changeVideoHeightHandler = () => {
+    const { innerWidth } = window;
+    setVideoPlayerHeight(getAdapTiveVideoPlayerHeight(innerWidth));
+    setVideoIframeHeight(getAdapTiveVideoIframeHeight(innerWidth));
+    setVideoSlidesPerView(getCountVideoSlidesPerView(innerWidth));
+    setVideoSlidesSpace(getVideoSlidesSpace(innerWidth));
+  };
+
+  useEffect(() => {
+    changeVideoHeightHandler();
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', changeVideoHeightHandler);
+
+    () => window.removeEventListener('resize', changeVideoHeightHandler);
+  }, [videoPlayerHeight]);
 
   useEffect(() => {
     if (swiper) {
@@ -60,7 +102,7 @@ export const VideoSlider: FC = (): ReactElement => {
               key={id}
               srcVideo={srcVideo}
               posterVideo={posterVideo}
-              height='650px'
+              height={`${videoPlayerHeight}px`}
               width='100%'
               videoRef={videoRef}
             />
@@ -76,8 +118,8 @@ export const VideoSlider: FC = (): ReactElement => {
           }}
           style={{ position: 'relative' }}
           loop={true}
-          spaceBetween={42}
-          slidesPerView={3}
+          spaceBetween={videoSlidesSpace}
+          slidesPerView={videoSlidesPerView}
           freeMode={true}
           watchSlidesProgress={true}
           modules={[Navigation, Pagination]}
@@ -91,7 +133,7 @@ export const VideoSlider: FC = (): ReactElement => {
             <SwiperSlide key={index}>
               <iframe
                 width='100%'
-                height='254'
+                height={videoIframeHeight}
                 src={iframeSrc}
                 title='YouTube video player'
                 loading='lazy'

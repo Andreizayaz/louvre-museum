@@ -17,7 +17,7 @@ export const Gallery: FC<GalleryPropsTypes> = ({
   galleryData,
   viewMore
 }): ReactElement => (
-  <section id='gallery' className='gallery' style={{ display: 'none' }}>
+  <section id='gallery' className='gallery'>
     <div className='gallery__container container'>
       <div className='gallery__inner-content inner-content'>
         <h2 className='inner-content__heading'>{heading}</h2>

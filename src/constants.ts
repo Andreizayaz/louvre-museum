@@ -104,3 +104,8 @@ export const COMMON_SWIPER_HEIGHT = 750;
 export const LAPTOP_SWIPER_HEIGHT = 525;
 export const TABLET_SWIPER_HEIGHT = 546;
 export const MOBILE_SWIPER_HEIGHT = 285;
+
+/* Touch Thresholds */
+export const TOUCH_THRESHOLD_X = 50;
+export const UP_DIRECTION = 'Up';
+export const DOWN_DIRECTION = 'Down';

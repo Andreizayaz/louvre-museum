@@ -3,6 +3,18 @@
 .contacts-section {
   &__container.container {
     padding: 75px 10px;
+
+    @media (max-width: $laptop-size) {
+      padding: 60px 20px;
+    }
+
+    @media (max-width: $tablet-size) {
+      padding: 40px 20px;
+    }
+
+    @media (max-width: $mobile-size) {
+      padding: 46px 20px;
+    }
   }
 }
 
@@ -24,11 +36,32 @@
     letter-spacing: $section-heading-letter-spacing;
     text-transform: uppercase;
 
+    @media (max-width: $laptop-size) {
+      margin-bottom: 60px;
+      font-size: 50px;
+      line-height: 75px;
+    }
+
+    @media (max-width: $tablet-size) {
+      margin-bottom: 40px;
+      font-size: 40px;
+      line-height: 60px;
+    }
+
+    @media (max-width: $mobile-size) {
+      font-size: 28px;
+      line-height: 40px;
+    }
+
     &::after {
       display: block;
       margin-top: 25px;
       content: ' ';
       border-bottom: 3px solid $heading-line-color;
+
+      @media (max-width: $laptop-size) {
+        margin-top: 20px;
+      }
     }
   }
 
@@ -37,5 +70,10 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: nowrap;
+
+    @media (max-width: $tablet-size) {
+      flex-direction: column;
+      row-gap: 40px;
+    }
   }
 }

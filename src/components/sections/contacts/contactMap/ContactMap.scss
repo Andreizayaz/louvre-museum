@@ -1,7 +1,31 @@
+@import 'src/scss/abstracts/variables';
+
 .contact-map {
   height: 620px;
   width: 67%;
-  background-image: url('./img/01_map.jpg');
   background-repeat: no-repeat;
   background-size: contain;
+
+  @media (max-width: 1120px) {
+    width: 60%;
+  }
+
+  @media (max-width: $laptop-size) {
+    height: 454px;
+    width: 71%;
+    background-size: cover;
+  }
+
+  @media (max-width: 900px) {
+    width: 60%;
+  }
+
+  @media (max-width: $tablet-size) {
+    height: 476px;
+    width: 100%;
+  }
+
+  @media (max-width: $mobile-size) {
+    height: 248px;
+  }
 }

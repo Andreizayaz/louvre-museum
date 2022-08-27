@@ -1,7 +1,26 @@
-import { FC, ReactElement } from 'react';
+import { FC, ReactElement, useEffect, useState } from 'react';
+
+import { getMapBackgroundImg } from './helpers';
 
 import './ContactMap.scss';
 
 export const ContactMap: FC = (): ReactElement => {
-  return <div className='contact-map'></div>;
+  const [bgImg, setBgImg] = useState('');
+
+  const windowResizeHandler = () => {
+    console.log('resize');
+    setBgImg(getMapBackgroundImg(window.innerWidth));
+  };
+
+  useEffect(() => {
+    setBgImg(getMapBackgroundImg(window.innerWidth));
+    window.addEventListener('resize', windowResizeHandler);
+  }, []);
+
+  return (
+    <div
+      className='contact-map'
+      style={{ backgroundImage: `url(${bgImg})` }}
+    ></div>
+  );
 };

@@ -1,7 +1,14 @@
+@import 'src/scss/abstracts/variables';
+
 .parallax {
   height: 400px;
   width: 100%;
   background-image: url('./img/01_parallax_gallery.jfif');
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
+
+  @media (max-width: $tablet-size) {
+    height: 300px;
+  }
 }

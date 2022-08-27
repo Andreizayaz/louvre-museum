@@ -4,6 +4,10 @@
 .radio-options {
   width: 40.9%;
 
+  @media (max-width: $laptop-size) {
+    display: none;
+  }
+
   &__heading {
     margin-bottom: 40px;
     @include text(

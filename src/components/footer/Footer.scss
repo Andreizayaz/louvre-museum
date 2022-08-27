@@ -1,6 +1,8 @@
 @import 'src/scss/abstracts/variables';
 
 .footer {
+  width: 100%;
+  overflow: hidden;
   background: $black-secondary;
 
   &__content {

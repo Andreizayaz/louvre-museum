@@ -5,5 +5,17 @@
 
   &__content {
     padding-top: 84px;
+
+    @media (max-width: $laptop-size) {
+      padding-top: 60px;
+    }
+
+    @media (max-width: $tablet-size) {
+      padding-top: 50px;
+    }
+
+    @media (max-width: $mobile-size) {
+      padding-top: 40px;
+    }
   }
 }

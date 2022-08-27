@@ -8,6 +8,45 @@
   margin-top: auto;
   margin-left: auto;
   width: 24%;
+
+  @media (max-width: 1450px) {
+    width: 30%;
+  }
+
+  @media (max-width: 1160px) {
+    column-gap: 15px;
+    width: 35%;
+  }
+
+  @media (max-width: 900px) {
+    width: 41%;
+  }
+
+  @media (max-width: $tablet-size) {
+    margin-top: 50px;
+    margin-right: 34px;
+    width: 51%;
+  }
+
+  @media (max-width: 700px) {
+    margin-right: 0;
+    width: 60%;
+  }
+
+  @media (max-width: 600px) {
+    width: 80%;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+
+  @media (max-width: $mobile-size) {
+    column-gap: 1px;
+    margin: 0 auto;
+    margin-top: 35px;
+    width: 68%;
+  }
 }
 
 .social-icon {

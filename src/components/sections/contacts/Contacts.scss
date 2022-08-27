@@ -10,10 +10,12 @@
 
     @media (max-width: $tablet-size) {
       padding: 40px 20px;
+      padding-bottom: 65px;
     }
 
     @media (max-width: $mobile-size) {
       padding: 46px 20px;
+      padding-bottom: 40px;
     }
   }
 }

@@ -16,7 +16,7 @@ export const Footer: FC<FooterPropsTypes> = ({
   listItemClasses,
   linkClasses
 }): ReactElement => (
-  <footer className='footer' style={{ display: 'none' }}>
+  <footer className='footer'>
     <div className='footer__content'>
       <TopFooter
         navBarClasses={navBarClasses}

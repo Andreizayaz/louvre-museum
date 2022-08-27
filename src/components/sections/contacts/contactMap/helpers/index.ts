@@ -1,0 +1,1 @@
+export { getMapBackgroundImg } from './functions';

@@ -92,6 +92,18 @@ export const VideoSlider: FC = (): ReactElement => {
     nextDirectionClasses: 'bottom-direction__next'
   };
 
+  useEffect(() => {
+    const youtybeIframes: NodeListOf<HTMLIFrameElement> =
+      document.querySelectorAll('.youtube-iframe');
+
+    youtybeIframes.forEach((item) => {
+      const iframe = item.contentDocument?.querySelector(
+        '.ytp-large-play-button.ytp-button.ytp-large-play-button-red-bg'
+      );
+      iframe?.classList.add('youtube-iframe__btn');
+    });
+  }, []);
+
   return (
     <div className='video-block'>
       <div ref={videoRef} className='video-block__top-slider'>
@@ -132,6 +144,7 @@ export const VideoSlider: FC = (): ReactElement => {
           {videoData.map(({ iframeSrc }, index) => (
             <SwiperSlide key={index}>
               <iframe
+                className='youtube-iframe'
                 width='100%'
                 height={videoIframeHeight}
                 src={iframeSrc}

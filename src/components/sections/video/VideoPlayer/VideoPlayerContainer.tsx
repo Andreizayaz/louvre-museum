@@ -247,8 +247,6 @@ const VideoPlayerContainer: FC<VideoPlayerContainerPropsTypes> = ({
   const trackPlayerOptions = { loadedSeconds, playedSeconds, played };
   const controlsOptions = { isFullScreen, isPlayerClicked };
 
-  console.log(reactPlayerHeight);
-
   return (
     <VideoPlayerContext.Provider
       value={{

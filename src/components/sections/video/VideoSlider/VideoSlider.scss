@@ -125,3 +125,14 @@
     }
   }
 }
+
+.youtube-iframe {
+  &__btn {
+    height: 48px;
+    width: 68px;
+  }
+}
+
+.ytp-large-play-button svg {
+  background-color: rgba(33, 33, 33, 0.8);
+}

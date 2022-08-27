@@ -53,11 +53,11 @@ export const TicketsSlider: FC<TicketsSliderPropsTypes> = ({
           manageSwiperState(swiper);
         }}
         slidesPerView={1}
-        /* autoplay={{
-        delay: 1000,
-        pauseOnMouseEnter: true,
-        disableOnInteraction: false
-      }} */
+        autoplay={{
+          delay: 1000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false
+        }}
         speed={2000}
         loop={true}
         grabCursor={true}

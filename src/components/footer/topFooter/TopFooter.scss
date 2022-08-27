@@ -4,10 +4,37 @@
   padding-bottom: 50px;
   border-bottom: 3px solid $footer-top-border-color;
 
+  @media (max-width: $laptop-size) {
+    padding-bottom: 54px;
+  }
+
+  @media (max-width: $tablet-size) {
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: $mobile-size) {
+    padding-top: 0;
+  }
+
   &__content {
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    @media (max-width: $tablet-size) {
+      flex-flow: row wrap;
+      padding-right: 56px;
+    }
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (max-width: $mobile-size) {
+      padding-top: 0;
+      padding-right: 0;
+    }
   }
 }
 
@@ -18,11 +45,56 @@
   background-image: url('./img/Logo.svg');
   background-repeat: no-repeat;
   background-size: contain;
+
+  @media (max-width: 900px) {
+    width: 180px;
+  }
+
+  @media (max-width: $tablet-size) {
+    height: 41px;
+    width: 199px;
+  }
+
+  @media (max-width: 500px) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: $mobile-size) {
+    margin-right: auto;
+    margin-left: 0;
+    margin-bottom: 40px;
+    height: 20px;
+    width: 131px;
+  }
 }
 
 .footer-navbar {
   margin-left: 145px;
   width: 34%;
+
+  @media (max-width: $laptop-size) {
+    margin-left: auto;
+    width: 36%;
+  }
+
+  @media (max-width: $tablet-size) {
+    padding-top: 5px;
+    width: 59%;
+  }
+
+  @media (max-width: 600px) {
+    width: 50%;
+  }
+
+  @media (max-width: 500px) {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  @media (max-width: $mobile-size) {
+    margin: 0;
+    width: 100%;
+  }
 }
 
 .footer-links {
@@ -32,6 +104,20 @@
   column-gap: 20px;
   row-gap: 25px;
   max-height: 170px;
+
+  @media (max-width: $tablet-size) {
+    column-gap: 97px;
+    padding: 0 19px;
+    max-height: 121px;
+  }
+
+  @media (max-width: $mobile-size) {
+    column-gap: 0;
+    padding: 0;
+    margin: 0;
+    max-height: 68px;
+    width: 87%;
+  }
 }
 
 .footer-link-item {
@@ -45,6 +131,16 @@
     letter-spacing: $link-letter-spacing;
     color: $main-color;
     transition: all 1s;
+
+    @media (max-width: $tablet-size) {
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    @media (max-width: $mobile-size) {
+      font-size: 16px;
+      line-height: 19px;
+    }
 
     &:hover {
       color: $link-active-color;

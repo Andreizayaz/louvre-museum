@@ -11,6 +11,20 @@
   font-size: $link-font-size;
   line-height: $link-font-size;
   letter-spacing: $link-letter-spacing;
+
+  @media (max-width: $tablet-size) {
+    padding: 40px 0;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  @media (max-width: $mobile-size) {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 
 .author-link {
@@ -21,6 +35,11 @@
   letter-spacing: $link-letter-spacing;
   color: $main-color;
   transition: all 1s;
+
+  @media (max-width: $mobile-size) {
+    font-size: 16px;
+    line-height: 22px;
+  }
 
   &:hover {
     color: $link-active-color;

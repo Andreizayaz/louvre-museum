@@ -22,6 +22,15 @@
     padding: 12px 15px;
     border: 1px solid $black-secondary;
     background-color: $white-color;
+
+    @media (max-width: 920px) {
+      column-gap: 5px;
+      padding: 5px 10px;
+    }
+
+    @media (max-width: $mobile-size) {
+      column-gap: 20px;
+    }
   }
 }
 

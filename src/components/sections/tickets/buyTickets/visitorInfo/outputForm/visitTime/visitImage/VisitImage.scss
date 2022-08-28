@@ -1,3 +1,5 @@
+@import 'src/scss/abstracts/variables';
+
 .visit-image {
   max-height: 120px;
   max-width: 150px;
@@ -5,4 +7,18 @@
   min-width: 150px;
   background-repeat: no-repeat;
   background-size: contain;
+
+  @media (max-width: $mobile-size) {
+    max-height: 96px;
+    max-width: 120px;
+    min-height: 96px;
+    min-width: 120px;
+  }
+
+  @media (max-width: 380px) {
+    max-height: 70px;
+    max-width: 100px;
+    min-height: 70px;
+    min-width: 100px;
+  }
 }

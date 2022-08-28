@@ -1,7 +1,19 @@
+@import 'src/scss/abstracts/variables';
+
 .ticket-close {
   position: absolute;
   top: 30px;
   right: 30px;
+
+  @media (max-width: 1200px) {
+    top: 20px;
+    right: 20px;
+  }
+
+  @media (max-width: $laptop-size) {
+    top: 30px;
+    right: 27px;
+  }
 
   &__btn {
     height: 25px;
@@ -10,6 +22,16 @@
     background-repeat: no-repeat;
     background-size: contain;
     transition: all 1s;
+
+    @media (max-width: 1200px) {
+      height: 20px;
+      width: 20px;
+    }
+
+    @media (max-width: $laptop-size) {
+      height: 25px;
+      width: 25px;
+    }
 
     &:hover {
       transform: rotate(360deg);

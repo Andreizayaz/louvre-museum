@@ -9,5 +9,17 @@
     column-gap: 40px;
     width: 970px;
     max-width: 970px;
+
+    @media (max-width: 1200px) {
+      column-gap: 20px;
+    }
+
+    @media (max-width: $laptop-size) {
+      width: 100%;
+    }
+
+    @media (max-width: $tablet-size) {
+      flex-direction: column;
+    }
   }
 }

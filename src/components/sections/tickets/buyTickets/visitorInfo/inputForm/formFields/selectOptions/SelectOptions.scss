@@ -21,6 +21,11 @@
     overflow: hidden;
     border: 1px solid $black-color;
     background-color: $white-color;
+
+    @media (max-width: 920px) {
+      column-gap: 5px;
+      padding: 10px;
+    }
   }
 
   div {

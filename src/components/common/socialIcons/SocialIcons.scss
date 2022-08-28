@@ -47,6 +47,10 @@
     margin-top: 35px;
     width: 68%;
   }
+
+  @media (max-width: 400px) {
+    width: 90%;
+  }
 }
 
 .social-icon {

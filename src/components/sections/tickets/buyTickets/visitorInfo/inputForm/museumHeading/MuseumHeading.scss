@@ -4,6 +4,10 @@
 .museum-heading {
   margin-bottom: 60px;
 
+  @media (max-width: $tablet-size) {
+    margin-bottom: 39px;
+  }
+
   &__logo {
     height: 41px;
     width: 85px;
@@ -20,6 +24,11 @@
     font-size: 50px;
     line-height: 55px;
     text-transform: uppercase;
+
+    @media (max-width: $mobile-size) {
+      font-size: 32px;
+      line-height: 35px;
+    }
   }
 
   &__subheading {

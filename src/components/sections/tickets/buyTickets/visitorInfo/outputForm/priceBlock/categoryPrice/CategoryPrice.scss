@@ -36,5 +36,10 @@
   &__total-by-category {
     font-size: $section-text-font-size;
     line-height: $small-line-height;
+
+    @media (max-width: 380px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 }

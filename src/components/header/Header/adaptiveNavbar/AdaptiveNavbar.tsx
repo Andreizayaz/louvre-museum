@@ -7,6 +7,7 @@ import { BottomNavbar } from './bottomNavbar';
 import { picturesType } from './picturesGallery/types';
 import { ClassesTypes } from './types';
 import { getTranslateDistance } from './helpers';
+import { LAPTOP_SIZE } from 'src/constants';
 
 type AdaptiveNavbarPropsTypes = {
   classesForAdaptiveNavbar: string;
@@ -30,16 +31,35 @@ export const AdaptiveNavbar: FC<AdaptiveNavbarPropsTypes> = ({
   const [translateDir, setTranslateDir] = useState('none');
 
   const windowResizeHandler = () => {
-    isOpen && setTranslateDir(getTranslateDistance(dir, window.innerWidth));
+    if (window.innerWidth > LAPTOP_SIZE) {
+      setTranslateDir('none');
+      return;
+    }
+    !isOpen
+      ? setTranslateDir(getTranslateDistance(dir, window.innerWidth))
+      : setTranslateDir('none');
   };
 
   useEffect(() => {
-    setTranslateDir(getTranslateDistance(dir, window.innerWidth));
     window.addEventListener('resize', windowResizeHandler);
+    if (window.innerWidth > LAPTOP_SIZE) {
+      setTranslateDir('none');
+      return;
+    }
+
+    !isOpen
+      ? setTranslateDir(getTranslateDistance(dir, window.innerWidth))
+      : setTranslateDir('none');
   }, []);
 
   useEffect(() => {
-    setTranslateDir(getTranslateDistance(dir, window.innerWidth));
+    if (window.innerWidth > LAPTOP_SIZE) {
+      setTranslateDir('none');
+      return;
+    }
+    !isOpen
+      ? setTranslateDir(getTranslateDistance(dir, window.innerWidth))
+      : setTranslateDir('none');
   }, [isOpen, dir]);
 
   return (
@@ -47,9 +67,7 @@ export const AdaptiveNavbar: FC<AdaptiveNavbarPropsTypes> = ({
       ref={adaptiveNavbarRef}
       className={classesForAdaptiveNavbar}
       data-testid='nav-links-container'
-      style={{
-        transform: !isOpen ? translateDir : 'none'
-      }}
+      style={{ transform: translateDir }}
     >
       <Navbar
         classes={classesForNavbar}

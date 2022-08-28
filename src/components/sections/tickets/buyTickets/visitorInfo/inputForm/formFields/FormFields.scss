@@ -12,6 +12,11 @@
     @include flex;
 
     width: 100%;
+
+    @media (max-width: $mobile-size) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
   }
 }
 
@@ -20,15 +25,29 @@
   min-height: 45px;
   width: 47.5%;
   cursor: pointer;
+
+  @media (max-width: $mobile-size) {
+    width: 100%;
+  }
 }
 
 .input-group {
   @include flex;
 
+  flex-wrap: nowrap;
   column-gap: 15px;
   width: 100%;
   border: 1px solid #030303;
   padding: 11px 15px;
+
+  @media (max-width: 920px) {
+    column-gap: 10px;
+    padding: 10px;
+  }
+
+  @media (max-width: $mobile-size) {
+    column-gap: 20px;
+  }
 
   .input,
   ::placeholder {
@@ -42,7 +61,7 @@
     color: #030303;
     text-align: left;
     margin-right: auto;
-    width: 90%;
+    width: 100%;
   }
 }
 

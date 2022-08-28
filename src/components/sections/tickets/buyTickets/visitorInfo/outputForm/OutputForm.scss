@@ -6,4 +6,18 @@
   min-width: 530px;
   max-width: 530px;
   border: 1px solid $black-secondary;
+
+  @media (max-width: 1000px) {
+    min-width: 45%;
+    width: 50%;
+  }
+
+  @media (max-width: $tablet-size) {
+    padding: 26px 16px;
+    width: 100%;
+  }
+
+  @media (max-width: $mobile-size) {
+    padding: 25px 15px;
+  }
 }

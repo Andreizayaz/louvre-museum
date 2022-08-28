@@ -1,3 +1,5 @@
+@import 'src/scss/abstracts/variables';
+
 .welcome-block {
   padding: 20px;
   font-family: inherit;
@@ -7,11 +9,19 @@
     font-size: 45px;
     text-align: center;
     line-height: 1.2;
+
+    @media (max-width: $tablet-size) {
+      font-size: 35px;
+    }
   }
 
   &__subheading {
     color: #740c11;
     font-size: 35px;
     text-align: center;
+
+    @media (max-width: $tablet-size) {
+      font-size: 30px;
+    }
   }
 }

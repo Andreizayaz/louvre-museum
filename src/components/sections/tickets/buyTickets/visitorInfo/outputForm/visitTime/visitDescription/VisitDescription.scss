@@ -4,6 +4,10 @@
   width: 45%;
   font-family: Roboto, Arial, sans-serif;
 
+  @media (max-width: $mobile-size) {
+    width: 60%;
+  }
+
   &__heading {
     color: #272727;
     font-weight: $medium-font-weight;

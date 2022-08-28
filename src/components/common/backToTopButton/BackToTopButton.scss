@@ -1,3 +1,5 @@
+@import 'src/scss/abstracts/variables';
+
 .top-button {
   position: fixed;
   bottom: 20px;
@@ -8,11 +10,16 @@
   opacity: 0.2;
   transition: all 1s;
 
+  @media (max-width: $mobile-size) {
+    height: 70px;
+    width: 70px;
+  }
+
   &:hover {
     opacity: 1;
   }
 
-  &__link {
+  &__btn {
     display: block;
     height: 100%;
     width: 100%;

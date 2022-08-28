@@ -5,7 +5,7 @@ import { ClickAwayListener } from '@material-ui/core';
 import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
 import { selectTicket, setTicketInfo, VisitorType } from 'src/store/Tickets';
 import {
@@ -53,6 +53,7 @@ const PickDate: FC<DatePickerPropsTypes> = ({
 
   const closeDatePicker = () => {
     setIsOpen(false);
+    console.log('close');
   };
 
   const toggleDatePicker = () => {
@@ -105,7 +106,7 @@ const PickDate: FC<DatePickerPropsTypes> = ({
           borderColor={borderColor}
         />
         <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <DatePicker
+          <DesktopDatePicker
             value=''
             onChange={(e) => changeHandler(e)}
             renderInput={(params) => <TextField {...params} />}

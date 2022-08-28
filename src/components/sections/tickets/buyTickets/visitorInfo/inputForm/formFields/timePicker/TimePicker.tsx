@@ -5,7 +5,7 @@ import { ClickAwayListener } from '@material-ui/core';
 import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { DesktopTimePicker } from '@mui/x-date-pickers/DesktopTimePicker';
 
 import { selectTicket, setTicketInfo, VisitorType } from 'src/store/Tickets';
 import {
@@ -96,7 +96,7 @@ const pickTime: FC<TimePickerPropsTypes> = ({
           clickHandler={toggleTimePicker}
         />
         <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <TimePicker
+          <DesktopTimePicker
             value=''
             onChange={(e) => {
               changeHandler(e);

@@ -5,6 +5,8 @@ import { AdaptiveNavbar } from './AdaptiveNavbar';
 import { galleryData } from './galleryData';
 
 import './AdaptiveNavbar.scss';
+import { useSelector } from 'react-redux';
+import { selectCurrentLanguage } from 'src/store/Language';
 
 type AdaptiveNavbarContainerPropsTypes = {
   isOpenMenu: boolean;
@@ -16,6 +18,7 @@ const AdaptiveNavbarContainer: FC<AdaptiveNavbarContainerPropsTypes> = ({
   closeAdaptiveNavbar
 }): ReactElement => {
   const adaptiveNavbarRef = useRef<HTMLDivElement>(null);
+  const { dir } = useSelector(selectCurrentLanguage);
 
   const isNavbarClicked = (e: any) => {
     !e.target.contains(adaptiveNavbarRef.current as HTMLElement) &&
@@ -45,6 +48,8 @@ const AdaptiveNavbarContainer: FC<AdaptiveNavbarContainerPropsTypes> = ({
       classesForNavbar={classesForNavbar}
       adaptiveNavbarRef={adaptiveNavbarRef}
       pictures={galleryData}
+      dir={dir}
+      isOpen={isOpenMenu}
       closeAdaptiveNavbar={closeAdaptiveNavbar}
     />
   );

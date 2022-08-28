@@ -5,6 +5,7 @@
   color: $odd-section-text-color;
   font-family: inherit;
   background-color: $odd-section-background;
+  overflow: hidden;
 
   &__container {
     position: relative;

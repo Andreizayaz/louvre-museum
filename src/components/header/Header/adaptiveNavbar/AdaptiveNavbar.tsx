@@ -17,6 +17,7 @@ type AdaptiveNavbarPropsTypes = {
   dir: string;
   isOpen: boolean;
   closeAdaptiveNavbar: (e: any) => void;
+  closeAdaptiveNavbarOnResize: () => void;
 };
 
 export const AdaptiveNavbar: FC<AdaptiveNavbarPropsTypes> = ({
@@ -26,11 +27,13 @@ export const AdaptiveNavbar: FC<AdaptiveNavbarPropsTypes> = ({
   pictures,
   dir,
   isOpen,
-  closeAdaptiveNavbar
+  closeAdaptiveNavbar,
+  closeAdaptiveNavbarOnResize
 }): ReactElement => {
   const [translateDir, setTranslateDir] = useState('none');
 
   const windowResizeHandler = () => {
+    closeAdaptiveNavbarOnResize();
     if (window.innerWidth > LAPTOP_SIZE) {
       setTranslateDir('none');
       return;

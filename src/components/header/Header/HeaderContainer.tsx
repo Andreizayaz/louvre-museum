@@ -51,6 +51,10 @@ const HeaderContainer = (): ReactElement => {
     isOpenMenu && setIsOpenMenu(false);
   };
 
+  const closeAdaptiveNavbarOnResize = () => {
+    setIsOpenMenu(false);
+  };
+
   useEffect(() => {
     if (typeof code !== 'string' || !code.length) {
       selectLanguage();
@@ -67,6 +71,7 @@ const HeaderContainer = (): ReactElement => {
         selectLanguage={selectLanguage}
         handleToggleMenu={handleToggleMenu}
         closeAdaptiveNavbar={closeAdaptiveNavbar}
+        closeAdaptiveNavbarOnResize={closeAdaptiveNavbarOnResize}
       />
     </>
   );

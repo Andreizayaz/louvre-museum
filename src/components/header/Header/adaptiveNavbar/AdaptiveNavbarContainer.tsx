@@ -11,11 +11,13 @@ import { selectCurrentLanguage } from 'src/store/Language';
 type AdaptiveNavbarContainerPropsTypes = {
   isOpenMenu: boolean;
   closeAdaptiveNavbar: (e: any) => void;
+  closeAdaptiveNavbarOnResize: () => void;
 };
 
 const AdaptiveNavbarContainer: FC<AdaptiveNavbarContainerPropsTypes> = ({
   isOpenMenu,
-  closeAdaptiveNavbar
+  closeAdaptiveNavbar,
+  closeAdaptiveNavbarOnResize
 }): ReactElement => {
   const adaptiveNavbarRef = useRef<HTMLDivElement>(null);
   const { dir } = useSelector(selectCurrentLanguage);
@@ -51,6 +53,7 @@ const AdaptiveNavbarContainer: FC<AdaptiveNavbarContainerPropsTypes> = ({
       dir={dir}
       isOpen={isOpenMenu}
       closeAdaptiveNavbar={closeAdaptiveNavbar}
+      closeAdaptiveNavbarOnResize={closeAdaptiveNavbarOnResize}
     />
   );
 };

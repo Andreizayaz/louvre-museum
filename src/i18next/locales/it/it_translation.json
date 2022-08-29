@@ -84,7 +84,7 @@
     "basic_18": "Fondamentale 18",
     "senior_65": "Anziano 65",
     "total": "Totale",
-    "buy_btn": "Acquista ora",
+    "buy_btn": "accedere",
     "pictures": {
       "Venus_giving": "Venere dona armatura ad Enea",
       "appearance_angel": "Aspetto dell'angelo Agar",
@@ -106,7 +106,7 @@
       "senior": "Anziano",
       "total": "Totale",
       "overview": "Panoramica",
-      "book": "Prenotare",
+      "book": "accedere",
       "min_alert": "Il conteggio dei biglietti non può essere negativo",
       "max_alert": "Il conteggio dei biglietti non può essere superiore a "
     },

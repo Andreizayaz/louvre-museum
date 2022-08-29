@@ -84,7 +84,7 @@
     "basic_18": "基本 18",
     "senior_65": "高級 65",
     "total": "全部的",
-    "buy_btn": "立即購買",
+    "buy_btn": "進入",
     "pictures": {
       "Venus_giving": "維納斯給埃涅阿斯盔甲",
       "appearance_angel": "天使夏甲的出現",
@@ -106,7 +106,7 @@
       "senior": "高級的",
       "total": "全部的",
       "overview": "概述",
-      "book": "書",
+      "book": "進入",
       "min_alert": "票數不能超過",
       "max_alert": "票數不能超過 "
     },

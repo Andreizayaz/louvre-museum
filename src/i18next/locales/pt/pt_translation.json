@@ -84,7 +84,7 @@
     "basic_18": "Básico 18",
     "senior_65": "Sênior 65",
     "total": "Total",
-    "buy_btn": "Compre Agora",
+    "buy_btn": "Digitar",
     "pictures": {
       "Venus_giving": "Vênus dando armadura a Enéias",
       "appearance_angel": "Aparição do anjo Hagar",
@@ -106,7 +106,7 @@
       "senior": "Senior",
       "total": "Total",
       "overview": "Visão geral",
-      "book": "Livro",
+      "book": "Digitar",
       "min_alert": "A contagem de ingressos não pode ser negativa",
       "max_alert": "A contagem de ingressos não pode ser superior a "
     },

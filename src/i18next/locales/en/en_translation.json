@@ -84,7 +84,7 @@
     "basic_18": "Basic 18",
     "senior_65": "Senior 65",
     "total": "Total",
-    "buy_btn": "Buy Now",
+    "buy_btn": "Enter",
     "pictures": {
       "Venus_giving": "Venus giving armor to Aeneas",
       "appearance_angel": "Appearance of the angel Hagar",
@@ -106,7 +106,7 @@
       "senior": "Senior",
       "total": "Total",
       "overview": "Overview",
-      "book": "Book",
+      "book": "Enter",
       "min_alert": "Tickets count can't be negative",
       "max_alert": "Tickets count can't be more than "
     },

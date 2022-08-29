@@ -84,7 +84,7 @@
     "basic_18": "De base 18",
     "senior_65": "Senior 65",
     "total": "Total",
-    "buy_btn": "Acheter maintenant",
+    "buy_btn": "Entrer",
     "pictures": {
       "Venus_giving": "Vénus donnant une armure à Enée",
       "appearance_angel": "Apparition de l'ange Hagar",
@@ -106,7 +106,7 @@
       "senior": "Senior",
       "total": "Total",
       "overview": "Aperçu",
-      "book": "Livre",
+      "book": "Entrer",
       "min_alert": "Le nombre de tickets ne peut pas être négatif",
       "max_alert": "Le nombre de billets ne peut pas dépasser "
     },

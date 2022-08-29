@@ -17,11 +17,6 @@ exports[`HeaderContainer render HeaderContainer component to match snapshot 1`] 
     <div
       className="adaptive-navbar"
       data-testid="nav-links-container"
-      style={
-        Object {
-          "transform": "none",
-        }
-      }
     >
       <nav
         className="navbar"

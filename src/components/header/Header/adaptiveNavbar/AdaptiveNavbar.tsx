@@ -1,4 +1,4 @@
-import { FC, ReactElement, RefObject, useEffect, useState } from 'react';
+import { FC, ReactElement, RefObject } from 'react';
 
 import { Navbar } from 'src/components/common';
 import { PicturesGallery } from './picturesGallery';
@@ -6,8 +6,6 @@ import { BottomNavbar } from './bottomNavbar';
 
 import { picturesType } from './picturesGallery/types';
 import { ClassesTypes } from './types';
-import { getTranslateDistance } from './helpers';
-import { LAPTOP_SIZE } from 'src/constants';
 
 type AdaptiveNavbarPropsTypes = {
   classesForAdaptiveNavbar: string;
@@ -17,7 +15,6 @@ type AdaptiveNavbarPropsTypes = {
   dir: string;
   isOpen: boolean;
   closeAdaptiveNavbar: (e: any) => void;
-  closeAdaptiveNavbarOnResize: () => void;
 };
 
 export const AdaptiveNavbar: FC<AdaptiveNavbarPropsTypes> = ({
@@ -25,52 +22,13 @@ export const AdaptiveNavbar: FC<AdaptiveNavbarPropsTypes> = ({
   classesForNavbar,
   adaptiveNavbarRef,
   pictures,
-  dir,
-  isOpen,
-  closeAdaptiveNavbar,
-  closeAdaptiveNavbarOnResize
+  closeAdaptiveNavbar
 }): ReactElement => {
-  const [translateDir, setTranslateDir] = useState('none');
-
-  const windowResizeHandler = () => {
-    closeAdaptiveNavbarOnResize();
-    if (window.innerWidth > LAPTOP_SIZE) {
-      setTranslateDir('none');
-      return;
-    }
-    !isOpen
-      ? setTranslateDir(getTranslateDistance(dir, window.innerWidth))
-      : setTranslateDir('none');
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', windowResizeHandler);
-    if (window.innerWidth > LAPTOP_SIZE) {
-      setTranslateDir('none');
-      return;
-    }
-
-    !isOpen
-      ? setTranslateDir(getTranslateDistance(dir, window.innerWidth))
-      : setTranslateDir('none');
-  }, []);
-
-  useEffect(() => {
-    if (window.innerWidth > LAPTOP_SIZE) {
-      setTranslateDir('none');
-      return;
-    }
-    !isOpen
-      ? setTranslateDir(getTranslateDistance(dir, window.innerWidth))
-      : setTranslateDir('none');
-  }, [isOpen, dir]);
-
   return (
     <div
       ref={adaptiveNavbarRef}
       className={classesForAdaptiveNavbar}
       data-testid='nav-links-container'
-      style={{ transform: translateDir }}
     >
       <Navbar
         classes={classesForNavbar}

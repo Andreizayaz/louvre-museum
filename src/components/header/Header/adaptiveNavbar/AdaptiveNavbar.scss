@@ -21,11 +21,9 @@
     width: 29%;
     min-width: 300px;
     background-color: $header-background;
+    display: none;
+    transform: translateX(-100%);
     transition: all 1s;
-
-    &_visible {
-      transform: translateX(0);
-    }
   }
 
   @media (max-width: $tablet-size) {
@@ -36,6 +34,11 @@
 
   @media (max-width: $mobile-size) {
     row-gap: 5px;
+  }
+
+  &_visible {
+    display: block;
+    transform: translateX(0);
   }
 }
 
@@ -121,5 +124,29 @@
   &:focus,
   &:focus-visible {
     outline: none;
+  }
+}
+
+@keyframes hide-menu {
+  0% {
+    display: block;
+    transform: translateX(0);
+  }
+
+  100% {
+    display: none;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes show-menu {
+  0% {
+    display: none;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    display: block;
+    transform: translateX(0);
   }
 }

@@ -14,7 +14,6 @@ type HeaderPropsType = {
   selectLanguage: (code: string) => void;
   handleToggleMenu: (e: MouseEvent<HTMLButtonElement>) => void;
   closeAdaptiveNavbar: () => void;
-  closeAdaptiveNavbarOnResize: () => void;
 };
 
 const Header = memo(
@@ -22,7 +21,6 @@ const Header = memo(
     selectLanguage,
     handleToggleMenu,
     closeAdaptiveNavbar,
-    closeAdaptiveNavbarOnResize,
     code,
     dir,
     languages,
@@ -37,7 +35,6 @@ const Header = memo(
         <AdaptiveNavbar
           isOpenMenu={isOpenMenu}
           closeAdaptiveNavbar={closeAdaptiveNavbar}
-          closeAdaptiveNavbarOnResize={closeAdaptiveNavbarOnResize}
         />
         <ToggleMenu
           isOpenMenu={isOpenMenu}
